@@ -1,0 +1,139 @@
+<html>
+<head>
+<title>Clients</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript">
+		function showform(dowhat) {
+			/*
+			* four DIVS: browse, insert, update, delete
+			* this function sets one visible the others not
+			*/
+			if (dowhat == 'insert'){
+				document.getElementById('browse').style.display = 'none';
+				document.getElementById('insert').style.display = 'block';
+				document.getElementById('update').style.display = 'none';
+				document.getElementById('delete').style.display = 'none';
+			}
+			else if (dowhat == 'update'){
+				document.getElementById('browse').style.display = 'none';
+				document.getElementById('insert').style.display = 'none';
+				document.getElementById('update').style.display = 'block';
+				document.getElementById('delete').style.display = 'none';
+			}
+      else if (dowhat == 'all'){
+				document.getElementById('browse').style.display = 'block';
+				document.getElementById('insert').style.display = 'block';
+				document.getElementById('update').style.display = 'block';
+				document.getElementById('delete').style.display = 'block';
+			}
+			else { //by default display browse
+				document.getElementById('browse').style.display = 'block';
+				document.getElementById('insert').style.display = 'none';
+				document.getElementById('update').style.display = 'none';
+				document.getElementById('delete').style.display = 'none';
+			}
+		}
+    function newClient() { showform('insert'); }
+    function updateClient(cid) { showform('update'); }
+    function deleteClient(cid) { showform ('delete'); }
+    function browseClients() { showform ('browse'); }
+    function showAll() { showform ('all'); }
+</script>
+</head>
+
+<body onload="browseClients()">
+<h1>Clients</h1>
+
+[ <a href="providers.html">Providers</a> | <a href="clients.html">Clients</a> ]
+
+<div id="browse">
+<p><a href="#" onClick="showAll()">Display all forms</a> </p>
+<table border="1" cellpadding="5">
+  <tr>
+    <th><a href="#" onClick="newClient()">New</a></th>
+    <th>id</th>
+    <th>firstName</th>
+    <th>lastName</th>
+    <th>provider</th>
+  </tr>
+  <tr>
+    <td><a href="#" onClick="updateClient('this.clientID')">Edit</a></td>
+    <td>1</td>
+    <td >Jane</td>
+    <td align="right" >Smith</td>
+    <td>Callie Torres</td>
+  </tr>
+  <tr>
+    <td><a href="#" onClick="updateClient('this.clientID')">Edit</a></td>
+    <td>2</td>
+    <td>Katie</td>
+    <td align="right" >Lee</td>
+    <td >Miranda Bailey</td>
+  </tr>
+  <tr>
+    <td><a href="#" onClick="updateClient('this.clientID')">Edit</a></td>
+    <td>3</td>
+    <td>Nicole</td>
+    <td align="right" >Dicaprio</td>
+    <td>Izzie Stevens</td>
+  </tr>
+  <tr>
+    <td><a href="#" onClick="updateClient('this.clientID')">Edit</a></td>
+    <td>4</td>
+    <td>Meredith</td>
+    <td align="right" >Grey</td>
+    <td>Arizona Robbins</td>
+  </tr>
+  <tr>
+    <td><a href="#" onClick="updateClient('this.clientID')">Edit</a></td>
+    <td>5</td>
+    <td>Christina</td>
+    <td align="right" >Yang</td>
+    <td>Izzie Stevens</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</div> <!-- browse -->
+<div id="insert">
+    <form method="POST" id="addClient">
+        <legend><strong>Add Client</strong></legend>
+          <fieldset class="fields">
+            <label> First Name </label> <input type="text" name="firstName">
+            <label> Last Name </label> <input type="text" name="lastName">
+            <label> Provider </label> <select name="homeworld">
+            	<option value="0">&nbsp;</option>
+                <option value="1">Mark Sloan</option>
+                <option value="2">Miranda Bailey</option>
+                <option value="3">Izzie Stevens</option>
+                <option value="4">Callie Torres</option>
+                <option value="5">Arizona Robbins</option>
+                </select>
+      </fieldset>
+          <input class="btn" type="submit" id="addClient" value="Add Client">
+          <input class="btn" type="button" value="cancel" onClick="browseClients()">
+	</form> 
+</div><!-- insert -->
+<p>&nbsp;</p>
+<div id="update">
+    <form method="POST" id="UpdateClient">
+        <legend><strong>Update Client</strong></legend>
+          <fieldset class="fields">
+          <input type="hidden" name="clientID" id="updateclientID" value="1">
+          <label> ID: </label> 1
+            <label> First Name </label> <input type="text" name="firstName" value="Jane">
+            <label> Last Name </label> <input type="text" name="lastName" value="Smith">
+            <label> Provider </label> <select name="provider">
+              <option value="0">&nbsp;</option>
+              <option value="1">Mark Sloan</option>
+              <option value="2">Miranda Bailey</option>
+              <option value="3">Izzie Stevens</option>
+              <option value="4">Callie Torres</option>
+              <option value="5">Arizona Robbins</option>
+                </select>
+      </fieldset>
+          <input class="btn" type="submit" id="UpdateSaveClient" value="Save Update Client">
+          <input class="btn" type="button" value="cancel" onClick="browseClients()">
+	</form> 
+</div><!-- update -->
+</body>
+</html>
