@@ -1,0 +1,64 @@
+:root{
+    --font-hover-color: white;
+  }
+  
+  button {
+      margin-top: 1.5em;
+      margin-bottom: 2em;
+      color: white;
+      background-color: teal;
+      padding: 13px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+      border-radius: 8px;
+      border:none;
+    
+    }
+  
+  /* Edit tables */
+  table, th, td {
+      border: 0.5px solid #98A09E;
+      border-collapse: collapse;
+    }
+  
+  table {
+    margin-top: 2em;
+    width: 100%;
+  }
+  
+  /* Change body */
+  body{
+    font-family: 'Trebuchet MS', sans-serif;
+    background-color: #F4FAF8;
+    margin-top: 1;
+    margin-left: 1em;
+    margin-right: 1em;
+  }
+  head {
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+  /* Edit headers */
+  h1 {
+    font-size: 60px;
+      text-align: center;
+      margin-left: 0;
+  }
+  
+  h2{
+    font-size: 45px;
+  }
+
+  
+  button:hover {
+    background-color: #ddd;
+    color: black;
+  }
+  
+  input[type="text"]
+  {
+    font-family: 'Trebuchet MS', sans-serif;
+  }
+  
