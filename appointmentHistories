@@ -67,10 +67,10 @@
     <td>31</td>
     <td>Jane</td>
     <td>Smith</td>
-    <td align="right" >8 wk prenatal</td>
+    <td>8 wk prenatal</td>
     <td>Izzie</td>
     <td>Stevens</td>
-    <td>04-03-2021</td>
+    <td align="right" >04-03-2021</td>
   </tr>
   <tr>
     <!-- <td><a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td> -->
@@ -78,10 +78,10 @@
     <td>32</td>
     <td>Jane</td>
     <td>Smith</td>
-    <td align="right" >6 wk postpartum</td>
+    <td>6 wk postpartum</td>
     <td>Izzie</td>
     <td>Stevens</td>
-    <td>04-03-2021</td>
+    <td align="right" >04-03-2021</td>
   </tr>
   <tr>
     <!-- <td><a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td> -->
@@ -89,10 +89,10 @@
     <td>33</td>
     <td>Katie</td>
     <td>Lee</td>
-    <td align="right" >Family Planning</td>
+    <td>Family Planning</td>
     <td>Callie</td>
     <td>Torres</td>
-    <td>03-29-2021</td>
+    <td align="right">03-29-2021</td>
   </tr>
   <tr>
     <!-- <td><a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td> -->
@@ -100,10 +100,10 @@
     <td>34</td>
     <td>Christina</td>
     <td>Yang</td>
-    <td align="right" >24 wk prenatal</td>
+    <td>24 wk prenatal</td>
     <td>Mark</td>
     <td>Sloan</td>
-    <td>04-12-2021</td>
+    <td align="right" >04-12-2021</td>
   </tr>
   <tr>
     <!-- <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td> -->
@@ -111,10 +111,10 @@
     <td>35</td>
     <td>Nicole</td>
     <td>Dicaprio</td>
-    <td align="right" >16 wk prenatal</td>
+    <td>16 wk prenatal</td>
     <td>Arizona</td>
     <td>Robbins</td>
-    <td>04-05-2021</td>
+    <td align="right">04-05-2021</td>
   </tr>
 </table>
 <p>&nbsp;</p>
@@ -146,33 +146,34 @@
   </form> 
 </div><!-- insert -->
 <p>&nbsp;</p>
-<!-- <div id="update">
-    <form method="POST" id="updateAppointmentDetail">
-        <legend><strong>Update Appointment Detail</strong></legend>
-          <fieldset class="fields">
-          <input type="hidden" name="apptDetailID" id="updateappointmentDetail" value="41">
-          <label> ID: </label> 41
-          <label> Perinatal Appointment </label> <select name="name">
-            <option value="0">&nbsp;</option>
-            <option value="16">8 wk prenatal</option>
-            <option value="17">6 wk postpartum</option>
-            <option value="18">family planning</option>
-            <option value="19">24 wk prenatal</option>
-            <option value="20">16 wk prenatals</option>
-            </select>
-              <label> Provider </label> <select name="provider">
-            <option value="0">&nbsp;</option>
-            <option value="1">Mark Sloan</option>
-            <option value="2">Miranda Bailey</option>
-            <option value="3">Izzie Stevens</option>
-            <option value="4">Callie Torres</option>
-            <option value="5">Arizona Robbins</option>
-              </select>
+<!--  <div id="update">
+    <form method="POST" id="updateAppointmentHistory">
+        <legend><strong>Update Appointment History</strong></legend>
+            <fieldset class="fields">
+            <input type="hidden" name="apptHistoryID" id="updateAppointmentHistory" value="41">
+            <label> ID: </label> 31
+            <label> Client </label> <select name="client">
+                <option value="0">&nbsp;</option>
+                <option value="1">Jane Smith</option>
+                <option value="2">Katie Lee</option>
+                <option value="3">Nicole Dicaprio</option>
+                <option value="4">Meredith Grey</option>
+                <option value="5">Christina Yang</option>
+                </select>
+            <label> Appointment Detail </label> <select name="apptDetailID">
+                <option value="0">&nbsp;</option>
+                <option value="41">8 wk prenatal - Stevens</option>
+                <option value="42">6 wk postpartum - Stevens</option>
+                <option value="43">family planning - Torres</option>
+                <option value="44">24 wk prenatal - Sloan</option>
+                <option value="45">16 wk prenatal - Robbins</option>
+                </select
+            <label> date </label> <input type="date" name="date" value = "04-03-2021">
       </fieldset>
-          <input class="btn" type="submit" id="UpdateSavePerinatalAppointment" value="Save Update Perinatal Appointment">
-          <input class="btn" type="button" value="cancel" onClick="browsePerinatalAppointment()">
+          <input class="btn" type="submit" id="UpdateSaveAppointmentHistory" value="Save Update to Appointment History">
+          <input class="btn" type="button" value="cancel" onClick="browseAppointmentHistory()">
   </form> 
-</div> --> <!-- update -->
+</div>  --> <!-- update -->
 <div id="delete" style="display: block">
     <form method="POST" id="deleteAppointmentHistory">
         <legend><strong>Delete Appointment from Patient History</strong></legend>
