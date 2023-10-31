@@ -57,8 +57,7 @@
     <th>Clients.firstName</th> <!-- instead of using clientID --> 
     <th>Clients.lastName</th> <!-- instead of using clientID --> 
     <th>PerinatalAppointments.name</th> <!-- instead of using apptDetailID --> 
-    <th>Providers.firstName</th> <!-- instead of using apptDetailID --> 
-    <th>Providers.lastName</th> <!-- instead of using apptDetailID --> 
+    <th>Provider</th> <!-- instead of using apptDetailID using concatenated first and last name --> 
     <th>date</th>
   </tr>
   <tr>
@@ -68,8 +67,7 @@
     <td>Jane</td>
     <td>Smith</td>
     <td>8 wk prenatal</td>
-    <td>Izzie</td>
-    <td>Stevens</td>
+    <td>Izzie Stevens</td>
     <td align="right" >04-03-2021</td>
   </tr>
   <tr>
@@ -79,8 +77,7 @@
     <td>Jane</td>
     <td>Smith</td>
     <td>6 wk postpartum</td>
-    <td>Izzie</td>
-    <td>Stevens</td>
+    <td>Izzie Stevens</td>
     <td align="right" >04-03-2021</td>
   </tr>
   <tr>
@@ -90,8 +87,7 @@
     <td>Katie</td>
     <td>Lee</td>
     <td>Family Planning</td>
-    <td>Callie</td>
-    <td>Torres</td>
+    <td>Callie Torres</td>
     <td align="right">03-29-2021</td>
   </tr>
   <tr>
@@ -101,8 +97,7 @@
     <td>Christina</td>
     <td>Yang</td>
     <td>24 wk prenatal</td>
-    <td>Mark</td>
-    <td>Sloan</td>
+    <td>Mark Sloan</td>
     <td align="right" >04-12-2021</td>
   </tr>
   <tr>
@@ -112,8 +107,7 @@
     <td>Nicole</td>
     <td>Dicaprio</td>
     <td>16 wk prenatal</td>
-    <td>Arizona</td>
-    <td>Robbins</td>
+    <td>Arizona Robbins</td>
     <td align="right">04-05-2021</td>
   </tr>
 </table>
@@ -194,4 +188,5 @@
   
 </body>
 </html>
+
 
