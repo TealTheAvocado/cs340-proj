@@ -44,7 +44,7 @@
 <h1>Perinatal Appointments</h1>
 
 <h3>
-  [ <a href="index.html">Home</a> | <a href="providers.html">Providers</a> | <a href="clients.html">Clients</a>  | <a href="perinatalAppointments.html">Perinatal Appointments</a> | <a href="appointmentDetails.html">Appointment Details</a> 
+  [ <a href="index.html">Home</a> | <a href="providers.html">Providers</a> | <a href="clients.html">Clients</a>  | <a href="perinatalAppointments.html">Perinatal Appointments</a> | <a href="appointmentDetails.html">Appointment Details</a> | <a href="appointmentHistories.html">Appointment Histories</a> ] 
 </h3>
 
 <div id="browse">
@@ -52,6 +52,7 @@
 <p><a href="#" onClick="newAppointmentDetail()">New</a></p>
 <table border="1" cellpadding="5">
   <tr>
+    <!-- need to add columne if edit options are allowed and uncommented below-->
     <th>apptDetailID</th>
     <th>PerinatalAppointments.name</th> <!-- instead of using perinatalApptID --> 
     <th>Providers.firstName</th> <!-- instead of using providerID --> 
@@ -150,3 +151,4 @@
 </div> --> <!-- update -->
 </body>
 </html>
+
