@@ -159,7 +159,7 @@ VALUES
 		INNER JOIN AppointmentDetails ON PerinatalAppointments.perinatalApptID = AppointmentDetails.perinatalApptID
 		INNER JOIN Providers ON AppointmentDetails.providerID = Providers.providerID 
 			WHERE PerinatalAppointments.name = '8 wk prenatal' AND Providers.firstName = "Izzie" AND Providers.lastName = "Stevens"),
-	2021-04-03),
+	'2021-04-03'),
     (32, 
     (SELECT clientID FROM Clients WHERE firstName = "Jane" AND lastName = "Smith"), 
     (SELECT apptDetailID FROM PerinatalAppointments 
