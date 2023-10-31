@@ -54,44 +54,38 @@
   <tr>
     <!-- need to add columne if edit options are allowed and uncommented below-->
     <th>apptDetailID</th>
-    <th>PerinatalAppointments.name</th> <!-- instead of using perinatalApptID --> 
-    <th>Providers.firstName</th> <!-- instead of using providerID --> 
-    <th>Providers.lastName</th> <!-- instead of using providerID --> 
+    <th>Appointment Name</th> <!-- instead of using perinatalApptID --> 
+    <th>Provider</th> <!-- instead of using providerID --> 
   </tr>
   <tr>
     <!-- <td>  <a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td>  --Not allowing edits to preserve appt histories-->
     <td>41</td>
     <td>8 wk prenatal</td>
-    <td >Izzie</td>
-    <td align="right" >Stevens</td>
+    <td >Izzie Stevens</td>
   </tr>
   <tr>
     <!-- <td><a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td> -->
     <td>42</td>
     <td>6 wk postpartum</td>
-    <td>Izzie</td>
-    <td align="right" >Stevens</td>
+    <td>Izzie Stevens</td>
   </tr>
   <tr>
     <!-- <td><a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td> -->
     <td>43</td>
     <td>family planning</td>
-    <td>Callie</td>
-    <td align="right" >Torres</td>
+    <td>Callie Torres</td>
   </tr>
   <tr>
     <!-- <td><a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td> -->
     <td>44</td>
     <td>24 wk prenatal</td>
-    <td>Mark</td>
-    <td align="right" >Sloan</td>
+    <td>Mark Sloan</td>
   </tr>
   <tr>
     <!-- <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td> -->
     <td>45</td>
     <td>16 wk prenatal</td>
-    <td>Arizona</td>
-    <td align="right" >Robbins</td>
+    <td>Arizona Robbins</td>
   </tr>
 </table>
 <p>&nbsp;</p>
