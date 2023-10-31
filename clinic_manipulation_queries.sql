@@ -1,46 +1,131 @@
--- get all Provider IDs, firstNames, lastNames to populate the Provider dropdown
-SELECT providerID, firstName, lastName FROM Providers
+-- Clent Page
+-- 1. Browse/Read: Get all Clients: 
+-- for each client, list clientID, firstName, lastName and Primary Provider 
+SELECT Clients.clientID, Clients.firstName, Clients.lastName, CONCAT(Providers.firstName," ", Providers.lastName) AS Provider 
+FROM Clients
+INNER JOIN Providers ON Clients.providerID = Providers.providerID;
 
--- get all clients and their providers for the Clients page
-SELECT Clients.clientID, firstName, lastName, Clients.providerID AS provider, 
-FROM Clients INNER JOIN Clients ON provider = Providers.providerID
-
--- get a single client's data for the Update Client form
-SELECT clientID, firstName, lastName, provider FROM Clients
-WHERE clientID = :client_ID_selected_from_browse_client_page
-
--- add a new client
+-- 2. Add/Create a client: 
+-- Get all Provider IDs, firstNames, lastNames to populate the Provider dropdown
+SELECT providerID, firstName, lastName FROM Providers;
+-- add a new client 
 INSERT INTO Clients 
 (firstName, lastName, providerID) 
 VALUES 
-(:firstName, :lastName, :provider_id_from_dropdown_Input)
+(:firstName, :lastName, :provider_id_from_dropdown_Input);
 
+-- 3. Edit/Update a client: 
+-- get a single client's data for the Update Client form 
+SELECT clientID, firstName, lastName, providerID FROM Clients
+WHERE clientID = :client_ID_selected_from_browse_client_page;
+-- Get all Provider IDs, firstNames, lastNames to populate the Provider dropdown
+SELECT providerID, firstName, lastName FROM Providers;
 -- update a client's data based on submission of the Update Client form 
 UPDATE Clients SET firstName = :fnameInput, lastName= :lnameInput, 
-provider = :provider_id_from_dropdown_Input
-WHERE id= :client_ID_from_the_update_form
+providerID = :provider_id_from_dropdown_Input
+WHERE clientID= :client_ID_from_the_update_form;
 
--- delete a client
+-- 4. Delete a client:
 DELETE FROM Clients 
-WHERE id = :client_ID_selected_from_browse_client_page
+WHERE clientID = :client_ID_selected_from_browse_client_page;
 
--- get all providers for the Providers page
-SELECT Provider.providerID, firstName, lastName, FROM Providers 
+-- Provider Page 
+-- 1. Browse/Read: get all providers
+-- for each provider, list ID, first name, last name, and title
+SELECT providerID, firstName, lastName, title FROM Providers; 
 
--- get a single provider's data for the Update Provider form
-SELECT providerID, firstName, lastName FROM Providers
-WHERE providerID = :provider_ID_selected_from_browse_provider_page
-
--- add a new client
+-- 2. Add/Create a provider: 
+-- create dropdown for title
+SELECT DISTINCT title From Providers; 
+-- add new provider 
 INSERT INTO Providers 
 (firstName, lastName, title) 
 VALUES 
-(:fnameInput, :lnameInput, :titleInput)
+(:fnameInput, :lnameInput, :title_fromt_drowpdown_Input);
 
+-- 3. Edit/Update up provider:
+-- create dropdown for title
+SELECT DISTINCT title From Providers; 
+-- get a single provider's data for the Update Provider form
+SELECT providerID, firstName, lastName, title FROM Providers
+WHERE providerID = :provider_ID_selected_from_browse_provider_page
 -- update a provider's data based on submission of the Update Provider form 
-UPDATE Providers SET firstName = :fnameInput, lastName= :lnameInput, title= :titleInput
-WHERE id= :provider_ID_from_the_update_form
+UPDATE Providers SET firstName = :fnameInput, lastName= :lnameInput, title= :title_from_dropdown_input
+WHERE providerID= :provider_ID_from_the_update_form;
 
--- delete a provider
+-- 4. Delete a provider:
 DELETE FROM Providers 
-WHERE id = :provider_ID_selected_from_browse_client_page
+WHERE providerID = :provider_ID_selected_from_browse_client_page;
+
+-- Perinatal Appointments Page
+-- 1. Browse/Read: get all perinatal Appointments
+-- for each appointment, list ID, name, billing code, and description
+SELECT perinatalApptID, name, billingCode, description FROM PerinatalAppointments; 
+
+-- 2. Add/Create: Create a new perinatal Appointment
+-- insert new perinatal appointment 
+INSERT INTO PerinatalAppointments 
+(name, billingCode, description) 
+VALUES 
+(:nameInput, :billingCodeInput, :descriptionInput);
+
+-- 3.Edit/Update: Edit an appointment
+-- get a single appointment's data for the Update Perinatal Appointment form
+SELECT perinatalApptID, name, billingCode, description FROM PerinatalAppointments
+WHERE perinatalApptID = :appointment_ID_selected_from_browse_provider_page;
+-- update an appointment's data based on submission of the Update Perinatal Appointment form 
+UPDATE PerinatalAppointments SET name = :nameInput, billingCode= :billingCodeInput, description= :descriptionInput
+WHERE perinatalApptID= :appointment_ID_from_the_update_form;
+
+-- 4. Delete: To preserve patient histories, deletion of perinatal appointments is not allowed. 
+
+-- Appointment Details Page
+-- 1. Browse/Read: get all Appointment Details
+-- for each Appointment Detail, list ID, perinatal appointment name, and concatenated provider first and last name 
+SELECT apptDetailID, PerinatalAppointments.name, CONCAT(Providers.firstName," ", Providers.lastName) AS Provider
+FROM PerinatalAppointments 
+INNER JOIN AppointmentDetails ON PerinatalAppointments.perinatalApptID = AppointmentDetails.perinatalApptID
+INNER JOIN Providers ON AppointmentDetails.providerID = Providers.providerID;
+
+-- 2. Add/Create: add a new appointment detail 
+-- create drop down for perinatal appointments, listing them by name
+SELECT perinatalapptID, name FROM PerinatalAppointments;
+-- create drop down menu for providers, listing each provider by first name and last name
+SELECT providerID, CONCAT(firstName, " ", lastName) AS Provider FROM Providers;
+-- insert new perinatal Appointment Detail
+INSERT INTO AppointmentDetails 
+(perinatalApptID, providerID) 
+VALUES 
+(:appointment_ID_from_droptdownInput, :provider_ID_sfrom_dropdownInput);
+
+-- 3. Edit/Update: To preserve patient histories, editing/updating appointment detials is not allowed
+
+-- 4. Delete: To preserve patient histories, deleting appointment details is not allowed
+
+-- Appointment Histories Page
+-- 1. Browse/Read: get all Appointment Histories
+-- for each Appointment History, list apptHistoryID, clients first name and last name, perinatal appointment name, providers first and last name concatenated and date
+SELECT AppointmentHistories.apptHistoryID, Clients.firstName, Clients.lastName, PerinatalAppointments.name, CONCAT(Providers.firstName," ", Providers.lastName) AS Provider, date 
+FROM PerinatalAppointments
+INNER JOIN AppointmentDetails ON PerinatalAppointments.perinatalApptID = AppointmentDetails.perinatalApptID
+INNER JOIN Providers ON AppointmentDetails.providerID = Providers.providerID
+INNER JOIN AppointmentHistories ON AppointmentDetails.apptDetailID = AppointmentHistories.apptDetailID
+INNER JOIN Clients ON AppointmentHistories.clientID = Clients.clientID;
+
+-- 2. Add/Create: add a new appointment history event
+-- Create drop down for client, listing each client by id and first and last name
+SELECT clientID, CONCAT(firstName, " ", lastName) as client FROM Clients;
+-- Create a drop down for appointment detail, listing each detail by appointment name and provider
+SELECT apptDetailID, CONCAT(PerinatalAppointments.name, " - ", Providers.firstName," ", Providers.lastName) AS AppointmentDetail
+FROM PerinatalAppointments 
+INNER JOIN AppointmentDetails ON PerinatalAppointments.perinatalApptID = AppointmentDetails.perinatalApptID
+INNER JOIN Providers ON AppointmentDetails.providerID = Providers.providerID;
+-- insert new appointment history
+INSERT INTO AppointmentHistories
+(ApptDetailID, clientID, date) 
+VALUES 
+(:appointment_detail_ID_from_droptdownInput, :client_ID_from_dropdownInput, :dateInput);
+
+-- 3. Edit/Update: To preserve patient histories, editing/updating appointment detials is not allowed
+
+-- 4. Delete: To preserve patient histories, deleting appointment details is not allowed
