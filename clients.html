@@ -57,6 +57,7 @@
     <th>firstName</th>
     <th>lastName</th>
     <th>provider</th>
+    <th></th>
   </tr>
   <tr>
     <td><a href="#" onClick="updateClient('this.clientID')">Edit</a></td>
@@ -64,6 +65,7 @@
     <td >Jane</td>
     <td align="right" >Smith</td>
     <td>Callie Torres</td>
+    <td><a href="#" onclick="deleteProvider('this.providerID')">Delete</a></td>
   </tr>
   <tr>
     <td><a href="#" onClick="updateClient('this.clientID')">Edit</a></td>
@@ -71,6 +73,7 @@
     <td>Katie</td>
     <td align="right" >Lee</td>
     <td >Miranda Bailey</td>
+    <td><a href="#" onclick="deleteProvider('this.providerID')">Delete</a></td>
   </tr>
   <tr>
     <td><a href="#" onClick="updateClient('this.clientID')">Edit</a></td>
@@ -78,6 +81,7 @@
     <td>Nicole</td>
     <td align="right" >Dicaprio</td>
     <td>Izzie Stevens</td>
+    <td><a href="#" onclick="deleteProvider('this.providerID')">Delete</a></td>
   </tr>
   <tr>
     <td><a href="#" onClick="updateClient('this.clientID')">Edit</a></td>
@@ -85,6 +89,7 @@
     <td>Meredith</td>
     <td align="right" >Grey</td>
     <td>Arizona Robbins</td>
+    <td><a href="#" onclick="deleteProvider('this.providerID')">Delete</a></td>
   </tr>
   <tr>
     <td><a href="#" onClick="updateClient('this.clientID')">Edit</a></td>
@@ -92,6 +97,7 @@
     <td>Christina</td>
     <td align="right" >Yang</td>
     <td>Izzie Stevens</td>
+    <td><a href="#" onclick="deleteProvider('this.providerID')">Delete</a></td>
   </tr>
 </table>
 <p>&nbsp;</p>
@@ -100,9 +106,9 @@
     <form method="POST" id="addClient">
         <legend><strong>Add Client</strong></legend>
           <fieldset class="fields">
-            <label> First Name </label> <input type="text" name="firstName">
-            <label> Last Name </label> <input type="text" name="lastName">
-            <label> Provider </label> <select name="homeworld">
+            <label> First Name </label> <input type="text" name="fNameInput">
+            <label> Last Name </label> <input type="text" name="lNameInput">
+            <label> Provider </label> <select name="provider">
             	<option value="0">&nbsp;</option>
                 <option value="1">Mark Sloan</option>
                 <option value="2">Miranda Bailey</option>
@@ -137,5 +143,20 @@
           <input class="btn" type="button" value="cancel" onClick="browseClients()">
 	</form> 
 </div><!-- update -->
+<p>&nbsp;</p>
+<div id="delete" style="display: block">
+  <form method="POST" id="deleteClient">
+      <legend><strong>Delete Client</strong></legend>
+          <fieldset class="fields">
+          <p>Are you sure you wish to delete the following?</p>
+          <input type="hidden" name="clientID" id="deleteclientID" value="2">
+          <label><strong>ID:</strong></label> 2
+            <label> <strong>Name</strong> </label> Katie Lee
+            
+    </fieldset>
+    <input class="btn" type="submit" id="DeleteClient" value="Delete Client">
+          <input class="btn" type="button" value="cancel" onClick="browseClients()">
+  </form> 
+</div><!-- delete -->
 </body>
 </html>
