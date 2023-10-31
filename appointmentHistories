@@ -142,7 +142,7 @@
             <label> date </label> <input type="date" name="date">
       </fieldset>
           <input class="btn" type="submit" id="addappointmentHistory" value="Add Appointment to History">
-          <input class="btn" type="button" value="cancel" onClick="browseAppointmentHistory()">
+          <input class="btn" type="button" value="Cancel" onClick="browseAppointmentHistory()">
   </form> 
 </div><!-- insert -->
 <p>&nbsp;</p>
@@ -187,8 +187,8 @@
            
 
       </fieldset>
-      <input class="btn" type="submit" id="DeletePerson" value="Delete Person">
-            <input class="btn" type="button" value="cancel" onClick="browsePeople()">
+      <input class="btn" type="submit" id="deleteApptHistory" value="Delete Appointment History">
+            <input class="btn" type="button" value="Cancel" onClick="browseAppointmentHistory()">
     </form> 
   </div><!-- delete -->
   
