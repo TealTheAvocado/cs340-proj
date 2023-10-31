@@ -1,0 +1,152 @@
+<html>
+<head>
+<title>Appointment Details </title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript">
+    function showform(dowhat) {
+      /*
+      * four DIVS: browse, insert, update, delete
+      * this function sets one visible the others not
+      */
+      if (dowhat == 'insert'){
+        document.getElementById('browse').style.display = 'none';
+        document.getElementById('insert').style.display = 'block';
+       /* document.getElementById('update').style.display = 'none';*/
+        /* document.getElementById('delete').style.display = 'none';*/
+      }
+      else if (dowhat == 'update'){
+        document.getElementById('browse').style.display = 'none';
+        document.getElementById('insert').style.display = 'none';
+        /*document.getElementById('update').style.display = 'block';*/
+        /*document.getElementById('delete').style.display = 'none';*/
+      }
+      else if (dowhat == 'all'){
+        document.getElementById('browse').style.display = 'block';
+        document.getElementById('insert').style.display = 'block';
+       /* document.getElementById('update').style.display = 'block'; */
+        /*document.getElementById('delete').style.display = 'block';*/
+      }
+      else { //by default display browse
+        document.getElementById('browse').style.display = 'block';
+        document.getElementById('insert').style.display = 'none';
+       /* document.getElementById('update').style.display = 'none'; */
+       /* document.getElementById('delete').style.display = 'none'; */
+      }
+    }
+    function newAppointmentDetail() { showform('insert'); }
+    /*function updateAppointmentDetail(cid) { showform('update'); } */
+    function browsAppointmentDetail() { showform ('browse'); }
+    function showAll() { showform ('all'); }
+</script>
+</head>
+
+<body onload="browseAppointmentDetail()">
+<h1>Perinatal Appointments</h1>
+
+<h3>
+  [ <a href="index.html">Home</a> | <a href="providers.html">Providers</a> | <a href="clients.html">Clients</a>  | <a href="perinatalAppointments.html">Perinatal Appointments</a> | <a href="appointmentDetails.html">Appointment Details</a> 
+</h3>
+
+<div id="browse">
+<p><a href="#" onClick="showAll()">Display all forms</a> </p>
+<p><a href="#" onClick="newAppointmentDetail()">New</a></p>
+<table border="1" cellpadding="5">
+  <tr>
+    <th>apptDetailID</th>
+    <th>PerinatalAppointments.name</th> <!-- instead of using perinatalApptID --> 
+    <th>Providers.firstName</th> <!-- instead of using providerID --> 
+    <th>Providers.lastName</th> <!-- instead of using providerID --> 
+  </tr>
+  <tr>
+    <!-- <td>  <a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td>  --Not allowing edits to preserve appt histories-->
+    <td>41</td>
+    <td>8 wk prenatal</td>
+    <td >Izzie</td>
+    <td align="right" >Stevens</td>
+  </tr>
+  <tr>
+    <!-- <td><a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td> -->
+    <td>42</td>
+    <td>6 wk postpartum</td>
+    <td>Izzie</td>
+    <td align="right" >Stevens</td>
+  </tr>
+  <tr>
+    <!-- <td><a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td> -->
+    <td>43</td>
+    <td>family planning</td>
+    <td>Callie</td>
+    <td align="right" >Torres</td>
+  </tr>
+  <tr>
+    <!-- <td><a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td> -->
+    <td>44</td>
+    <td>24 wk prenatal</td>
+    <td>Mark</td>
+    <td align="right" >Sloan</td>
+  </tr>
+  <tr>
+    <!-- <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td> -->
+    <td>45</td>
+    <td>16 wk prenatal</td>
+    <td>Arizona</td>
+    <td align="right" >Robbins</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</div> <!-- browse -->
+<div id="insert">
+    <form method="POST" id="addAppointmentDetail">
+        <legend><strong>Link an Appointment to a Provider to add a  new Appointment Detail</strong></legend>
+          <fieldset class="fields">
+            <label> Perinatal Appointment Name </label> <select name="name">
+              <option value="0">&nbsp;</option>
+                <option value="16">8 wk prenatal</option>
+                <option value="17">6 wk postpartum</option>
+                <option value="18">family planning</option>
+                <option value="19">24 wk prenatal</option>
+                <option value="10">16 wk prenatal</option>
+                </select>
+            <label> Provider </label> <select name="provider">
+                 <option value="0">&nbsp;</option>
+                <option value="1">Mark Sloan</option>
+                <option value="2">Miranda Bailey</option>
+                <option value="3">Izzie Stevens</option>
+                <option value="4">Callie Torres</option>
+                <option value="5">Arizona Robbins</option>
+                </select>
+      </fieldset>
+          <input class="btn" type="submit" id="addappointmentDetail" value="Add Appointment Detail">
+          <input class="btn" type="button" value="cancel" onClick="browseAppointmentDetail()">
+  </form> 
+</div><!-- insert -->
+<p>&nbsp;</p>
+<!-- <div id="update">
+    <form method="POST" id="updateAppointmentDetail">
+        <legend><strong>Update Appointment Detail</strong></legend>
+          <fieldset class="fields">
+          <input type="hidden" name="apptDetailID" id="updateappointmentDetail" value="41">
+          <label> ID: </label> 41
+          <label> Perinatal Appointment </label> <select name="name">
+            <option value="0">&nbsp;</option>
+            <option value="16">8 wk prenatal</option>
+            <option value="17">6 wk postpartum</option>
+            <option value="18">family planning</option>
+            <option value="19">24 wk prenatal</option>
+            <option value="20">16 wk prenatals</option>
+            </select>
+              <label> Provider </label> <select name="provider">
+            <option value="0">&nbsp;</option>
+            <option value="1">Mark Sloan</option>
+            <option value="2">Miranda Bailey</option>
+            <option value="3">Izzie Stevens</option>
+            <option value="4">Callie Torres</option>
+            <option value="5">Arizona Robbins</option>
+              </select>
+      </fieldset>
+          <input class="btn" type="submit" id="UpdateSavePerinatalAppointment" value="Save Update Perinatal Appointment">
+          <input class="btn" type="button" value="cancel" onClick="browsePerinatalAppointment()">
+  </form> 
+</div> --> <!-- update -->
+</body>
+</html>
