@@ -1,0 +1,187 @@
+<html>
+<head>
+<title>Perinatal Appointments </title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript">
+    function showform(dowhat) {
+      /*
+      * four DIVS: browse, insert, update, delete
+      * this function sets one visible the others not
+      */
+      if (dowhat == 'insert'){
+        document.getElementById('browse').style.display = 'none';
+        document.getElementById('insert').style.display = 'block';
+        document.getElementById('update').style.display = 'none';
+        document.getElementById('delete').style.display = 'none';
+      }
+      else if (dowhat == 'update'){
+        document.getElementById('browse').style.display = 'none';
+        document.getElementById('insert').style.display = 'none';
+        document.getElementById('update').style.display = 'block';
+        document.getElementById('delete').style.display = 'none';
+      }
+      else if (dowhat == 'all'){
+        document.getElementById('browse').style.display = 'block';
+        document.getElementById('insert').style.display = 'block';
+        document.getElementById('update').style.display = 'block';
+        document.getElementById('delete').style.display = 'block';
+      }
+      else { //by default display browse
+        document.getElementById('browse').style.display = 'block';
+        document.getElementById('insert').style.display = 'none';
+        document.getElementById('update').style.display = 'none';
+        document.getElementById('delete').style.display = 'none';
+      }
+    }
+    function newPerinatalAppointment() { showform('insert'); }
+    function updatePerinatalAppointment(cid) { showform('update'); }
+    function browsePerinatalAppointment() { showform ('browse'); }
+    function showAll() { showform ('all'); }
+</script>
+</head>
+
+<body onload="browsePerinatalAppointments()">
+<h1>Perinatal Appointments</h1>
+
+<h3>
+  [ <a href="index.html">Home</a> | <a href="providers.html">Providers</a> | <a href="clients.html">Clients</a>  | <a href="perinatalAppointments.html">Perinatal Appointments</a> 
+</h3>
+
+<div id="browse">
+<p><a href="#" onClick="showAll()">Display all forms</a> </p>
+<table border="1" cellpadding="5">
+  <tr>
+    <th><a href="#" onClick="newPerinatalAppointment()">New</a></th>
+    <th>perinatalApptID</th>
+    <th>name</th>
+    <th>billlingCode</th>
+    <th>description</th>
+  </tr>
+  <tr>
+    <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td>
+    <td>16</td>
+    <td>8 wk prenatal</td>
+    <td >1256-7</td>
+    <td align="right" >8 week prenatal visit</td>
+  </tr>
+  <tr>
+    <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td>
+    <td>17</td>
+    <td>6 wk postpartum</td>
+    <td>1236-0</td>
+    <td align="right" >postpartum maternal wellness check</td>
+  </tr>
+  <tr>
+    <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td>
+    <td>18</td>
+    <td>family planning</td>
+    <td>12344-22</td>
+    <td align="right" >discuss birth control or fertility options</td>
+  </tr>
+  <tr>
+    <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td>
+    <td>19</td>
+    <td>24 wk prenatal</td>
+    <td>13435-123</td>
+    <td align="right" >24 week prenatal visit</td>
+  </tr>
+  <tr>
+    <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td>
+    <td>20</td>
+    <td>16 wk prenatal</td>
+    <td>12343-12</td>
+    <td align="right" >16 week prenatal visit</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</div> <!-- browse -->
+<div id="insert">
+    <form method="POST" id="addPerinatalAppointment">
+        <legend><strong>Add Perinatal Appointment</strong></legend>
+          <fieldset class="fields">
+            <label> Name </label> <input type="text" name="name">
+            <label> Billing Code </label> <input type="text" name="billingCode">
+            <label> Description </label> <input type="text" name="description">
+      </fieldset>
+          <input class="btn" type="submit" id="addperinatalAppointment" value="Add Perinatal Appontment">
+          <input class="btn" type="button" value="cancel" onClick="browsePerinatalAppointment()">
+  </form> 
+</div><!-- insert -->
+<p>&nbsp;</p>
+<div id="update">
+    <form method="POST" id="updatePerinatalAppointment">
+        <legend><strong>Update Perinatal Appointment</strong></legend>
+          <fieldset class="fields">
+          <input type="hidden" name="perinatalApptID" id="updatePerinatalApptID" value="1">
+          <label> ID: </label> 16
+            <label> Name </label> <input type="text" name="name" value="8 wk prenatal">
+            <label> Billing Code </label> <input type="text" name="billingCode" value="1256-7">
+            <label> Description </label> <input type="text" name="description" value="8 week prenatal visit">
+      </fieldset>
+          <input class="btn" type="submit" id="UpdateSavePerinatalAppointment" value="Save Update Perinatal Appointment">
+          <input class="btn" type="button" value="cancel" onClick="browsePerinatalAppointment()">
+  </form> 
+</div><!-- update -->
+
+<div id="browse">
+<p><a href="#" onClick="showAll()">Display all forms</a> </p>
+<table border="1" cellpadding="5">
+  <tr>
+    <th><a href="#" onClick="newPerinatalAppointment()">New</a></th>
+    <th>perinatalApptID</th>
+    <th>name</th>
+    <th>billlingCode</th>
+    <th>description</th>
+  </tr>
+  <tr>
+    <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td>
+    <td>16</td>
+    <td>8 wk prenatal</td>
+    <td >1256-7</td>
+    <td align="right" >8 week prenatal visit</td>
+  </tr>
+  <tr>
+    <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td>
+    <td>17</td>
+    <td>6 wk postpartum</td>
+    <td>1236-0</td>
+    <td align="right" >postpartum maternal wellness check</td>
+  </tr>
+  <tr>
+    <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td>
+    <td>18</td>
+    <td>family planning</td>
+    <td>12344-22</td>
+    <td align="right" >discuss birth control or fertility options</td>
+  </tr>
+  <tr>
+    <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td>
+    <td>19</td>
+    <td>24 wk prenatal</td>
+    <td>13435-123</td>
+    <td align="right" >24 week prenatal visit</td>
+  </tr>
+  <tr>
+    <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td>
+    <td>20</td>
+    <td>16 wk prenatal</td>
+    <td>12343-12</td>
+    <td align="right" >16 week prenatal visit</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</div> <!-- browse -->
+<div id="insert">
+    <form method="POST" id="addPerinatalAppointment">
+        <legend><strong>Add Perinatal Appointment</strong></legend>
+          <fieldset class="fields">
+            <label> Name </label> <input type="text" name="name">
+            <label> Billing Code </label> <input type="text" name="billingCode">
+            <label> Description </label> <input type="text" name="description">
+      </fieldset>
+          <input class="btn" type="submit" id="addperinatalAppointment" value="Add Perinatal Appontment">
+          <input class="btn" type="button" value="cancel" onClick="browsePerinatalAppointment()">
+  </form> 
+</div><!-- insert -->
+</body>
+</html>
