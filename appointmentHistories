@@ -1,0 +1,195 @@
+<html>
+<head>
+<title>Appointment Histories</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript">
+    function showform(dowhat) {
+      /*
+      * four DIVS: browse, insert, update, delete
+      * this function sets one visible the others not
+      */
+      if (dowhat == 'insert'){
+        document.getElementById('browse').style.display = 'none';
+        document.getElementById('insert').style.display = 'block';
+       /* document.getElementById('update').style.display = 'none';*/
+        document.getElementById('delete').style.display = 'none';
+      }
+      else if (dowhat == 'update'){
+        document.getElementById('browse').style.display = 'none';
+        document.getElementById('insert').style.display = 'none';
+        /*document.getElementById('update').style.display = 'block';*/
+        document.getElementById('delete').style.display = 'none';
+      }
+      else if (dowhat == 'all'){
+        document.getElementById('browse').style.display = 'block';
+        document.getElementById('insert').style.display = 'block';
+       /* document.getElementById('update').style.display = 'block'; */
+        document.getElementById('delete').style.display = 'block';
+      }
+      else { //by default display browse
+        document.getElementById('browse').style.display = 'block';
+        document.getElementById('insert').style.display = 'none';
+       /* document.getElementById('update').style.display = 'none'; */
+       document.getElementById('delete').style.display = 'none'; 
+      }
+    }
+    function newAppointmentHistory() { showform('insert'); }
+    /*function updateAppointmentHistory(cid) { showform('update'); } */
+    function deleteAppointmentHistory(apptHxid) { showform ('delete'); }
+    function browsAppointmentHistory() { showform ('browse'); }
+    function showAll() { showform ('all'); }
+</script>
+</head>
+
+<body onload="browseAppointmentHistory()">
+<h1>Appointment Histories</h1>
+
+<h3>
+  [ <a href="index.html">Home</a> | <a href="providers.html">Providers</a> | <a href="clients.html">Clients</a>  | <a href="perinatalAppointments.html">Perinatal Appointments</a> | <a href="appointmentDetails.html">Appointment Details</a> | <a href="appointmentHistories.html">Appointment Histories</a> ]
+</h3>
+
+<div id="browse">
+<p><a href="#" onClick="showAll()">Display all forms</a> </p>
+<table border="1" cellpadding="5">
+  <tr>
+    <th><a href="#" onClick="newAppointmenHistory()">New</a></th>
+    <th>apptHistoryID</th>
+    <th>Clients.firstName</th> <!-- instead of using clientID --> 
+    <th>Clients.lastName</th> <!-- instead of using clientID --> 
+    <th>PerinatalAppointments.name</th> <!-- instead of using apptDetailID --> 
+    <th>Providers.firstName</th> <!-- instead of using apptDetailID --> 
+    <th>Providers.lastName</th> <!-- instead of using apptDetailID --> 
+    <th>date</th>
+  </tr>
+  <tr>
+    <!-- <td>  <a href="#" onClick="updateAppointmentHistory('this.apptHistoryID')">Edit</a></td>  --Not allowing edits to preserve appt histories-->
+    <td><a href="#" onclick="deleteAppointmentHistory('this.apptHistoryID')">Delete</a></td>
+    <td>31</td>
+    <td>Jane</td>
+    <td>Smith</td>
+    <td align="right" >8 wk prenatal</td>
+    <td>Izzie</td>
+    <td>Stevens</td>
+    <td>04-03-2021</td>
+  </tr>
+  <tr>
+    <!-- <td><a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td> -->
+    <td><a href="#" onclick="deleteAppointmentHistory('this.apptHistoryID')">Delete</a></td>
+    <td>32</td>
+    <td>Jane</td>
+    <td>Smith</td>
+    <td align="right" >6 wk postpartum</td>
+    <td>Izzie</td>
+    <td>Stevens</td>
+    <td>04-03-2021</td>
+  </tr>
+  <tr>
+    <!-- <td><a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td> -->
+    <td><a href="#" onclick="deleteAppointmentHistory('this.apptHistoryID')">Delete</a></td>
+    <td>33</td>
+    <td>Katie</td>
+    <td>Lee</td>
+    <td align="right" >Family Planning</td>
+    <td>Callie</td>
+    <td>Torres</td>
+    <td>03-29-2021</td>
+  </tr>
+  <tr>
+    <!-- <td><a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td> -->
+    <td><a href="#" onclick="deleteAppointmentHistory('this.apptHistoryID')">Delete</a></td>
+    <td>34</td>
+    <td>Christina</td>
+    <td>Yang</td>
+    <td align="right" >24 wk prenatal</td>
+    <td>Mark</td>
+    <td>Sloan</td>
+    <td>04-12-2021</td>
+  </tr>
+  <tr>
+    <!-- <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td> -->
+    <td><a href="#" onclick="deleteAppointmentHistory('this.apptHistoryID')">Delete</a></td>
+    <td>35</td>
+    <td>Nicole</td>
+    <td>Dicaprio</td>
+    <td align="right" >16 wk prenatal</td>
+    <td>Arizona</td>
+    <td>Robbins</td>
+    <td>04-05-2021</td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</div> <!-- browse -->
+<div id="insert">
+    <form method="POST" id="addAppointmentHistory">
+        <legend><strong>Add an Appointment to a Patient's History</strong></legend>
+          <fieldset class="fields">
+            <label>Client Name</label><select name ="name">
+                <option value="0">&nbsp;</option>
+                <option value="1">Jane Smith</option>
+                <option value="2">Katie Lee</option>
+                <option value="3">Nicole Dicaprio</option>
+                <option value="4">Meredith Grey</option>
+                <option value="5">Christina Yang</option>
+            </select>
+            <label> Perinatal Appointment and Provider </label> <select name="apptDetailID">
+              <option value="0">&nbsp;</option>
+                <option value="41">8 wk prenatal - Stevens</option>
+                <option value="42">6 wk postpartum - Stevens</option>
+                <option value="43">family planning - Torres</option>
+                <option value="44">24 wk prenatal - Sloan</option>
+                <option value="45">16 wk prenatal - Robbins</option>
+                </select>
+            <label> date </label> <input type="date" name="date">
+      </fieldset>
+          <input class="btn" type="submit" id="addappointmentHistory" value="Add Appointment to History">
+          <input class="btn" type="button" value="cancel" onClick="browseAppointmentHistory()">
+  </form> 
+</div><!-- insert -->
+<p>&nbsp;</p>
+<!-- <div id="update">
+    <form method="POST" id="updateAppointmentDetail">
+        <legend><strong>Update Appointment Detail</strong></legend>
+          <fieldset class="fields">
+          <input type="hidden" name="apptDetailID" id="updateappointmentDetail" value="41">
+          <label> ID: </label> 41
+          <label> Perinatal Appointment </label> <select name="name">
+            <option value="0">&nbsp;</option>
+            <option value="16">8 wk prenatal</option>
+            <option value="17">6 wk postpartum</option>
+            <option value="18">family planning</option>
+            <option value="19">24 wk prenatal</option>
+            <option value="20">16 wk prenatals</option>
+            </select>
+              <label> Provider </label> <select name="provider">
+            <option value="0">&nbsp;</option>
+            <option value="1">Mark Sloan</option>
+            <option value="2">Miranda Bailey</option>
+            <option value="3">Izzie Stevens</option>
+            <option value="4">Callie Torres</option>
+            <option value="5">Arizona Robbins</option>
+              </select>
+      </fieldset>
+          <input class="btn" type="submit" id="UpdateSavePerinatalAppointment" value="Save Update Perinatal Appointment">
+          <input class="btn" type="button" value="cancel" onClick="browsePerinatalAppointment()">
+  </form> 
+</div> --> <!-- update -->
+<div id="delete" style="display: block">
+    <form method="POST" id="deleteAppointmentHistory">
+        <legend><strong>Delete Appointment from Patient History</strong></legend>
+            <fieldset class="fields">
+            <p>Are you sure you wish to delete the following?</p>
+            <input type="hidden" name="deleteapptHistoryID" id="deleteapptHistoryID" value="31">
+                <label><strong>ID:</strong></label> 31 
+                <label> <strong>Client:</strong> </label> Jane Smith 
+                <label> <strong>Appointment:</strong> </label> 8 wk prenatal - Stevens
+                <label> <strong>Date:</strong> </label> 04-03-2021
+           
+
+      </fieldset>
+      <input class="btn" type="submit" id="DeletePerson" value="Delete Person">
+            <input class="btn" type="button" value="cancel" onClick="browsePeople()">
+    </form> 
+  </div><!-- delete -->
+  
+</body>
+</html>
