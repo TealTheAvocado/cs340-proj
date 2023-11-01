@@ -26,6 +26,12 @@
         document.getElementById('update').style.display = 'block'; 
         document.getElementById('delete').style.display = 'block';
       }
+      else if (dowhat == 'delete'){
+				document.getElementById('browse').style.display = 'none';
+				document.getElementById('insert').style.display = 'none';
+				document.getElementById('update').style.display = 'none';
+				document.getElementById('delete').style.display = 'block';
+			}
       else { //by default display browse
         document.getElementById('browse').style.display = 'block';
         document.getElementById('insert').style.display = 'none';
@@ -109,7 +115,7 @@
     <td>16 wk prenatal</td>
     <td>Arizona Robbins</td>
     <td>04-05-2021</td>
-    <td><a href="#" onClick="updateAppointmentHistory('this.ApptHistoryID')">Edit</a></td> 
+    <td><a href="#" onClick="updateAppointmentHistory('this.apptHistoryID')">Edit</a></td> 
     <td><a href="#" onclick="deleteAppointmentHistory('this.apptHistoryID')">Delete</a></td>
   </tr>
 </table>
@@ -180,8 +186,6 @@
                 <label> <strong>Client:</strong> </label> Jane Smith 
                 <label> <strong>Appointment:</strong> </label> 8 wk prenatal - Stevens
                 <label> <strong>Date:</strong> </label> 04-03-2021
-           
-
       </fieldset>
       <input class="btn" type="submit" id="deleteApppointmentHistory" value="Delete Appointment History">
             <input class="btn" type="button" value="Cancel" onClick="browseAppointmentHistory()">
