@@ -51,75 +51,67 @@
 <p><a href="#" onClick="showAll()">Display all forms</a> </p>
 <table border="1" cellpadding="5">
   <tr>
-    <th><a href="#" onClick="newPerinatalAppointment()">New</a></th>
-    <th>perinatalApptID</th>
-    <th>name</th>
-    <th>billlingCode</th>
-    <th>description</th>
+    <th><a href="#" onClick="newNonMedicalService()">New</a></th>
+    <th>ServiceID</th>
+    <th>Name</th>
+    <th>Description</th>
   </tr>
   <tr>
-    <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td>
-    <td>16</td>
-    <td>8 wk prenatal</td>
-    <td >1256-7</td>
-    <td align="right" >8 week prenatal visit</td>
+    <td><a href="#" onClick="updateNonmedicalService('this.serviceID')">Edit</a></td>
+    <td>21</td>
+    <td  >Lactation Counseling</td>
+    <td>1:1 appointment with lactation consultant</td>
   </tr>
   <tr>
-    <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td>
-    <td>17</td>
-    <td>6 wk postpartum</td>
-    <td>1236-0</td>
-    <td align="right" >postpartum maternal wellness check</td>
+    <td><a href="#" onClick="updateNonmedicalService('this.serviceID')">Edit</a></td>
+    <td>22</td>
+    <td>Breastfeeding Group</td>
+    <td >Breastfeeding support group led by lactation consultant</td>
   </tr>
   <tr>
-    <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td>
-    <td>18</td>
-    <td>family planning</td>
-    <td>12344-22</td>
-    <td align="right" >discuss birth control or fertility options</td>
+    <td><a href="#" onClick="updateNonmedicalService('this.serviceID')">Edit</a></td>
+    <td>23</td>
+    <td>Housing Assistance</td>
+    <td >Meeting with social worker to determine housing options</td>
   </tr>
   <tr>
-    <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td>
-    <td>19</td>
-    <td>24 wk prenatal</td>
-    <td>13435-123</td>
-    <td align="right" >24 week prenatal visit</td>
+    <td><a href="#" onClick="updateNonmedicalService('this.serviceID')">Edit</a></td>
+    <td>24</td>
+    <td>Prenatal Nutrition</td>
+    <td >Appointment with nutritionist to improve and support prenatal nutritiont</td>
   </tr>
   <tr>
-    <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td>
-    <td>20</td>
-    <td>16 wk prenatal</td>
-    <td>12343-12</td>
-    <td align="right" >16 week prenatal visit</td>
+    <td><a href="#" onClick="updateNonmedicalService('this.serviceID')">Edit</a></td>
+    <td>25</td>
+    <td>Gestational Diabetes Nutrition</td>
+    <td  >appointment with nutritionist to support nutrition in setting of gestational diabetes</td>
   </tr>
 </table>
 <p>&nbsp;</p>
 </div> <!-- browse -->
 <div id="insert">
-    <form method="POST" id="addPerinatalAppointment">
-        <legend><strong>Add Perinatal Appointment</strong></legend>
+    <form method="POST" id="addNonmedicalService">
+        <legend><strong>Add Service</strong></legend>
           <fieldset class="fields">
             <label> Name </label> <input type="text" name="name">
-            <label> Billing Code </label> <input type="text" name="billingCode">
             <label> Description </label> <input type="text" name="description">
       </fieldset>
-          <input class="btn" type="submit" id="addperinatalAppointment" value="Add Perinatal Appontment">
-          <input class="btn" type="button" value="Cancel" onClick="browsePerinatalAppointments()">
+          <input class="btn" type="submit" id="addnonmedicalService" value="Add Service">
+          <input class="btn" type="button" value="Cancel" onClick="browseNonmedicalService()">
   </form> 
 </div><!-- insert -->
 <p>&nbsp;</p>
 <div id="update">
-    <form method="POST" id="updatePerinatalAppointment">
-        <legend><strong>Update Perinatal Appointment</strong></legend>
+    <form method="POST" id="updateNonmedicalService">
+        <legend><strong>Update Service</strong></legend>
           <fieldset class="fields">
-          <input type="hidden" name="perinatalApptID" id="updatePerinatalApptID" value="1">
-          <label> ID: </label> 16
-            <label> Name </label> <input type="text" name="name" value="8 wk prenatal">
-            <label> Billing Code </label> <input type="text" name="billingCode" value="1256-7">
-            <label> Description </label> <input type="text" name="description" value="8 week prenatal visit">
+          <input type="hidden" name="serviceID" id="serviceID" value="21">
+          <label> ID: </label> 21
+            <label> Name </label> <input type="text" name="name" value="Lactation Counseling">
+            <label> Description </label> <input type="text" name="description" value="1:1 appointment with lactation consultant">
       </fieldset>
-          <input class="btn" type="submit" id="UpdateSavePerinatalAppointment" value="Save Update Perinatal Appointment">
-          <input class="btn" type="button" value="Cancel" onClick="browsePerinatalAppointments()">
+          <input class="btn" type="submit" id="UpdateSaveNonmedicalService" value="Save Update Service">
+          <input class="btn" type="button" value="Cancel" onClick="browseNonmedicalService()">
   </form> 
 </div><!-- update -->
 </body>
