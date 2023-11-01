@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Appointment Details </title>
+<title>Service Details </title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript">
     function showform(dowhat) {
@@ -33,114 +33,114 @@
        /* document.getElementById('delete').style.display = 'none'; */
       }
     }
-    function newAppointmentDetail() { showform('insert'); }
-    /*function updateAppointmentDetail(cid) { showform('update'); } */
-    function browseAppointmentDetail() { showform ('browse'); }
+    function newServiceDetaill() { showform('insert'); }
+    /*function updateServiceDetail(cid) { showform('update'); } */
+    function browseServiceDetail() { showform ('browse'); }
     function showAll() { showform ('all'); }
 </script>
 </head>
 
-<body onload="browseAppointmentDetail()">
-<h1>Appointment Details</h1>
+<body onload="browseServiceDetail()">
+<h1>Service Details</h1>
 
 <h3>
-  [ <a href="index.html">Home</a> | <a href="providers.html">Providers</a> | <a href="clients.html">Clients</a>  | <a href="perinatalAppointments.html">Perinatal Appointments</a> | <a href="appointmentDetails.html">Appointment Details</a> | <a href="appointmentHistories.html">Appointment Histories</a> | <a href="employees.html">Employees</a> | <a href="nonMedicalServices.html">Services</a> | <a href="serviceDetails.html">Services</a> ] 
+  [ <a href="index.html">Home</a> | <a href="providers.html">Providers</a> | <a href="clients.html">Clients</a>  | <a href="perinatalAppointments.html">Perinatal Appointments</a> | <a href="appointmentDetails.html">Appointment Details</a> | <a href="appointmentHistories.html">Appointment Histories</a> | <a href="employees.html">Employees</a> | <a href="nonMedicalServices.html">Services</a> | <a href="serviceDetails.html">Service Details</a> ] 
 </h3>
 
 <div id="browse">
 <p><a href="#" onClick="showAll()">Display all forms</a> </p>
-<p><a href="#" onClick="newAppointmentDetail()">New</a></p>
+<p><a href="#" onClick="newServiceDetail()">New</a></p>
 <table border="1" cellpadding="5">
   <tr>
-    <!-- need to add columne if edit options are allowed and uncommented below-->
-    <th>apptDetailID</th>
-    <th>Appointment Name</th> <!-- instead of using perinatalApptID --> 
-    <th>Provider</th> <!-- instead of using providerID --> 
+    <!-- need to add column if edit options are allowed and uncommented below-->
+    <th>Service Detail ID</th>
+    <th>Service Name</th> <!-- instead of using serviceID --> 
+    <th>Employee</th> <!-- instead of using employeeID --> 
   </tr>
   <tr>
-    <!-- <td>  <a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td>  --Not allowing edits to preserve appt histories-->
-    <td>41</td>
-    <td>8 wk prenatal</td>
-    <td >Izzie Stevens</td>
+    <!-- <td>  <a href="#" onClick="updateServiceDetail('this.serviceDetailID')">Edit</a></td>  --Not allowing edits to preserve appt histories-->
+    <td>36</td>
+    <td>Breastfeeding Group</td>
+    <td >Lexie Grey</td>
   </tr>
   <tr>
-    <!-- <td><a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td> -->
-    <td>42</td>
-    <td>6 wk postpartum</td>
-    <td>Izzie Stevens</td>
+    <!-- <td><a href="#" onClick="updateServiceDetail('this.serviceDetailID')">Edit</a></td> -->
+    <td>37</td>
+    <td>Lactation Counseling</td>
+    <td>Jackson Avery</td>
   </tr>
   <tr>
-    <!-- <td><a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td> -->
-    <td>43</td>
-    <td>family planning</td>
-    <td>Callie Torres</td>
+    <!-- <td><a href="#" onClick="updateServiceDetail('this.serviceDetailID')">Edit</a></td> -->
+    <td>38</td>
+    <td>Housing Assistance</td>
+    <td>George O'Malley</td>
   </tr>
   <tr>
-    <!-- <td><a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td> -->
-    <td>44</td>
-    <td>24 wk prenatal</td>
-    <td>Mark Sloan</td>
+    <!-- <td><a href="#" onClick="updateServiceDetail('this.serviceDetailID')">Edit</a></td> -->
+    <td>39</td>
+    <td>Prenatal Nutrition</td>
+    <td>Jo Wilson</td>
   </tr>
   <tr>
-    <!-- <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td> -->
-    <td>45</td>
-    <td>16 wk prenatal</td>
-    <td>Arizona Robbins</td>
+    <!-- <td><a href="#" onClick="updateServiceDetail('this.serviceDetailID')">Edit</a></td> -->
+    <td>40</td>
+    <td>Gestational Diabetes Nutrition</td>
+    <td>Jo Wilson</td>
   </tr>
 </table>
 <p>&nbsp;</p>
 </div> <!-- browse -->
 <div id="insert">
-    <form method="POST" id="addAppointmentDetail">
-        <legend><strong>Link an Appointment to a Provider to add a  new Appointment Detail</strong></legend>
+    <form method="POST" id="addServiceDetail">
+        <legend><strong>Link a Service to an Employee to add a new Service Detail</strong></legend>
           <fieldset class="fields">
-            <label> Perinatal Appointment Name </label> <select name="name">
+            <label> Nonmedical Service Name </label> <select name="name">
               <option value="0">&nbsp;</option>
-                <option value="16">8 wk prenatal</option>
-                <option value="17">6 wk postpartum</option>
-                <option value="18">family planning</option>
-                <option value="19">24 wk prenatal</option>
-                <option value="10">16 wk prenatal</option>
+                <option value="21">Lactation Counseling</option>
+                <option value="22">Breastfeeding Group</option>
+                <option value="23">Housing Assistance</option>
+                <option value="24">Prenatal Nutrition</option>
+                <option value="25">Gestational Diabetes Nutrition</option>
                 </select>
-            <label> Provider </label> <select name="provider">
+            <label> Employee </label> <select name="provider">
                  <option value="0">&nbsp;</option>
-                <option value="1">Mark Sloan</option>
-                <option value="2">Miranda Bailey</option>
-                <option value="3">Izzie Stevens</option>
-                <option value="4">Callie Torres</option>
-                <option value="5">Arizona Robbins</option>
+                <option value="11">Lexie Grey</option>
+                <option value="12">Jo Wilson</option>
+                <option value="13">Jackson Avery</option>
+                <option value="14">George O'Malley</option>
+                <option value="15">April Kepner</option>
                 </select>
       </fieldset>
-          <input class="btn" type="submit" id="addappointmentDetail" value="Add Appointment Detail">
-          <input class="btn" type="button" value="Cancel" onClick="browseAppointmentDetail()">
+          <input class="btn" type="submit" id="addserviceDetail" value="Add Service Detail">
+          <input class="btn" type="button" value="Cancel" onClick="browseServiceDetail()">
   </form> 
 </div><!-- insert -->
 <p>&nbsp;</p>
 <!-- <div id="update">
-    <form method="POST" id="updateAppointmentDetail">
-        <legend><strong>Update Appointment Detail</strong></legend>
+    <form method="POST" id="updateServiceDetail">
+        <legend><strong>Update Service Detail</strong></legend>
           <fieldset class="fields">
-          <input type="hidden" name="apptDetailID" id="updateappointmentDetail" value="41">
-          <label> ID: </label> 41
-          <label> Perinatal Appointment </label> <select name="name">
+          <input type="hidden" name="serviceDetailID" id="updateserviceDetail" value="36">
+          <label> ID: </label> 36
+          <label> Service </label> <select name="name">
             <option value="0">&nbsp;</option>
-            <option value="16">8 wk prenatal</option>
-            <option value="17">6 wk postpartum</option>
-            <option value="18">family planning</option>
-            <option value="19">24 wk prenatal</option>
-            <option value="20">16 wk prenatals</option>
+            <option value="21">Lactation Counseling</option>
+            <option value="22">Breastfeeding Group</option>
+            <option value="23">Housing Assistance</option>
+            <option value="24">Prenatal Nutrition</option>
+            <option value="25">Gestational Diabetes Nutrition</option>
             </select>
-              <label> Provider </label> <select name="provider">
-            <option value="0">&nbsp;</option>
-            <option value="1">Mark Sloan</option>
-            <option value="2">Miranda Bailey</option>
-            <option value="3">Izzie Stevens</option>
-            <option value="4">Callie Torres</option>
-            <option value="5">Arizona Robbins</option>
+              <label> Employee </label> <select name="employee">
+                <option value="0">&nbsp;</option>
+                <option value="11">Lexie Grey</option>
+                <option value="12">Jo Wilson</option>
+                <option value="13">Jackson Avery</option>
+                <option value="14">George O'Malley</option>
+                <option value="15">April Kepner</option>
               </select>
       </fieldset>
-          <input class="btn" type="submit" id="UpdateSavePerinatalAppointment" value="Save Update Perinatal Appointment">
-          <input class="btn" type="button" value="cancel" onClick="browsePerinatalAppointment()">
+          <input class="btn" type="submit" id="UpdateSaveServiceDetail" value="Save Update Service Detail">
+          <input class="btn" type="button" value="cancel" onClick="browseServiceDetail()">
   </form> 
 </div> --> <!-- update -->
 </body>
