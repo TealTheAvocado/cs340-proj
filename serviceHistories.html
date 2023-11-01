@@ -1,0 +1,194 @@
+<html>
+<head>
+<title>Service Histories</title>
+<link href="style.css" rel="stylesheet" type="text/css" />
+<script language="JavaScript">
+    function showform(dowhat) {
+      /*
+      * four DIVS: browse, insert, update, delete
+      * this function sets one visible the others not
+      */
+      if (dowhat == 'insert'){
+        document.getElementById('browse').style.display = 'none';
+        document.getElementById('insert').style.display = 'block';
+        document.getElementById('update').style.display = 'none';
+        document.getElementById('delete').style.display = 'none';
+      }
+      else if (dowhat == 'update'){
+        document.getElementById('browse').style.display = 'none';
+        document.getElementById('insert').style.display = 'none';
+        document.getElementById('update').style.display = 'block';
+        document.getElementById('delete').style.display = 'none';
+      }
+      else if (dowhat == 'all'){
+        document.getElementById('browse').style.display = 'block';
+        document.getElementById('insert').style.display = 'block';
+        document.getElementById('update').style.display = 'block'; 
+        document.getElementById('delete').style.display = 'block';
+      }
+      else { //by default display browse
+        document.getElementById('browse').style.display = 'block';
+        document.getElementById('insert').style.display = 'none';
+        document.getElementById('update').style.display = 'none'; 
+        document.getElementById('delete').style.display = 'none'; 
+      }
+    }
+    function newServiceHistory() { showform('insert'); }
+    function updateServiceHistory(cid) { showform('update'); } 
+    function deleteServiceHistory(apptHxid) { showform ('delete'); }
+    function browseServiceHistory() { showform ('browse'); }
+    function showAll() { showform ('all'); }
+</script>
+</head>
+
+<body onload="browseServiceHistory()">
+<h1>Service Histories</h1>
+
+<h3>
+  [ <a href="index.html">Home</a> | <a href="providers.html">Providers</a> | <a href="clients.html">Clients</a>  | <a href="perinatalAppointments.html">Perinatal Appointments</a> | <a href="appointmentDetails.html">Appointment Details</a> | <a href="appointmentHistories.html">Appointment Histories</a> | <a href="employees.html">Employees</a> | <a href="nonMedicalServices.html">Services</a> | <a href="serviceDetails.html">Services Details</a> | <a href="serviceHistories.html">Service Histories</a> ]
+</h3>
+
+<div id="browse">
+<p><a href="#" onClick="showAll()">Display all forms</a> </p>
+<p><a href="#" onClick="newServiceHistory()">New</a></p>
+<table border="1" cellpadding="5">
+  <tr>
+    <th>serviceHistoryID</th>
+    <th>Clients.firstName</th> <!-- instead of using clientID --> 
+    <th>Clients.lastName</th> <!-- instead of using clientID --> 
+    <th>NonmedicalServices.name</th> <!-- instead of using serviceDetailID --> 
+    <th>Employee</th> <!-- instead of using serviceDetailID using concatenated first and last name --> 
+    <th>date</th>
+    <th></th>
+    <th></th>
+  </tr>
+  <tr>
+    <td>26</td>
+    <td>Jane</td>
+    <td>Smith</td>
+    <td>Breastfeeding Group</td>
+    <td>Lexie Grey</td>
+    <td>04-03-2021</td>
+    <td> <a href="#" onClick="updateServiceHistory('this.serviceHistoryID')">Edit</a></td>  
+    <td><a href="#" onclick="deleteServiceHistory('this.serviceHistoryID')">Delete</a></td>
+  </tr>
+  <tr>
+    <td>27</td>
+    <td>Katie</td>
+    <td>Lee</td>
+    <td>Lactation Counseling</td>
+    <td>Jackson Avery</td>
+    <td>03-29-2021</td>
+    <td><a href="#" onClick="updateServiceHistory('this.serviceHistoryID')">Edit</a></td> 
+    <td><a href="#" onclick="deleteAppointmentHistory('this.serviceHistoryID')">Delete</a></td>
+  </tr>
+  <tr>
+    <td>28</td>
+    <td>Nicole</td>
+    <td>Dicaprio</td>
+    <td>Housing Assistance</td>
+    <td>George O'Malley</td>
+    <td>04-05-2021</td>
+    <td><a href="#" onClick="updateServiceHistory('this.serviceHistoryID')">Edit</a></td> 
+    <td><a href="#" onclick="deleteServiceHistory('this.serviceHistoryID')">Delete</a></td>
+  </tr>
+  <tr>
+    <td>29</td>
+    <td>Meredith</td>
+    <td>Grey</td>
+    <td>Prenatal Nutrition</td>
+    <td>Jo Wilson</td>
+    <td>04-12-2021</td>
+    <td><a href="#" onClick="updateServiceHistory('this.serviceHistorylID')">Edit</a></td>
+    <td><a href="#" onclick="deleteServiceHistory('this.serviceHistoryID')">Delete</a></td>
+  </tr>
+  <tr>
+    <td>30</td>
+    <td>Meredith</td>
+    <td>Grey</td>
+    <td>Gestational Diabetes Nutrition</td>
+    <td>Jo Wilson</td>
+    <td>04-05-2021</td>
+    <td><a href="#" onClick="updateServiceHistory('this.serviceHistoryID')">Edit</a></td>
+    <td><a href="#" onclick="deleteServiceHistory('this.serviceHistoryID')">Delete</a></td>
+  </tr>
+</table>
+<p>&nbsp;</p>
+</div> <!-- browse -->
+<div id="insert">
+    <form method="POST" id="addServiceHistory">
+        <legend><strong>Add a Service to a Patient's History</strong></legend>
+          <fieldset class="fields">
+            <label>Client Name</label><select name ="name">
+                <option value="0">&nbsp;</option>
+                <option value="1">Jane Smith</option>
+                <option value="2">Katie Lee</option>
+                <option value="3">Nicole Dicaprio</option>
+                <option value="4">Meredith Grey</option>
+                <option value="5">Christina Yang</option>
+            </select>
+            <label> Service and Employee </label> <select name="serviceDetailID">
+              <option value="0">&nbsp;</option>
+              <option value="36">Breastfeeding Group - Lexie Grey</option>
+              <option value="37">Lactation Counseling - Jackson Avery</option>
+              <option value="38">Housing Assistance - George O'Malley</option>
+              <option value="39">Prenatal Nutrition - Jo Wilson</option>
+              <option value="40">Gestational Diabetes Nutrition - Jo Wilson</option>
+                </select>
+            <label> date </label> <input type="date" name="date">
+      </fieldset>
+          <input class="btn" type="submit" id="addappointmentHistory" value="Add Appointment to History">
+          <input class="btn" type="button" value="Cancel" onClick="browseAppointmentHistory()">
+  </form> 
+</div><!-- insert -->
+<p>&nbsp;</p>
+<div id="update">
+    <form method="POST" id="updateAppointmentHistory">
+        <legend><strong>Update Appointment History</strong></legend>
+            <fieldset class="fields">
+            <input type="hidden" name="apptHistoryID" id="updateappointmentHistory" value="31">
+            <label> ID: </label> 31
+            <label> Client </label> <select name="client">
+                <option value="0">&nbsp;</option>
+                <option value="1">Jane Smith</option>
+                <option value="2">Katie Lee</option>
+                <option value="3">Nicole Dicaprio</option>
+                <option value="4">Meredith Grey</option>
+                <option value="5">Christina Yang</option>
+                </select>
+            <label> Appointment Detail </label> <select name="apptDetailID">
+                <option value="0">&nbsp;</option>
+                <option value="36">Breastfeeding Group - Lexie Grey</option>
+                <option value="37">Lactation Counseling - Jackson Avery</option>
+                <option value="38">Housing Assistance - George O'Malley</option>
+                <option value="39">Prenatal Nutrition - Jo Wilson</option>
+                <option value="40">Gestational Diabetes Nutrition - Jo Wilson</option>
+            </select>
+            <label> date </label> <input type="date" name="date" value = "04-03-2021">
+      </fieldset>
+          <input class="btn" type="submit" id="UpdateSaveserviceHistory" value="Save Update to Service History">
+          <input class="btn" type="button" value="Cancel" onClick="browseServiceHistory()">
+  </form> 
+</div>  <!-- update -->
+<div id="delete" style="display: block">
+    <form method="POST" id="deleteServiceHistory">
+        <legend><strong>Delete Service from Client History</strong></legend>
+            <fieldset class="fields">
+            <p>Are you sure you wish to delete the following?</p>
+            <input type="hidden" name="deleteServiceHistoryID" id="deleteServiceHistoryID" value="26">
+                <label><strong>ID:</strong></label> 26 
+                <label> <strong>Client:</strong> </label> Jane Smith 
+                <label> <strong>Appointment:</strong> </label> Breastfeeding Group - Lexie Grey
+                <label> <strong>Date:</strong> </label> 04-03-2021
+           
+
+      </fieldset>
+      <input class="btn" type="submit" id="deleteserviceHistory" value="Delete Service History">
+            <input class="btn" type="button" value="Cancel" onClick="browseServiceHistory()">
+    </form> 
+  </div><!-- delete -->
+  
+</body>
+</html>
+
+

@@ -50,65 +50,67 @@
 
 <div id="browse">
 <p><a href="#" onClick="showAll()">Display all forms</a> </p>
+<p><a href="#" onClick="newAppointmenHistory()">New</a> </p>
 <table border="1" cellpadding="5">
   <tr>
-    <th><a href="#" onClick="newAppointmenHistory()">New</a></th>
     <th>apptHistoryID</th>
     <th>Clients.firstName</th> <!-- instead of using clientID --> 
     <th>Clients.lastName</th> <!-- instead of using clientID --> 
     <th>PerinatalAppointments.name</th> <!-- instead of using apptDetailID --> 
     <th>Provider</th> <!-- instead of using apptDetailID using concatenated first and last name --> 
     <th>date</th>
+    <th></th>
+    <th></th>
   </tr>
-  <tr>
-    <!-- <td>  <a href="#" onClick="updateAppointmentHistory('this.apptHistoryID')">Edit</a></td>  --Not allowing edits to preserve appt histories-->
-    <td><a href="#" onclick="deleteAppointmentHistory('this.apptHistoryID')">Delete</a></td>
+  <tr> 
     <td>31</td>
     <td>Jane</td>
     <td>Smith</td>
     <td>8 wk prenatal</td>
     <td>Izzie Stevens</td>
-    <td align="right" >04-03-2021</td>
+    <td>04-03-2021</td>
+    <td><a href="#" onClick="updateAppointmentHistory('this.apptHistoryID')">Edit</a></td> 
+    <td><a href="#" onclick="deleteAppointmentHistory('this.apptHistoryID')">Delete</a></td>
   </tr>
   <tr>
-    <!-- <td><a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td> -->
-    <td><a href="#" onclick="deleteAppointmentHistory('this.apptHistoryID')">Delete</a></td>
     <td>32</td>
     <td>Jane</td>
     <td>Smith</td>
     <td>6 wk postpartum</td>
     <td>Izzie Stevens</td>
-    <td align="right" >04-03-2021</td>
+    <td>04-03-2021</td>
+    <td><a href="#" onClick="updateAppointmentHistory('this.apptHistoryID')">Edit</a></td> 
+    <td><a href="#" onclick="deleteAppointmentHistory('this.apptHistoryID')">Delete</a></td>
   </tr>
   <tr>
-    <!-- <td><a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td> -->
-    <td><a href="#" onclick="deleteAppointmentHistory('this.apptHistoryID')">Delete</a></td>
     <td>33</td>
     <td>Katie</td>
     <td>Lee</td>
     <td>Family Planning</td>
     <td>Callie Torres</td>
-    <td align="right">03-29-2021</td>
+    <td>03-29-2021</td>
+    <td><a href="#" onClick="updateAppointmentHistory('this.apptHistoryID')">Edit</a></td>
+    <td><a href="#" onclick="deleteAppointmentHistory('this.apptHistoryID')">Delete</a></td>
   </tr>
   <tr>
-    <!-- <td><a href="#" onClick="updateAppointmentDetail('this.apptDetailID')">Edit</a></td> -->
-    <td><a href="#" onclick="deleteAppointmentHistory('this.apptHistoryID')">Delete</a></td>
     <td>34</td>
     <td>Christina</td>
     <td>Yang</td>
     <td>24 wk prenatal</td>
     <td>Mark Sloan</td>
-    <td align="right" >04-12-2021</td>
+    <td>04-12-2021</td>
+    <td><a href="#" onClick="updateAppointmentHistory('this.apptHistoryID')">Edit</a></td>
+    <td><a href="#" onclick="deleteAppointmentHistory('this.apptHistoryID')">Delete</a></td>
   </tr>
   <tr>
-    <!-- <td><a href="#" onClick="updatePerinatalAppointment('this.perinatalApptID')">Edit</a></td> -->
-    <td><a href="#" onclick="deleteAppointmentHistory('this.apptHistoryID')">Delete</a></td>
     <td>35</td>
     <td>Nicole</td>
     <td>Dicaprio</td>
     <td>16 wk prenatal</td>
     <td>Arizona Robbins</td>
-    <td align="right">04-05-2021</td>
+    <td>04-05-2021</td>
+    <td><a href="#" onClick="updateAppointmentHistory('this.ApptHistoryID')">Edit</a></td> 
+    <td><a href="#" onclick="deleteAppointmentHistory('this.apptHistoryID')">Delete</a></td>
   </tr>
 </table>
 <p>&nbsp;</p>
@@ -165,7 +167,7 @@
             <label> date </label> <input type="date" name="date" value = "04-03-2021">
       </fieldset>
           <input class="btn" type="submit" id="UpdateSaveAppointmentHistory" value="Save Update to Appointment History">
-          <input class="btn" type="button" value="cancel" onClick="browseAppointmentHistory()">
+          <input class="btn" type="button" value="Cancel" onClick="browseAppointmentHistory()">
   </form> 
 </div>  <!-- update -->
 <div id="delete" style="display: block">
