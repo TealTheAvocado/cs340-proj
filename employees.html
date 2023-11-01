@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Providers</title>
+<title>Employees</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript">
 		function showform(dowhat) {
@@ -39,15 +39,15 @@
 				document.getElementById('delete').style.display = 'none';
 			}
 		}
-    function newProvider() { showform('insert'); }
-    function updateProvider(pid) { showform('update'); }
-    function deleteProvider(pid) { showform ('delete'); }
-    function browseProviders() { showform ('browse'); }
+    function newEmployee() { showform('insert'); }
+    function updateEmployee(eid) { showform('update'); }
+    function deleteEmployee(eid) { showform ('delete'); }
+    function browseEmployee() { showform ('browse'); }
     function showAll() { showform ('all'); }
 </script>
 </head>
 
-<body onload="browseProviders()">
+<body onload="browseEmployees()">
 <h1>Providers</h1>
 
 <h3>
@@ -58,7 +58,7 @@
 <p><a href="#" onClick="showAll()">Display all forms</a> </p>
 <table border="1" cellpadding="5">
   <tr>
-    <th><a href="#" onClick="newProvider()">New</a></th>
+    <th><a href="#" onClick="newEmployee()">New</a></th>
     <th>id</th>
     <th>firstName</th>
     <th>lastName</th>
@@ -66,96 +66,98 @@
     <th></th>
   </tr>
   <tr>
-    <td><a href="#" onClick="updateProvider('this.providerID')">Edit</a></td>
-    <td>6</td>
-    <td >Mark</td>
-    <td align="right" >Sloan</td>
-    <td>Doctor</td>
-    <td><a href="#" onclick="deleteProvider('this.providerID')">Delete</a></td>
+    <td><a href="#" onClick="updateEmployee('this.employeeID')">Edit</a></td>
+    <td>11</td>
+    <td >Lexie</td>
+    <td align="right" >Grey</td>
+    <td>Lactation Consultant</td>
+    <td><a href="#" onclick="deleteEmployee('this.employeeID')">Delete</a></td>
   </tr>
   <tr>
-    <td><a href="#" onClick="updateProvider('this.providerID')">Edit</a></td>
-    <td>7</td>
-    <td>Miranda</td>
-    <td align="right" >Bailey</td>
-    <td >Doctor</td>
-    <td><a href="#" onclick="deleteProvider('this.providerID')">Delete</a></td>
+    <td><a href="#" onClick="updateEmployee('this.employeeID')">Edit</a></td>
+    <td>12</td>
+    <td>Jo</td>
+    <td align="right" >Wilson</td>
+    <td >Nutritionist</td>
+    <td><a href="#" onclick="deleteEmployee('this.employeeID')">Delete</a></td>
   </tr>
   <tr>
-    <td><a href="#" onClick="updateProvider('this.providerID')">Edit</a></td>
-    <td>8</td>
-    <td>Izzie</td>
-    <td align="right" >Stevens</td>
-    <td>Nurse Practitioner</td>
-    <td><a href="#" onclick="deleteProvider('this.providerID')">Delete</a></td>
+    <td><a href="#" onClick="updateEmployee('this.employeeID')">Edit</a></td>
+    <td>13</td>
+    <td>Jackson</td>
+    <td align="right" >Avery</td>
+    <td>Lactation Consultant</td>
+    <td><a href="#" onclick="deleteEmployee('this.employeeID')">Delete</a></td>
   </tr>
   <tr>
-    <td><a href="#" onClick="updateProvider('this.providerID')">Edit</a></td>
-    <td>9</td>
-    <td>Callie</td>
-    <td align="right" >Torres</td>
-    <td>Doctor</td>
-    <td><a href="#" onclick="deleteProvider('this.providerID')">Delete</a></td>
+    <td><a href="#" onClick="updateEmployee('this.employeeID')">Edit</a></td>
+    <td>14</td>
+    <td>George</td>
+    <td align="right" >O'Malley</td>
+    <td>Social Worker</td>
+    <td><a href="#" onclick="deleteEmployee('this.employeeID')">Delete</a></td>
   </tr>
   <tr>
-    <td><a href="#" onClick="updateProvider('this.providerID')">Edit</a></td>
-    <td>10</td>
-    <td>Arizona</td>
-    <td align="right" >Robbins</td>
-    <td>Doctor</td>
-    <td><a href="#" onclick="deleteProvider('this.providerID')">Delete</a></td>
+    <td><a href="#" onClick="updateEmployee('this.employeeID')">Edit</a></td>
+    <td>15</td>
+    <td>April</td>
+    <td align="right" >Kepner</td>
+    <td>Social Worker</td>
+    <td><a href="#" onclick="deleteEmployee('this.employeeID')">Delete</a></td>
   </tr>
 </table>
 <p>&nbsp;</p>
 </div> <!-- browse -->
 <div id="insert">
-    <form method="POST" id="addProvider">
-        <legend><strong>Add Provider</strong></legend>
+    <form method="POST" id="addEmployee">
+        <legend><strong>Add Employee</strong></legend>
           <fieldset class="fields">
             <label> First Name </label> <input type="text" name="fNameInput">
             <label> Last Name </label> <input type="text" name="lNameInput">
             <label> Title </label> <select name="titleInput">
             	<option value="0">&nbsp;</option>
-                <option value="1">Doctor</option>
-                <option value="2">Nurse Practitioner</option>
+                <option value="1">Lactation Consultant</option>
+                <option value="2">Nutritionist</option>
+                <option value="3">Social Worker</option>
                 </select>
       </fieldset>
-          <input class="btn" type="submit" id="addProvider" value="Add Provider">
-          <input class="btn" type="button" value="Cancel" onClick="browseProviders()">
+          <input class="btn" type="submit" id="addEmployee" value="Add Employee">
+          <input class="btn" type="button" value="Cancel" onClick="browseEmployees()">
 	</form> 
 </div><!-- insert -->
 <p>&nbsp;</p>
 <div id="update">
-    <form method="POST" id="updateProvider">
-        <legend><strong>Update Provider</strong></legend>
+    <form method="POST" id="updateEmployee">
+        <legend><strong>Update Employee</strong></legend>
           <fieldset class="fields">
-          <input type="hidden" name="providerID" id="updateproviderID" value="6">
-          <label> ID: </label> 6
-            <label> First Name </label> <input type="text" name="firstName" value="Mark">
+          <input type="hidden" name="employeeID" id="updateemployeeID" value="11">
+          <label> ID: </label> 11
+            <label> First Name </label> <input type="text" name="firstName" value="Lexie">
             <label> Last Name </label> <input type="text" name="lastName" value="Sloan">
             <label> Title </label> <select name="title">
             	<option value="0">&nbsp;</option>
-                <option value="1">Doctor</option>
-                <option value="2">Nurse Practitioner</option>
+                <option value="1">Lactation Consultant</option>
+                <option value="2">Nutritionist</option>
+                <option value="3">Social Worker</option>
                 </select>
       </fieldset>
-          <input class="btn" type="submit" id="UpdateSaveProvider" value="Save Update Provider">
-          <input class="btn" type="button" value="Cancel" onClick="browseProviders()">
+          <input class="btn" type="submit" id="UpdateSaveEmployee" value="Save Update Employee">
+          <input class="btn" type="button" value="Cancel" onClick="browseEmployees()">
 	</form> 
 </div><!-- update -->
 <p>&nbsp;</p>
 <div id="delete" style="display: block">
-  <form method="POST" id="deleteProvider">
-      <legend><strong>Delete Provider</strong></legend>
+  <form method="POST" id="deleteEmployee">
+      <legend><strong>Delete Employee</strong></legend>
           <fieldset class="fields">
           <p>Are you sure you wish to delete the following?</p>
-          <input type="hidden" name="providerID" id="deleteproviderID" value="6">
-          <label><strong>ID:</strong></label> 6
-            <label> <strong>Name</strong> </label> Mark Sloan
+          <input type="hidden" name="employeeID" id="deleteemployeeID" value="11">
+          <label><strong>ID:</strong></label> 11
+            <label> <strong>Name</strong> </label> Lexie Grey
             
     </fieldset>
-    <input class="btn" type="submit" id="DeleteProvider" value="Delete Provider">
-          <input class="btn" type="button" value="Cancel" onClick="browseProviders()">
+    <input class="btn" type="submit" id="deleteEmployee" value="Delete Employee">
+          <input class="btn" type="button" value="Cancel" onClick="browseEmployees()">
   </form> 
 </div><!-- delete -->
 </body>

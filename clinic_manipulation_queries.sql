@@ -41,7 +41,7 @@ SELECT DISTINCT title From Providers;
 INSERT INTO Providers 
 (firstName, lastName, title) 
 VALUES 
-(:fnameInput, :lnameInput, :title_fromt_drowpdown_Input);
+(:fnameInput, :lnameInput, :title_from_drowpdown_Input);
 
 -- 3. Edit/Update up provider:
 -- create dropdown for title
@@ -55,7 +55,7 @@ WHERE providerID= :provider_ID_from_the_update_form;
 
 -- 4. Delete a provider:
 DELETE FROM Providers 
-WHERE providerID = :provider_ID_selected_from_browse_client_page;
+WHERE providerID = :provider_ID_selected_from_browse_provider_page;
 
 -- Perinatal Appointments Page
 -- 1. Browse/Read: get all perinatal Appointments
@@ -72,7 +72,7 @@ VALUES
 -- 3.Edit/Update: Edit an appointment
 -- get a single appointment's data for the Update Perinatal Appointment form
 SELECT perinatalApptID, name, billingCode, description FROM PerinatalAppointments
-WHERE perinatalApptID = :appointment_ID_selected_from_browse_provider_page;
+WHERE perinatalApptID = :appointment_ID_selected_from_browse_appointment_page;
 -- update an appointment's data based on submission of the Update Perinatal Appointment form 
 UPDATE PerinatalAppointments SET name = :nameInput, billingCode= :billingCodeInput, description= :descriptionInput
 WHERE perinatalApptID= :appointment_ID_from_the_update_form;
@@ -129,3 +129,32 @@ VALUES
 -- 3. Edit/Update: To preserve patient histories, editing/updating appointment detials is not allowed
 
 -- 4. Delete: To preserve patient histories, deleting appointment details is not allowed
+
+
+-- Employee Page 
+-- 1. Browse/Read: get all employees
+-- for each provider, list ID, first name, last name, and title
+SELECT employeeID, firstName, lastName, title FROM Employees; 
+
+-- 2. Add/Create an employee: 
+-- create dropdown for title
+SELECT DISTINCT title From Employees; 
+-- add new employee
+INSERT INTO Employees
+(firstName, lastName, title) 
+VALUES 
+(:fnameInput, :lnameInput, :title_from_drowpdown_Input);
+
+-- 3. Edit/Update up employee:
+-- create dropdown for title
+SELECT DISTINCT title From Employees; 
+-- get a single employee's data for the Update Employee form
+SELECT employeeID, firstName, lastName, title FROM Employees
+WHERE employeeID = :employee_ID_selected_from_browse_employee_page
+-- update an employee's data based on submission of the Update Employee form 
+UPDATE Employees SET firstName = :fnameInput, lastName= :lnameInput, title= :title_from_dropdown_input
+WHERE employeeID= :employee_ID_from_the_update_form;
+
+-- 4. Delete an employee:
+DELETE FROM Employees
+WHERE employeeID = :employee_ID_selected_from_browse_employee_page;
