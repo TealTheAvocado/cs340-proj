@@ -11,30 +11,30 @@
       if (dowhat == 'insert'){
         document.getElementById('browse').style.display = 'none';
         document.getElementById('insert').style.display = 'block';
-       /* document.getElementById('update').style.display = 'none';*/
+        document.getElementById('update').style.display = 'none';
         document.getElementById('delete').style.display = 'none';
       }
       else if (dowhat == 'update'){
         document.getElementById('browse').style.display = 'none';
         document.getElementById('insert').style.display = 'none';
-        /*document.getElementById('update').style.display = 'block';*/
+        document.getElementById('update').style.display = 'block';
         document.getElementById('delete').style.display = 'none';
       }
       else if (dowhat == 'all'){
         document.getElementById('browse').style.display = 'block';
         document.getElementById('insert').style.display = 'block';
-       /* document.getElementById('update').style.display = 'block'; */
+        document.getElementById('update').style.display = 'block'; 
         document.getElementById('delete').style.display = 'block';
       }
       else { //by default display browse
         document.getElementById('browse').style.display = 'block';
         document.getElementById('insert').style.display = 'none';
-       /* document.getElementById('update').style.display = 'none'; */
+       document.getElementById('update').style.display = 'none'; 
        document.getElementById('delete').style.display = 'none'; 
       }
     }
     function newAppointmentHistory() { showform('insert'); }
-    /*function updateAppointmentHistory(cid) { showform('update'); } */
+    function updateAppointmentHistory(cid) { showform('update'); } 
     function deleteAppointmentHistory(apptHxid) { showform ('delete'); }
     function browseAppointmentHistory() { showform ('browse'); }
     function showAll() { showform ('all'); }
@@ -45,7 +45,7 @@
 <h1>Appointment Histories</h1>
 
 <h3>
-  [ <a href="index.html">Home</a> | <a href="providers.html">Providers</a> | <a href="clients.html">Clients</a>  | <a href="perinatalAppointments.html">Perinatal Appointments</a> | <a href="appointmentDetails.html">Appointment Details</a> | <a href="appointmentHistories.html">Appointment Histories</a> | <a href="employees.html">Employees</a> | <a href="nonMedicalServices.html">Services</a> | <a href="serviceDetails.html">Services</a> ]
+  [ <a href="index.html">Home</a> | <a href="providers.html">Providers</a> | <a href="clients.html">Clients</a>  | <a href="perinatalAppointments.html">Perinatal Appointments</a> | <a href="appointmentDetails.html">Appointment Details</a> | <a href="appointmentHistories.html">Appointment Histories</a> | <a href="employees.html">Employees</a> | <a href="nonMedicalServices.html">Services</a> | <a href="serviceDetails.html">Services Details</a> ]
 </h3>
 
 <div id="browse">
@@ -140,11 +140,11 @@
   </form> 
 </div><!-- insert -->
 <p>&nbsp;</p>
-<!--  <div id="update">
+<div id="update">
     <form method="POST" id="updateAppointmentHistory">
         <legend><strong>Update Appointment History</strong></legend>
             <fieldset class="fields">
-            <input type="hidden" name="apptHistoryID" id="updateAppointmentHistory" value="41">
+            <input type="hidden" name="apptHistoryID" id="updateappointmentHistory" value="31">
             <label> ID: </label> 31
             <label> Client </label> <select name="client">
                 <option value="0">&nbsp;</option>
@@ -161,13 +161,13 @@
                 <option value="43">family planning - Torres</option>
                 <option value="44">24 wk prenatal - Sloan</option>
                 <option value="45">16 wk prenatal - Robbins</option>
-                </select
+            </select>
             <label> date </label> <input type="date" name="date" value = "04-03-2021">
       </fieldset>
           <input class="btn" type="submit" id="UpdateSaveAppointmentHistory" value="Save Update to Appointment History">
           <input class="btn" type="button" value="cancel" onClick="browseAppointmentHistory()">
   </form> 
-</div>  --> <!-- update -->
+</div>  <!-- update -->
 <div id="delete" style="display: block">
     <form method="POST" id="deleteAppointmentHistory">
         <legend><strong>Delete Appointment from Patient History</strong></legend>
