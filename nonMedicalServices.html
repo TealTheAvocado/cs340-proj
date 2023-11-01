@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Perinatal Appointments </title>
+<title>Services</title>
 <link href="style.css" rel="stylesheet" type="text/css" />
 <script language="JavaScript">
     function showform(dowhat) {
@@ -33,15 +33,15 @@
         document.getElementById('delete').style.display = 'none';
       }
     }
-    function newPerinatalAppointment() { showform('insert'); }
-    function updatePerinatalAppointment(cid) { showform('update'); }
-    function browsePerinatalAppointments() { showform ('browse'); }
+    function newNonMedicalService() { showform('insert'); }
+    function updateNonmedicalService(cid) { showform('update'); }
+    function browseNonmedicalService() { showform ('browse'); }
     function showAll() { showform ('all'); }
 </script>
 </head>
 
-<body onload="browsePerinatalAppointments()">
-<h1>Perinatal Appointments</h1>
+<body onload="browseNonmedicalService()">
+<h1>Nonmedical Services</h1>
 
 <h3>
   [ <a href="index.html">Home</a> | <a href="providers.html">Providers</a> | <a href="clients.html">Clients</a>  | <a href="perinatalAppointments.html">Perinatal Appointments</a> | <a href="appointmentDetails.html">Appointment Details</a> | <a href="appointmentHistories.html">Appointment Histories</a> | <a href="employees.html">Employees</a> | <a href="nonMedicalServices.html">Services</a> ]  
