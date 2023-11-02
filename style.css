@@ -2,21 +2,6 @@
     --font-hover-color: white;
   }
   
-  button {
-      margin-top: 1.5em;
-      margin-bottom: 2em;
-      color: white;
-      background-color: teal;
-      padding: 13px 32px;
-      text-align: center;
-      text-decoration: none;
-      display: inline-block;
-      font-size: 16px;
-      border-radius: 8px;
-      border:none;
-    
-    }
-  
   /* Edit tables */
   table, th, td {
       border: 0.5px solid #98A09E;
@@ -33,8 +18,6 @@
     font-family: 'Trebuchet MS', sans-serif;
     background-color: #F4FAF8;
     margin-top: 1;
-    margin-left: 1em;
-    margin-right: 1em;
   }
   head {
     margin-top: 0px;
@@ -62,24 +45,20 @@
     font-family: 'Trebuchet MS', sans-serif;
   }
   
-  button {
-    margin-top: 1.5em;
-    margin-bottom: 2em;
-    color: white;
-    background-color: teal;
-    padding: 13px 32px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 16px;
-    border-radius: 8px;
-    border:none;
-  
-  }
-
+/* Add background color but fix at top */
+.topnav {
+  overflow: hidden;
+  background-color: navy;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  opacity: 1;
+  list-style-type: none;
+  display: flex;
+}
 /* Style the links inside the navigation bar */
 .topnav a {
-  display: flex;
   color: #98A09E;
   text-align: center;
   padding: 14px 16px;
@@ -95,28 +74,6 @@
 /* Change the color of links on hover */
 .topnav a:hover {
   background-color: #010101;
-  color: var(--font-hover-color);
-}
-
-/* Add background color but fix at top */
-.topnav {
-  overflow: hidden;
-  background-color: black;
-  top: 0;
-  left: 0;
-  right: 0;
-  width: 100%;
-  opacity: 1;
-  list-style-type: none;
-  display: flex;
-  border-left: 0px;
-  margin-top: 0;
-  margin-left: 0em;
-  margin-right: 0em;
-}
-/* Hide the link that should open and close the topnav on small screens */
-.topnav .icon {
-  display: none;
 }
 
 /* Dropdown container - needed to position the dropdown content */
@@ -132,8 +89,6 @@
   outline: none;
   color: #98A09E;
   padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit;
   margin: 0;
 }
 
@@ -159,10 +114,13 @@
   font-size: 30px;
 }
 
+.dropbtn {
+  background-color: navy;
+}
 /* Add a dark background on topnav links and the dropdown button on hover */
 .topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #555;
-  color: white;
+  background-color: #98A09E;
+  color: black;
 }
 
 /* Add a grey background to dropdown links on hover */
