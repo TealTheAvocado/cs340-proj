@@ -192,39 +192,39 @@ WHERE serviceID = :service_ID_selected_from_browse_appointment_page;
 UPDATE NonmedicalServices SET name = :nameInput, description= :descriptionInput
 WHERE serviceID= :service_ID_from_the_update_form;
 
--- 4. Delete: To preserve patient service histories, deletion of nonmedical services is not allowed. 
+-- 4. Delete: To preserve patient histories, deletion of perinatal appointments is not allowed. 
 
 
 -- Service Details Page
 -- 1. Browse/Read: get all Service Details
--- for each Service Detail, list ID, service name, and concatenated provider first and last name 
-SELECT serviceDetailID, NonmedicalServices.name, CONCAT(Providers.firstName," ", Providers.lastName) AS Provider
+-- for each Service Detail, list ID, service name, and concatenated employee first and last name 
+SELECT serviceDetailID, NonmedicalServices.name, CONCAT(NonmedicalEmployees.firstName," ", NonmedicalEmployees.lastName) AS Employee
 FROM NonmedicalServices 
 INNER JOIN ServiceDetails ON NonmedicalServices.serviceID = ServiceDetails.serviceID
-INNER JOIN Providers ON ServiceDetails.providerID = Providers.providerID;
+INNER JOIN NonmedicalEmployees ON ServiceDetails.employeeID = NonmedicalEmployees.employeeID;
 
 -- 2. Add/Create: add a new service detail 
 -- create drop down for services, listing them by name
 SELECT serviceID, name FROM NonmedicalServices;
 -- create drop down menu for providers, listing each provider by first name and last name
-SELECT providerID, CONCAT(firstName, " ", lastName) AS Provider FROM Providers;
+SELECT employeeID, CONCAT(firstName, " ", lastName) AS Employee FROM NonmedicalEmployees;
 -- insert new Service Detail
 INSERT INTO ServiceDetails 
-(serviceID, providerID) 
+(serviceID, employeeID) 
 VALUES 
-(:service_ID_from_droptdownInput, :provider_ID_sfrom_dropdownInput);
+(:service_ID_from_droptdownInput, :employee_ID_sfrom_dropdownInput);
 
--- 3. Edit/Update: To preserve patient service histories, editing/updating service detials is not allowed
+-- 3. Edit/Update: To preserve patient histories, editing/updating appointment detials is not allowed
 
--- 4. Delete: To preserve patient service histories, deleting service details is not allowed
+-- 4. Delete: To preserve patient histories, deleting appointment details is not allowed
 
 -- Service Histories Page
 -- 1. Browse/Read: get all Service Histories
 -- for each Service History, list serviceHistoryID, clients first name and last name, service name, providers first and last name concatenated and date
-SELECT ServiceHistories.serviceHistoryID, Clients.firstName, Clients.lastName, NonmedicalServices.name, CONCAT(Providers.firstName," ", Providers.lastName) AS Provider, date 
+SELECT ServiceHistories.serviceHistoryID, Clients.firstName, Clients.lastName, NonmedicalServices.name, CONCAT(NonmedicalEmployees.firstName," ", NonmedicalEmployees.lastName) AS Employee, date 
 FROM NonmedicalServices
 INNER JOIN ServiceDetails ON NonmedicalServices.serviceID = ServiceDetails.serviceID
-INNER JOIN Providers ON ServiceDetails.providerID = Providers.providerID
+INNER JOIN NonmedicalEmployees ON ServiceDetails.employeeID = NonmedicalEmployees.employeeID
 INNER JOIN ServiceHistories ON ServiceDetails.serviceDetailID = ServiceHistories.serviceDetailID
 INNER JOIN Clients ON ServiceHistories.clientID = Clients.clientID;
 
@@ -232,10 +232,10 @@ INNER JOIN Clients ON ServiceHistories.clientID = Clients.clientID;
 -- Create drop down for client, listing each client by id and first and last name
 SELECT clientID, CONCAT(firstName, " ", lastName) as client FROM Clients;
 -- Create a drop down for service detail, listing each detail by service name and provider
-SELECT serviceDetailID, CONCAT(NonmedicalServices.name, " - ", Providers.firstName," ", Providers.lastName) AS ServiceDetail
+SELECT serviceDetailID, CONCAT(NonmedicalServices.name, " - ", NonmedicalEmployees.firstName," ", NonmedicalEmployees.lastName) AS ServiceDetail
 FROM NonmedicalServices 
-INNER JOIN ServiceDetails ON PerinatalAppointments.serviceID = ServiceDetails.serviceID
-INNER JOIN Providers ON ServiceDetails.providerID = Providers.providerID;
+INNER JOIN ServiceDetails ON NonmedicalServices.serviceID = ServiceDetails.serviceID
+INNER JOIN NonmedicalEmployees ON ServiceDetails.employeeID = NonmedicalEmployees.employeeID;
 -- insert new appointment history
 INSERT INTO ServiceHistories
 (serviceDetailID, clientID, date) 
@@ -248,13 +248,13 @@ SELECT serviceHistoryID, clientID, serviceDetailID, date FROM ServiceHistories
 WHERE serviceHistoryID = :service_history_ID_selected_from_browse_history_page;
 
 -- create a dropdown of service details to select from, listing each detail by service name and provider
-SELECT serviceDetailID, CONCAT(NonmedicalServices.name, " - ", Providers.firstName," ", Providers.lastName) AS ServiceDetail
+SELECT serviceDetailID, CONCAT(NonmedicalServices.name, " - ", NonmedicalEmployees.firstName," ", NonmedicalEmployees.lastName) AS ServiceDetail
 FROM NonmedicalServices 
-INNER JOIN ServiceDetails ON NonmedicalServcies.serviceID = ServiceDetails.serviceID
-INNER JOIN Providers ON ServiceDetails.providerID = Providers.providerID;
+INNER JOIN ServiceDetails ON NonmedicalServices.serviceID = ServiceDetails.serviceID
+INNER JOIN NonmedicalEmployees ON ServiceDetails.employeeID = NonmedicalEmployees.employeeID;
 
 -- update a service history data based on submission of the Update Services History form 
 UPDATE ServiceHistories SET serviceDetailID = :service_detail_ID_selected_from_dropdown, date= :dateInput
-WHERE serviceID= :service_ID_from_the_update_form;
+WHERE serviceHistoryID= :service_ID_from_the_update_form;
 
--- 4. Delete: To preserve patient service histories, deleting a service history is not allowed
+-- 4. Delete: To preserve patient histories, deleting appointment details is not allowed
