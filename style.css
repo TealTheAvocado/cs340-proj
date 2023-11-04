@@ -150,7 +150,7 @@ article {
 }
 
 footer {
-  background-color:var(--lightBackground);
+  /*background-color:var(--lightBackground);*/
   padding:1%;
   margin-top: 4%;
   border-radius:5px 5px 5px 5px;
