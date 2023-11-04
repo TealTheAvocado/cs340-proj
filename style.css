@@ -102,12 +102,23 @@
 
 /*  ----- Specific Page layout blocks -----  */
 
+body {
+  font-family: 'Arial', sans-serif;
+  font-size: 1em;
+  line-height: 1.2;
+  background-color: var(--lightBackground:#0066FF05);
+  color:var(--textDarkGrey);  
+  margin: 2%;  
+  padding: 2%;
+  max-width: 100%;
+}
+
 header {
   /* if we want background color
   background-color:var(--lightBackground);
-  border-radius:5px 5px 5px 5px; */
+  border-radius:5px 5px 5px 5px; 
   margin-bottom: 1%;
-  padding:1%;
+  padding:1%;*/
   font-size:200%;
   text-align:center;
   color:var(--textDarkGrey);
@@ -155,7 +166,7 @@ footer {
   
 
 h1, h2, h3, h4, h5, h6 {
-color:var(--textDarkGrey); 
+color: var(--textDarkGrey); 
 font-family:'Trebuchet MS', sans-serif;
 } 
 
