@@ -2,8 +2,10 @@
 :root{
   --navigationBarBlue:#0066FF; 
   --white:#FFFFFF;
-  --textDarkGrey:#666666; 
-  --lightBackground:#0066FF90;
+  --textDarkGrey:#666666;
+  --lightGreyhightlight:#66666650
+  --lightBackground:#0066FF05;
+  --accentYellow: #FFCC00;
   --font-hover-color: white;
   }
   
@@ -78,7 +80,7 @@
 }
 /* Change the color of links on hover */
 .topnav a:hover {
-  background-color: #010101;
+  background-color: var(--textDarkGrey);
 }
 
 /* Dropdown container - needed to position the dropdown content */
@@ -92,7 +94,7 @@
   font-size: 30px;
   border: none;
   outline: none;
-  color: #FFFFFF;
+  color: var(--white);
   padding: 14px 16px;
   margin: 0;
 }
@@ -104,7 +106,7 @@
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
   z-index: 1;
-  background-color: white;
+  background-color: var(--white);
 }
 
 /* Style the links inside the dropdown */
