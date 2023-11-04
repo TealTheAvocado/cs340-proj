@@ -59,7 +59,7 @@
 }
 /* Style the links inside the navigation bar */
 .topnav a {
-  color: #98A09E;
+  color: #FFFFFF;
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -87,7 +87,7 @@
   font-size: 30px;
   border: none;
   outline: none;
-  color: #98A09E;
+  color: #FFFFFF;
   padding: 14px 16px;
   margin: 0;
 }
@@ -119,7 +119,7 @@
 }
 
 .topnav a:hover, .dropdown:hover .dropbtn {
-  background-color: #98A09E;
+  background-color: #FFFFFF;
   color: black;
 }
 
