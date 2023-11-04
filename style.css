@@ -3,34 +3,109 @@
   --navigationBarBlue:#0066FF; 
   --white:#FFFFFF;
   --textDarkGrey:#666666;
-  --lightGreyhightlight:#66666650
+  --lightGreyhightlight:#66666650;
   --lightBackground:#0066FF05;
   --accentYellow: #FFCC00;
   --font-hover-color: white;
   }
-  
-  /* Edit tables */
-  table, th, td {
-      border: 0.5px solid var(--textDarkGrey);
-      border-collapse: collapse;
-    }
-  
-  table {
-    margin-top: 2em;
-    width: 100%;
-  }
-  
-  /* Change body */
-  body{
-    font-family: 'Trebuchet MS', sans-serif;
-    background-color:var(--lightBackground);
-    margin-top: 1;
-  }
-  head {
+
+/* ----- Format to Apply to All ---- */
+body {       
+  font-family: 'Arial', sans-serif;
+  font-size: 1em;
+  line-height: 1.2;
+  background-color: var(--lightBackground:#0066FF05);
+  color:var(--textDarkGrey);  
+  margin: 2%;  
+  padding: 2%;
+  max-width: 100%;
+}
+
+/*  ----- Specific Page layout blocks -----  */
+/* for formatting we may want to add a header section for the title but for now there is no header 
+  header {
+  background-color:var(--lightBackground);
+  border-radius:5px 5px 5px 5px;
+  margin-bottom: 4%;
+  padding:1%;
+  font-size:200%;
+  text-align:center;
+}
+header img {
+  width:150px; 
+}
+*/
+/* we don't have a main either, we could put everything under the header in main
+main {
+  display:block;
+  background-color: var(--lightBackground);
+  border-radius:5px 5px 5px 5px;
+  margin:0; /*40px;*/
+  padding:4%; 
+  /*min-height: 900 px;*/
+}
+*/
+
+section {
+  display:block;
+  background-color:var(--lightBackground);
+  border-radius:5px 5px 5px 5px;
+  padding: 2%;
+}
+
+article {
+  display:block;
+  background-color:var(--lightBackground);
+  border-radius:5px 5px 5px 5px;
+  margin:0px 30px 30px 30px;
+  padding-left:4%;
+  padding-right: 4%;
+  padding-top: 2%;
+  padding-bottom: 1%;
+  text-align:justify;
+}
+
+
+footer {
+  background-color:var(--lightBackground);
+  padding:1%;
+  margin-top: 4%;
+  border-radius:5px 5px 5px 5px;
+  text-align:left;
+  font-size:0.8em; 
+
+    head {
     margin-top: 0px;
     margin-left: 0px;
-  }
-  /* Edit headers */
+     }
+
+  /* ----- Typography ------ */
+  
+
+h1, h2, h3, h4, h5, h6 {
+color:var(--textDarkGrey); 
+font-family:'Trebuchet MS', sans-serif;
+} 
+
+h1 {
+  font-size: 250%; 
+  margin: 0; 
+  padding-top: 1%;
+  padding-bottom: 2%; 
+ 
+}
+h2 {
+  font-size: 200%; 
+  margin: 0; 
+  padding-top: 2%;
+  padding-bottom: 2%;
+  white-space: normal;
+}
+h3 {
+  font-size: 150%; 
+  margin: 0; 
+  padding-top: 2%;
+  white-space: normal;
   h1 {
     font-size: 60px;
       text-align: center;
@@ -51,7 +126,28 @@
   {
     font-family: 'Trebuchet MS', sans-serif;
   }
+
+  /*  ----- Table ----- */
+
+  table, th, td {
+    padding: 2%;
+    margin:2%;
+    background-color: var(--dovegrey90);
+    color: var(--navy);
+    border:2px solid var(--textDarkGrey);
+    border-radius:5px 5px 5px 5px; 
+    border-collapse: collapse;
+    display:inline-block;
+    }
   
+  table {
+    margin-top: 2em;
+    width: 100%;
+  }
+  
+
+
+  /* ---- Navigation ---- */
 /* Add background color but fix at top */
 .topnav {
   overflow: hidden;
