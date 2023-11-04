@@ -10,7 +10,7 @@
   }
 
 /* ----- Format to Apply to All ---- */
-body {       
+/*body {       
   font-family: 'Arial', sans-serif;
   font-size: 1em;
   line-height: 1.2;
@@ -20,6 +20,7 @@ body {
   padding: 2%;
   max-width: 100%;
 }
+/*
 
 /*  ----- Specific Page layout blocks -----  */
 /* for formatting we may want to add a header section for the title but for now there is no header 
@@ -65,6 +66,13 @@ article {
   text-align:justify;
 }
 
+p {
+  font-family: 'Arial', sans-serif;
+  font-size: 1em;
+  line-height: 1.2;
+  background-color: var(--lightBackground:#0066FF05);
+  color:var(--textDarkGrey)
+}
 
 footer {
   background-color:var(--lightBackground);
