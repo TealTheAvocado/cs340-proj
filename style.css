@@ -48,7 +48,7 @@
 /* Add background color but fix at top */
 .topnav {
   overflow: hidden;
-  background-color: navy;
+  background-color: #0066FF;
   top: 0;
   left: 0;
   right: 0;
@@ -115,7 +115,7 @@
 }
 
 .dropbtn {
-  background-color: navy;
+  background-color: #0066FF;
 }
 
 .topnav a:hover, .dropdown:hover .dropbtn {
