@@ -1,10 +1,15 @@
+/* assign colors to variable names */
 :root{
-    --font-hover-color: white;
+  --navigationBarBlue:#0066FF; 
+  --white:#FFFFFF;
+  --textDarkGrey:#666666; 
+  --lightBackground:#0066FF90;
+  --font-hover-color: white;
   }
   
   /* Edit tables */
   table, th, td {
-      border: 0.5px solid #98A09E;
+      border: 0.5px solid var(--textDarkGrey);
       border-collapse: collapse;
     }
   
@@ -16,7 +21,7 @@
   /* Change body */
   body{
     font-family: 'Trebuchet MS', sans-serif;
-    background-color: #F4FAF8;
+    background-color:var(--lightBackground);
     margin-top: 1;
   }
   head {
@@ -36,8 +41,8 @@
 
   
   button:hover {
-    background-color: #ddd;
-    color: black;
+    background-color: var(--white);
+    color: var(--textDarkGrey);
   }
   
   input[type="text"]
@@ -48,7 +53,7 @@
 /* Add background color but fix at top */
 .topnav {
   overflow: hidden;
-  background-color: #0066FF;
+  background-color: var(--navigationBarBlue);
   top: 0;
   left: 0;
   right: 0;
@@ -59,7 +64,7 @@
 }
 /* Style the links inside the navigation bar */
 .topnav a {
-  color: #FFFFFF;
+  color: var(--white);
   text-align: center;
   padding: 14px 16px;
   text-decoration: none;
@@ -115,7 +120,7 @@
 }
 
 .dropbtn {
-  background-color: #0066FF;
+  background-color: var(--navigationBarBlue);
 }
 
 .topnav a:hover, .dropdown:hover .dropbtn {
