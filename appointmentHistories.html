@@ -100,12 +100,9 @@
 <main>
 <section>
 <h1>Appointment Histories</h1>
-<article>
+<article id="browse">
 	<p>Browse the table below to review, add, edit, and delete perinatal appointments from a client’s records. 
 	</p>
-</article>
-
-<div id="browse">
 <p><a href="#" onClick="showAll()">Display all forms</a> </p>
 <p><a href="#" onClick="newAppointmentHistory()">New</a> </p>
 <table border="1" cellpadding="5">
@@ -170,9 +167,9 @@
     <td><a href="#" onclick="deleteAppointmentHistory('this.apptHistoryID')">Delete</a></td>
   </tr>
 </table>
-<p>&nbsp;</p>
-</div> <!-- browse -->
-<div id="insert">
+
+</article> <!-- browse -->
+<article id="insert">
     <form method="POST" id="addAppointmentHistory">
         <legend><strong>Add an Appointment to a Patient's History</strong></legend>
           <fieldset class="fields">
@@ -197,9 +194,8 @@
           <input class="btn" type="submit" id="addappointmentHistory" value="Add Appointment to History">
           <input class="btn" type="button" value="Cancel" onClick="browseAppointmentHistory()">
   </form> 
-</div><!-- insert -->
-<p>&nbsp;</p>
-<div id="update">
+</article><!-- insert -->
+<article id="update">
     <form method="POST" id="updateAppointmentHistory">
         <legend><strong>Update Appointment History</strong></legend>
             <fieldset class="fields">
@@ -226,8 +222,8 @@
           <input class="btn" type="submit" id="UpdateSaveAppointmentHistory" value="Save Update to Appointment History">
           <input class="btn" type="button" value="Cancel" onClick="browseAppointmentHistory()">
   </form> 
-</div>  <!-- update -->
-<div id="delete" style="display: block">
+</article>  <!-- update -->
+<article id="delete" style="display: block">
     <form method="POST" id="deleteAppointmentHistory">
         <legend><strong>Delete Appointment from Patient History</strong></legend>
             <fieldset class="fields">
@@ -241,7 +237,7 @@
       <input class="btn" type="submit" id="deleteApppointmentHistory" value="Delete Appointment History">
             <input class="btn" type="button" value="Cancel" onClick="browseAppointmentHistory()">
     </form> 
-  </div><!-- delete -->
+  </article><!-- delete -->
 </section>
 </main>
 <footer>
