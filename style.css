@@ -9,7 +9,16 @@
   --font-hover-color: white;
   }
 
-
+header {
+  /* if we want background color
+  background-color:var(--lightBackground);
+  border-radius:5px 5px 5px 5px; 
+  margin-bottom: 1%;
+  padding:1%;*/
+  font-size: 125%;
+  text-align:center;
+  color:var(--textDarkGrey);
+}
 
   /* ---- Navigation ---- */
 /* Add background color but fix at top */
@@ -113,16 +122,7 @@ body {
   /*max-width: 100%;*/
 }
 
-header {
-  /* if we want background color
-  background-color:var(--lightBackground);
-  border-radius:5px 5px 5px 5px; 
-  margin-bottom: 1%;
-  padding:1%;*/
-  font-size: 150%;
-  text-align:center;
-  color:var(--textDarkGrey);
-}
+
 section {
   display:block;
   /* if we want a background color
