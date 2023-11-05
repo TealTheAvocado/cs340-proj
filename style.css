@@ -213,6 +213,12 @@ h1 {
     width: 100%;
   }
 
+  .subheading {
+  font-size: 110%;
+  text-align:center;
+  color:var(--textDarkGrey);
+}
+    
 
 
 
