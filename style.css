@@ -171,28 +171,8 @@ color: var(--textDarkGrey);
 font-family:'Trebuchet MS', sans-serif;
 } 
 
+
 h1 {
-  font-size: 250%; 
-  margin: 0; 
-  padding-top: 1%;
-  padding-left:4%;
-  padding-right: 4%;
-  /*padding-bottom: 1%;*/
- 
-}
-h2 {
-  font-size: 200%; 
-  margin: 0; 
-  padding-top: 1%;
-  /*padding-bottom: 1%;*/
-  white-space: normal;
-}
-h3 {
-  font-size: 150%; 
-  margin: 0; 
-  /*padding-top: 1%;*/
-  white-space: normal;
-  h1 {
     font-size: 60px;
       text-align: center;
       margin-left: 0;
