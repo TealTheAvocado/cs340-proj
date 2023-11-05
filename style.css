@@ -115,7 +115,13 @@ header {
   color:var(--textDarkGrey);
 }
 
-
+.pageHead{
+  background-color:var(--lightBackgrounde);
+  font-size: 110%;
+  text-align:center;
+  color:var(--textDarkGrey);
+}
+  
 body {
   font-family: 'Arial', sans-serif;
   /*font-size: 1em;*/
