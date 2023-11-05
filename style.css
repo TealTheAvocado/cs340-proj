@@ -107,8 +107,8 @@ header {
   /* if we want background color
   
   border-radius:5px 5px 5px 5px; 
-  margin-bottom: 1%;
-  padding:1%;*/
+  margin-bottom: 0%;
+  padding:2%;*/
   background-color:var(--siteHeadBlue);
   font-size: 125%;
   text-align:left;
@@ -118,6 +118,7 @@ header {
   font-size: 125%;
   text-align:center;
   color:var(--textDarkGrey);
+  background-color:var(--lightBackground);
 }
 
 body {
