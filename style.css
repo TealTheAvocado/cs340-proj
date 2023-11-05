@@ -119,8 +119,9 @@ body {
   /*line-height: 1.2;*/
   background-color: var(--lightBackground:#0066FF05);
   color:var(--textDarkGrey);  
-  /*margin: 2%;  
-  padding: 2%;*/
+  /*margin: 2%;*/
+  padding-right: 4%;
+  padding-left: 4%;
   /*max-width: 100%;*/
 }
 
