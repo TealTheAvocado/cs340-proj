@@ -200,24 +200,17 @@ h1 {
   table, th, td {
     padding: 2%;
     margin:2%;
-    background-color: var(--dovegrey90);
-    color: var(--navy);
+    background-color: var(--lightGreyhightlight);
+    color: var(--textDarkGrey);
     border:2px solid var(--textDarkGrey);
     border-radius:5px 5px 5px 5px; 
     border-collapse: collapse;
     display:inline-block;
+    width: 100%;
     }
   
-  table {
-    margin-top: 2em;
-    width: 100%;
-  }
 
-  .subheading {
-  font-size: 110%;
-  text-align:left;
-  color:var(--textDarkGrey);
-}
+
     
 
 
