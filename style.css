@@ -1,7 +1,7 @@
 /* assign colors to variable names */
 :root{
   --navigationBarBlue:#0066FF;
-  --siteHeadBlue: #0066ff80;
+  --siteHeadBlue: #0066ff70;
   --white:#FFFFFF;
   --textDarkGrey:#666666;
   --lightGreyhightlight:#66666650;
@@ -114,12 +114,7 @@ header {
   text-align:left;
   color:var(--textDarkGrey);
 }
-.pageHead {
-  font-size: 125%;
-  text-align:center;
-  color:var(--textDarkGrey);
-  background-color:var(--lightBackground);
-}
+
 
 body {
   font-family: 'Arial', sans-serif;
