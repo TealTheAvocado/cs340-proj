@@ -101,11 +101,13 @@
 </header>
 <main>
 <section>
+<article>
 <h1>Service Histories</h1>
-	<article>
-		<p>Browse the table below to review, add, edit, and delete services from a client’s records.
-		</p>
-	</article>
+	
+<p>Browse the table below to review, add, edit, and delete services from a client’s records.
+</p>
+</article>
+<article>
 <div id="browse">
 <p><a href="#" onClick="showAll()">Display all forms</a> </p>
 <p><a href="#" onClick="newServiceHistory()">New</a></p>
@@ -172,7 +174,9 @@
   </tr>
 </table>
 <p>&nbsp;</p>
-</div> <!-- browse -->
+</div> 
+</article><!-- browse -->
+<article> 
 <div id="insert">
     <form method="POST" id="addServiceHistory">
         <legend><strong>Add a Service to a Patient's History</strong></legend>
@@ -198,8 +202,10 @@
           <input class="btn" type="submit" id="addappointmentHistory" value="Add Appointment to History">
           <input class="btn" type="button" value="Cancel" onClick="browseServiceHistory()">
   </form> 
-</div><!-- insert -->
+</div>
+</article><!-- insert -->
 <p>&nbsp;</p>
+<article>
 <div id="update">
     <form method="POST" id="updateAppointmentHistory">
         <legend><strong>Update Appointment History</strong></legend>
@@ -227,7 +233,9 @@
           <input class="btn" type="submit" id="UpdateSaveServiceHistory" value="Save Update to Service History">
           <input class="btn" type="button" value="Cancel" onClick="browseServiceHistory()">
   </form> 
-</div>  <!-- update -->
+</div>
+</article><!-- update -->
+<article>
 <div id="delete" style="display: block">
     <form method="POST" id="deleteServiceHistory">
         <legend><strong>Delete Service from Client History</strong></legend>
@@ -245,6 +253,7 @@
             <input class="btn" type="button" value="Cancel" onClick="browseServiceHistory()">
     </form> 
   </div><!-- delete -->
+</article>
 </section>
 </main>
  <footer>
