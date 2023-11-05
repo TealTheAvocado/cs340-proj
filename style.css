@@ -9,16 +9,7 @@
   --font-hover-color: white;
   }
 
-header {
-  /* if we want background color
-  background-color:var(--lightBackground);
-  border-radius:5px 5px 5px 5px; 
-  margin-bottom: 1%;
-  padding:1%;*/
-  font-size: 125%;
-  text-align:center;
-  color:var(--textDarkGrey);
-}
+
 
   /* ---- Navigation ---- */
 /* Add background color but fix at top */
@@ -110,6 +101,17 @@ header {
 
 
 /*  ----- Specific Page layout blocks -----  */
+
+header {
+  /* if we want background color
+  background-color:var(--lightBackground);
+  border-radius:5px 5px 5px 5px; 
+  margin-bottom: 1%;
+  padding:1%;*/
+  font-size: 125%;
+  text-align:center;
+  color:var(--textDarkGrey);
+}
 
 body {
   font-family: 'Arial', sans-serif;
