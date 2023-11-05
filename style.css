@@ -105,7 +105,7 @@
 body {
   font-family: 'Arial', sans-serif;
   font-size: 1em;
-  line-height: 1.2;
+  /*line-height: 1.2;*/
   background-color: var(--lightBackground:#0066FF05);
   color:var(--textDarkGrey);  
   /*margin: 2%;  
@@ -128,7 +128,8 @@ section {
   /* if we want a background color
   background-color:var(--lightBackground);
   border-radius:5px 5px 5px 5px; */
-  padding: 1%;
+  padding-left: 1%;
+  padding-right: 1%
 }
 
 article {
