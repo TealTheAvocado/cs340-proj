@@ -1,6 +1,7 @@
 /* assign colors to variable names */
 :root{
-  --navigationBarBlue:#0066FF; 
+  --navigationBarBlue:#0066FF;
+  --siteHeadBlue: #0066ff80;
   --white:#FFFFFF;
   --textDarkGrey:#666666;
   --lightGreyhightlight:#66666650;
@@ -104,10 +105,16 @@
 
 header {
   /* if we want background color
-  background-color:var(--lightBackground);
+  
   border-radius:5px 5px 5px 5px; 
   margin-bottom: 1%;
   padding:1%;*/
+  background-color:var(--siteHeadBlue);
+  font-size: 125%;
+  text-align:left;
+  color:var(--textDarkGrey);
+}
+.pageHead {
   font-size: 125%;
   text-align:center;
   color:var(--textDarkGrey);
