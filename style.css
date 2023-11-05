@@ -20,9 +20,6 @@ header {
   color:var(--textDarkGrey);
 }
 
-header, h2 {
-  tex-align:left;
-}
   /* ---- Navigation ---- */
 /* Add background color but fix at top */
 .topnav {
@@ -131,9 +128,9 @@ section {
   /* if we want a background color
   background-color:var(--lightBackground);
   border-radius:5px 5px 5px 5px; */
-  padding-left: 1%;
-  padding-right: 1%;
-  padding-bottom: 0;
+  padding-left: 4%;
+  padding-right: 4%;
+  padding-bottom: 0px;
 }
 
 article {
@@ -143,10 +140,10 @@ article {
   border-radius:5px 5px 5px 5px;
   */
   margin:0px 30px 30px 30px;
-  padding-left:3%;
-  padding-right: 3%;
   padding-top: 1%;
-  padding-bottom: 0;
+  padding-bottom: 1%;
+  /*padding-left:3%;
+  padding-right: 3%;
   text-align:justify;
   font-family: 'Arial', sans-serif;
   font-size: 1em;
