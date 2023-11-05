@@ -103,7 +103,7 @@
 <article>
 <p>Seattle Prenatal employs a diverse group of physicians, nurse practitioners, and clinical nurse midwives who are committed to providing the best evidence-based, holistic medical care to pregnant women. Browse the table below to review, add, edit, and delete our current providers. </p>
 </article>
-
+<article>
 <div id="browse">
 <p><a href="#" onClick="showAll()">Display all forms</a> </p>
 <table border="1" cellpadding="5">
@@ -156,8 +156,9 @@
     <td><a href="#" onclick="deleteProvider('this.providerID')">Delete</a></td>
   </tr>
 </table>
-<p>&nbsp;</p>
-</div> <!-- browse -->
+</div>
+</article><!-- browse -->
+<article>
 <div id="insert">
     <form method="POST" id="addProvider">
         <legend><strong>Add Provider</strong></legend>
@@ -174,7 +175,8 @@
           <input class="btn" type="button" value="Cancel" onClick="browseProviders()">
 	</form> 
 </div><!-- insert -->
-<p>&nbsp;</p>
+</article>
+</article>
 <div id="update">
     <form method="POST" id="updateProvider">
         <legend><strong>Update Provider</strong></legend>
@@ -193,7 +195,8 @@
           <input class="btn" type="button" value="Cancel" onClick="browseProviders()">
 	</form> 
 </div><!-- update -->
-<p>&nbsp;</p>
+</article>
+<article>
 <div id="delete" style="display: block">
   <form method="POST" id="deleteProvider">
       <legend><strong>Delete Provider</strong></legend>
@@ -208,6 +211,7 @@
           <input class="btn" type="button" value="Cancel" onClick="browseProviders()">
   </form> 
 </div><!-- delete -->
+</article>
 </section>
 </main>
  <footer>
