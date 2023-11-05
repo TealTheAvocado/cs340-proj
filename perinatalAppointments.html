@@ -93,13 +93,11 @@
     <header><h1>Seattle Prenatal</h1></header>
     <main>
     <section>
+        <article id="browse">
 <h1>Perinatal Appointments</h1>
     <article>
         <p>Seattle Prenatal offers expert, personalized perinatal care to all clients. Browse the table below to review, add, and edit current perinatal appointments.  
         </p>
-    </article>
-
-<div id="browse">
 <p><a href="#" onClick="showAll()">Display all forms</a> </p>
 <table border="1" cellpadding="5">
   <tr>
@@ -145,9 +143,8 @@
     <td>16 week prenatal visit</td>
   </tr>
 </table>
-<p>&nbsp;</p>
-</div> <!-- browse -->
-<div id="insert">
+</article> <!-- browse -->
+<article id="insert">
     <form method="POST" id="addPerinatalAppointment">
         <legend><strong>Add Perinatal Appointment</strong></legend>
           <fieldset class="fields">
@@ -158,9 +155,9 @@
           <input class="btn" type="submit" id="addperinatalAppointment" value="Add Perinatal Appontment">
           <input class="btn" type="button" value="Cancel" onClick="browsePerinatalAppointments()">
   </form> 
-</div><!-- insert -->
-<p>&nbsp;</p>
-<div id="update">
+</article><!-- insert -->
+
+<article id="update">
     <form method="POST" id="updatePerinatalAppointment">
         <legend><strong>Update Perinatal Appointment</strong></legend>
           <fieldset class="fields">
@@ -173,7 +170,7 @@
           <input class="btn" type="submit" id="UpdateSavePerinatalAppointment" value="Save Update Perinatal Appointment">
           <input class="btn" type="button" value="Cancel" onClick="browsePerinatalAppointments()">
   </form> 
-</div><!-- update -->
+</article><!-- update -->
 </section>
 </main>
  <footer>
