@@ -215,7 +215,7 @@ h1 {
 
   .subheading {
   font-size: 110%;
-  text-align:center;
+  text-align:left;
   color:var(--textDarkGrey);
 }
     
