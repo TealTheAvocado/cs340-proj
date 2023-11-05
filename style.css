@@ -106,9 +106,9 @@
 header {
   /* if we want background color
   
-  border-radius:5px 5px 5px 5px; 
+  border-radius:5px 5px 5px 5px; */
   margin-bottom: 0%;
-  padding:2%;*/
+  padding:2%;
   background-color:var(--siteHeadBlue);
   font-size: 125%;
   text-align:left;
