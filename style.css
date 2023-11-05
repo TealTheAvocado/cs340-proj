@@ -128,7 +128,7 @@ section {
   /* if we want a background color
   background-color:var(--lightBackground);
   border-radius:5px 5px 5px 5px; */
-  padding: 2%;
+  padding: 1%;
 }
 
 article {
