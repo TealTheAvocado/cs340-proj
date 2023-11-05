@@ -1,4 +1,4 @@
-/* assign colors to variable names */
+1/* assign colors to variable names */
 :root{
   --navigationBarBlue:#0066FF; 
   --white:#FFFFFF;
@@ -128,8 +128,8 @@ section {
   /* if we want a background color
   background-color:var(--lightBackground);
   border-radius:5px 5px 5px 5px; */
-  padding-left: 4%;
-  padding-right: 4%;
+  padding-left: 1%;
+  padding-right: 1%;
   padding-bottom: 0px;
 }
 
@@ -142,7 +142,7 @@ article {
   margin:0px 30px 30px 30px;
   padding-top: 1%;
   padding-bottom: 1%;
-  /*padding-left:3%;
+  padding-left:3%;
   padding-right: 3%;
   text-align:justify;
   font-family: 'Arial', sans-serif;
