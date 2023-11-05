@@ -64,6 +64,9 @@
 </head>
 
 <body onload="browseServiceHistory()">
+<header>
+    <h1>Seattle Prenatal</h1>
+</header>
   <div class="topnav" id="myTopnav">
     <a href="index.html">Home</a>
     <div class="dropdown">
@@ -96,14 +99,11 @@
       </div>
     </div>
   </div>
-<header>
-    <h1>Seattle Prenatal</h1>
-</header>
+
 <main>
 <section>
-
+<header class="pageHead"><h2>Service Histories</h2></header>
 <article id="browse">
-<h1>Service Histories</h1>
 <p>Browse the table below to review, add, edit, and delete services from a client’s records.
 </p>
 <p><a href="#" onClick="showAll()">Display all forms</a> </p>
@@ -172,7 +172,6 @@
 </table>
 </article><!-- browse -->
 <article id="insert">
-	<h1>Service Histories</h1>
     <form method="POST" id="addServiceHistory">
         <legend><strong>Add a Service to a Patient's History</strong></legend>
           <fieldset class="fields">
@@ -199,7 +198,6 @@
   </form> 
 </article><!-- insert -->
 <article id="update">
-	<h1>Service Histories</h1>
     <form method="POST" id="updateAppointmentHistory">
         <legend><strong>Update Appointment History</strong></legend>
             <fieldset class="fields">
@@ -228,7 +226,6 @@
   </form> 
 </article><!-- update -->
 <article id="delete" style="display: block">
-	<h1>Service Histories</h1>
     <form method="POST" id="deleteServiceHistory">
         <legend><strong>Delete Service from Client History</strong></legend>
             <fieldset class="fields">
