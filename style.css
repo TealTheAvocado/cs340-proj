@@ -126,7 +126,7 @@ body {
   font-family: 'Arial', sans-serif;
   /*font-size: 1em;*/
   /*line-height: 1.2;*/
-  background-color: var(--lightBackground:#0066FF05);
+  background-color: var(--lightBackground);
   color:var(--textDarkGrey);  
   /*margin: 2%;*/
   /*max-width: 100%;*/
