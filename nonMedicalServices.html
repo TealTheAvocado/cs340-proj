@@ -93,11 +93,9 @@
 <main>
 <section>
 <h1>Nonmedical Services</h1>
-<article>
+<article id="browse">
     <p>In addition to routine prenatal care, Seattle Prenatal offers an extensive variety of services to clients. Popular services include breastfeeding support group, housing assistance, career counseling, and nutrition counseling. Browse the table below to review, add, or edit our current services. 
     </p>
-</article>
-<div id="browse">
 <p><a href="#" onClick="showAll()">Display all forms</a> </p>
 <table border="1" cellpadding="5">
   <tr>
@@ -137,9 +135,9 @@
     <td  >appointment with nutritionist to support nutrition in setting of gestational diabetes</td>
   </tr>
 </table>
-<p>&nbsp;</p>
-</div> <!-- browse -->
-<div id="insert">
+
+</article> <!-- browse -->
+<article id="insert">
     <form method="POST" id="addNonmedicalService">
         <legend><strong>Add Service</strong></legend>
           <fieldset class="fields">
@@ -149,9 +147,8 @@
           <input class="btn" type="submit" id="addnonmedicalService" value="Add Service">
           <input class="btn" type="button" value="Cancel" onClick="browseNonmedicalService()">
   </form> 
-</div><!-- insert -->
-<p>&nbsp;</p>
-<div id="update">
+</article><!-- insert -->
+<article id="update">
     <form method="POST" id="updateNonmedicalService">
         <legend><strong>Update Service</strong></legend>
           <fieldset class="fields">
@@ -163,7 +160,7 @@
           <input class="btn" type="submit" id="UpdateSaveNonmedicalService" value="Save Update Service">
           <input class="btn" type="button" value="Cancel" onClick="browseNonmedicalService()">
   </form> 
-</div><!-- update -->
+</article><!-- update -->
 </section>
 </main>
 <footer>
