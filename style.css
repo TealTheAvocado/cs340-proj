@@ -20,6 +20,9 @@ header {
   color:var(--textDarkGrey);
 }
 
+header, h2 {
+  tex-align:left;
+}
   /* ---- Navigation ---- */
 /* Add background color but fix at top */
 .topnav {
