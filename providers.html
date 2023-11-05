@@ -99,12 +99,9 @@
 <header><h1>Seattle Prenatal</h1></header>
 <main>
 <section>
+<article id="browse>
 <h1>Providers</h1>
-<article>
 <p>Seattle Prenatal employs a diverse group of physicians, nurse practitioners, and clinical nurse midwives who are committed to providing the best evidence-based, holistic medical care to pregnant women. Browse the table below to review, add, edit, and delete our current providers. </p>
-</article>
-<article>
-<div id="browse">
 <p><a href="#" onClick="showAll()">Display all forms</a> </p>
 <table border="1" cellpadding="5">
   <tr>
@@ -156,10 +153,8 @@
     <td><a href="#" onclick="deleteProvider('this.providerID')">Delete</a></td>
   </tr>
 </table>
-</div>
 </article><!-- browse -->
-<article>
-<div id="insert">
+<article id="insert">
     <form method="POST" id="addProvider">
         <legend><strong>Add Provider</strong></legend>
           <fieldset class="fields">
@@ -174,10 +169,8 @@
           <input class="btn" type="submit" id="addProvider" value="Add Provider">
           <input class="btn" type="button" value="Cancel" onClick="browseProviders()">
 	</form> 
-</div><!-- insert -->
-</article>
-</article>
-<div id="update">
+</article><!-- insert -->
+<article id="update">
     <form method="POST" id="updateProvider">
         <legend><strong>Update Provider</strong></legend>
           <fieldset class="fields">
@@ -194,10 +187,9 @@
           <input class="btn" type="submit" id="UpdateSaveProvider" value="Save Update Provider">
           <input class="btn" type="button" value="Cancel" onClick="browseProviders()">
 	</form> 
-</div><!-- update -->
+<!-- update -->
 </article>
-<article>
-<div id="delete" style="display: block">
+<article id="delete" style="display: block">
   <form method="POST" id="deleteProvider">
       <legend><strong>Delete Provider</strong></legend>
           <fieldset class="fields">
@@ -210,7 +202,7 @@
     <input class="btn" type="submit" id="DeleteProvider" value="Delete Provider">
           <input class="btn" type="button" value="Cancel" onClick="browseProviders()">
   </form> 
-</div><!-- delete -->
+<!-- delete -->
 </article>
 </section>
 </main>
