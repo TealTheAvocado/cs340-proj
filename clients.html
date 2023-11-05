@@ -100,13 +100,11 @@
 <header><h1>Seattle Prenatal</h1></header>
 <main>
 <section>
-<article>
-  <h1>Clients</h1>
-	
-		<p>Clients are the heart of Seattle Prenatal and we are honored to partner with them during the prenatal period and beyond. Browse the table below to review, add, edit, or delete our current clients. 
-		</p>
-	
-<div id="browse">
+
+<h1>Clients</h1>
+<article id="browse">
+<p>Clients are the heart of Seattle Prenatal and we are honored to partner with them during the prenatal period and beyond. Browse the table below to review, add, edit, or delete our current clients. 
+</p>	
 <p><a href="#" onClick="showAll()">Display all forms</a> </p>
 <table border="1" cellpadding="5">
   <tr>
@@ -158,9 +156,8 @@
     <td><a href="#" onclick="deleteClient('this.clientID')">Delete</a></td>
   </tr>
 </table>
-<p>&nbsp;</p>
-</div> <!-- browse -->
-<div id="insert">
+</article> <!-- browse -->
+<article id="insert">
     <form method="POST" id="addClient">
         <legend><strong>Add Client</strong></legend>
           <fieldset class="fields">
@@ -178,9 +175,8 @@
           <input class="btn" type="submit" id="addClient" value="Add Client">
           <input class="btn" type="button" value="Cancel" onClick="browseClients()">
 	</form> 
-</div><!-- insert -->
-<p>&nbsp;</p>
-<div id="update">
+</article><!-- insert -->
+<article id="update">
     <form method="POST" id="UpdateClient">
         <legend><strong>Update Client</strong></legend>
           <fieldset class="fields">
@@ -200,9 +196,9 @@
           <input class="btn" type="submit" id="UpdateSaveClient" value="Save Update Client">
           <input class="btn" type="button" value="Cancel" onClick="browseClients()">
 	</form> 
-</div><!-- update -->
-<p>&nbsp;</p>
-<div id="delete" style="display: block">
+</article><!-- update -->
+
+<article id="delete" style="display: block">
   <form method="POST" id="deleteClient">
       <legend><strong>Delete Client</strong></legend>
           <fieldset class="fields">
@@ -214,7 +210,7 @@
     <input class="btn" type="submit" id="DeleteClient" value="Delete Client">
           <input class="btn" type="button" value="Cancel" onClick="browseClients()">
   </form> 
-</div><!-- delete -->
+<!-- delete -->
 </article>
 </section>
 </main>
