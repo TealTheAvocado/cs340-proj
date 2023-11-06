@@ -15,7 +15,7 @@
   /* ---- Navigation ---- */
 /* Add background color but fix at top */
 .topnav {
-  overflow: hidden;
+  overflow: auto;
   background-color: var(--navigationBarBlue);
   top: 0;
   left: 0;
@@ -236,3 +236,10 @@ h1 {
   }
   
   
+/* Apply flex for large screens and revert to default for smaller screens */
+@media (max-width: 768px) {
+  table, th, td {
+    display: table; /* Revert to the default display style for tables */
+    width: 100%; /* Make tables full-width on smaller screens */
+  }
+}
