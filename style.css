@@ -230,8 +230,8 @@ h1 {
     /*width: 100%;*/
     }
 
- /* th, td {
-    flex:1; 
+  th, td {
+    /*flex:1; */
     flex-shrink: 2;
   }*/
   
