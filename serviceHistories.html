@@ -111,8 +111,8 @@
     <th>serviceHistoryID</th>
     <th>Clients.firstName</th> <!-- instead of using clientID --> 
     <th>Clients.lastName</th> <!-- instead of using clientID --> 
-    <th>NonmedicalServices.name</th> <!-- instead of using serviceDetailID --> 
-    <th>Employee</th> <!-- instead of using serviceDetailID using concatenated first and last name --> 
+    <th>NonmedicalServices.name</th> <!-- instead of using serviceID --> 
+    <th>Employee</th> <!-- instead of using employeeID using concatenated first and last name --> 
     <th>date</th>
     <th></th>
     <th></th>
@@ -181,13 +181,21 @@
                 <option value="4">Meredith Grey</option>
                 <option value="5">Christina Yang</option>
             </select>
-            <label> Service and Employee </label> <select name="serviceDetailID">
+            <label> Service </label> <select name="serviceID">
               <option value="0">&nbsp;</option>
-              <option value="36">Breastfeeding Group - Lexie Grey</option>
-              <option value="37">Lactation Counseling - Jackson Avery</option>
-              <option value="38">Housing Assistance - George O'Malley</option>
-              <option value="39">Prenatal Nutrition - Jo Wilson</option>
-              <option value="40">Gestational Diabetes Nutrition - Jo Wilson</option>
+		<option value="21">Lactation Counseling/option>
+              	<option value="22">Breastfeeding Group</option>
+             	<option value="23">Housing Assistance</option>
+              	<option value="24">Prenatal Nutrition</option>
+              	<option value="25">Gestational Diabetes Nutrition</option>
+                </select>
+		<label> Employee </label> <select name="employeeID">
+              	<option value="0">&nbsp;</option>
+             	<option value="11">Lexie Grey</option>
+		<option value="12">Jo Wilson</option>
+              	<option value="13">Jackson Avery</option>
+              	<option value="14">George O'Malley</option>
+              	<option value="15">April Kepner</option>
                 </select>
             <label> date </label> <input type="date" name="date">
       </fieldset>
@@ -209,13 +217,22 @@
                 <option value="4">Meredith Grey</option>
                 <option value="5">Christina Yang</option>
                 </select>
-            <label> Appointment Detail </label> <select name="apptDetailID">
-                <option value="0">&nbsp;</option>
-                <option value="36">Breastfeeding Group - Lexie Grey</option>
-                <option value="37">Lactation Counseling - Jackson Avery</option>
-                <option value="38">Housing Assistance - George O'Malley</option>
-                <option value="39">Prenatal Nutrition - Jo Wilson</option>
-                <option value="40">Gestational Diabetes Nutrition - Jo Wilson</option>
+              <label> Service </label> <select name="serviceID">
+              <option value="0">&nbsp;</option>
+		<option value="21">Lactation Counseling/option>
+              	<option value="22">Breastfeeding Group</option>
+             	<option value="23">Housing Assistance</option>
+              	<option value="24">Prenatal Nutrition</option>
+              	<option value="25">Gestational Diabetes Nutrition</option>
+                </select>
+		<label> Employee </label> <select name="employeeID">
+              	<option value="0">&nbsp;</option>
+             	<option value="11">Lexie Grey</option>
+		<option value="12">Jo Wilson</option>
+              	<option value="13">Jackson Avery</option>
+              	<option value="14">George O'Malley</option>
+              	<option value="15">April Kepner</option>
+                </select>
             </select>
             <label> date </label> <input type="date" name="date" value = "04-03-2021">
       </fieldset>
@@ -231,7 +248,8 @@
             <input type="hidden" name="deleteServiceHistoryID" id="deleteServiceHistoryID" value="26">
                 <label><strong>ID:</strong></label> 26 
                 <label> <strong>Client:</strong> </label> Jane Smith 
-                <label> <strong>Appointment:</strong> </label> Breastfeeding Group - Lexie Grey
+                <label> <strong>Service:</strong> </label> Breastfeeding Group
+		<label> <strong>Employee:</strong> </label>Lexie Grey
                 <label> <strong>Date:</strong> </label> 04-03-2021
            
 
