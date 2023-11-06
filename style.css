@@ -135,7 +135,7 @@ body {
   /*line-height: 1.2;*/
   background-color: var(--lightBackground);
   color:var(--textDarkGrey);  
-  /*margin: 2%;*/
+  margin: 0px;
   /*max-width: 100%;*/
 }
 
