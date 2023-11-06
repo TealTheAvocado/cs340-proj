@@ -214,8 +214,6 @@ h1 {
   /*  ----- Table ----- */
 
     table {
-    padding: 2%;
-    margin:2%;
     background-color: var(--lightGreyhightlight);
     color: var(--textDarkGrey);
     /*border:2px solid var(--textDarkGrey);*/
@@ -232,6 +230,8 @@ h1 {
 
   
   th, td {
+    padding: 2%;
+    margin:2%;
     border-bottom: 1px solid var(--textDarkGrey);
     /*flex:1;
     flex-shrink: 2;
