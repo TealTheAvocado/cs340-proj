@@ -223,8 +223,8 @@ h1 {
     border-collapse: collapse;
     /*flex-basis: auto;*/
     display:flex;
-    flex-direction: row;
-    flex-wrap: wrap;
+    /*flex-direction: row;
+    flex-wrap: wrap;*/
     /*flex: 1;*/
     /*table-layout: auto;*/
     /*width: 100%;*/
