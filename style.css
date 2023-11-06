@@ -213,19 +213,35 @@ h1 {
 
   /*  ----- Table ----- */
 
-    table {
+  /* verbadim W3 schools*/
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid var(--textDarkGrey);
+}
+
+tr:hover {background-color: var(--accentYellow);
+         }  
+  
+/* OLD code
+  table {
     background-color: var(--lightGreyhightlight);
     color: var(--textDarkGrey);
-    /*border:2px solid var(--textDarkGrey);*/
-    /*border-radius:5px 5px 5px 5px;*/
-    /*border-collapse: collapse;*/
-    /*flex-basis: auto;*/
+    border:2px solid var(--textDarkGrey);
+    border-radius:5px 5px 5px 5px;
+    border-collapse: collapse;
+    flex-basis: auto;
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
     flex-shrink: 2;
-    /*width: 100%;
-    table-layout: auto;*/
+    width: 100%;
+    table-layout: auto;
     }
 
   
@@ -233,12 +249,13 @@ h1 {
     padding: 2%;
     margin:2%;
     border-bottom: 1px solid var(--textDarkGrey);
-    /*flex:1;
+    flex:1;
     flex-shrink: 2;
-  }*/
+ 
 
   tr:hover {
-    background-color: var(--accentYellow);}
+    background-color: var(--accentYellow);
+*/
   
   
 /* Apply flex for large screens and revert to default for smaller screens */
