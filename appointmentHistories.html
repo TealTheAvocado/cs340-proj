@@ -105,12 +105,12 @@
 <p><a href="#" onClick="newAppointmentHistory()">New</a> </p>
 <table border="1" cellpadding="5">
   <tr>
-    <th>apptHistoryID</th>
-    <th>Clients.firstName</th> <!-- instead of using clientID --> 
-    <th>Clients.lastName</th> <!-- instead of using clientID --> 
-    <th>PerinatalAppointments.name</th> <!-- instead of using apptDetailID --> 
-    <th>Provider</th> <!-- instead of using apptDetailID using concatenated first and last name --> 
-    <th>date</th>
+    <th>History ID</th> <!-- apptHistoryID -->
+    <th>Client First Name</th> <!-- instead of using clientID, use Clients.firstName --> 
+    <th>Client Last Name</th> <!-- instead of using clientID, use Client.lastName --> 
+    <th>Perinatal Appointment </th> <!-- instead of using perinatalApptID, use PerinatalAppointments.name --> 
+    <th>Provider</th> <!-- instead of using providerID using CONCAT(Providers.firstName, ' ', Providers.lastName) --> 
+    <th>Date</th>
     <th></th>
     <th></th>
   </tr>
