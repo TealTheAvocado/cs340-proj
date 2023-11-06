@@ -226,15 +226,16 @@ h1 {
     flex-direction: row;
     flex-wrap: wrap;
     /*flex: 1;*/
-    table-layout: auto;
+    /*table-layout: auto;*/
     /*width: 100%;*/
     
     }
 
-  /*th, td {
-    flex:1; flex includes flex basis, flex-grow, and flex-shrink
-    flex-shrink: 2;
-  }*/
+  th, td {
+    flex:1; 
+    /*flex-shrink: 2;*/
+  }
+  
   
 
 
