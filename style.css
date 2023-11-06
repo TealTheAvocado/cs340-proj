@@ -221,6 +221,8 @@ h1 {
     border:2px solid var(--textDarkGrey);
     border-radius:5px 5px 5px 5px; 
     border-collapse: collapse;
+    flex-basis: auto;
+    flex-shrink: 1;
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
