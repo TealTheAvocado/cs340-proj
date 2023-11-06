@@ -36,6 +36,10 @@
 
 }
 
+.topnav a > * {
+  flex: 1 1 0;
+}
+
 .topnav:first-child{
   margin-left: 0px;
 }
