@@ -217,10 +217,11 @@ h1 {
 table {
   border-collapse: collapse;
   width: 100%;
+  display: flex;
 }
 
 th, td {
-  padding: 8px;
+  padding: 1%;
   text-align: left;
   border-bottom: 1px solid var(--textDarkGrey);
 }
