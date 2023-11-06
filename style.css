@@ -213,7 +213,7 @@ h1 {
 
   /*  ----- Table ----- */
 
-    table, th, td {
+    table {
     padding: 2%;
     margin:2%;
     background-color: var(--lightGreyhightlight);
