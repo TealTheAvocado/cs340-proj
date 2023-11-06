@@ -24,7 +24,7 @@
   opacity: 1;
   list-style-type: none;
   display: flex;
-  align-items: stretch ;
+  /*align-items: stretch ;*/
   flex-wrap: wrap;
   flex-direction: row;
 }
@@ -221,7 +221,9 @@ h1 {
     border:2px solid var(--textDarkGrey);
     border-radius:5px 5px 5px 5px; 
     border-collapse: collapse;
-    display:inline-block;
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
     width: 100%;
     }
   
