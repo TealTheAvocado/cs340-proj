@@ -85,31 +85,21 @@ CREATE TABLE NonmedicalServices (
     PRIMARY KEY (serviceID)
 );
 
--- Drop and create the ServiceDetails table
-DROP TABLE IF EXISTS ServiceDetails;
-CREATE TABLE ServiceDetails (
-    serviceDetailID INT NOT NULL AUTO_INCREMENT,
-    serviceID INT,
-    employeeID INT,
-    PRIMARY KEY (serviceDetailID),
-    FOREIGN KEY (serviceID) REFERENCES NonmedicalServices(serviceID)
-    ON DELETE RESTRICT,
-    FOREIGN KEY (employeeID) REFERENCES NonmedicalEmployees(employeeID)
-    ON DELETE SET NULL
-);
-
 -- Drop and create the ServiceHistories table
 DROP TABLE IF EXISTS ServiceHistories;
 CREATE TABLE ServiceHistories (
     serviceHistoryID INT NOT NULL AUTO_INCREMENT,
     clientID INT NOT NULL,
-    serviceDetailID INT, NOT NULL
+    serviceID INT NOT NULL,
+	employeeID INT,
     date DATE NOT NULL,
     PRIMARY KEY (serviceHistoryID),
     FOREIGN KEY (clientID) REFERENCES Clients(clientID)
     ON DELETE CASCADE,
-    FOREIGN KEY (serviceDetailID) REFERENCES ServiceDetails(serviceDetailID)
-    ON DELETE RESTRICT
+    FOREIGN KEY (serviceID) REFERENCES NonmedicalServices(serviceID)
+    ON DELETE RESTRICT,
+    FOREIGN KEY (employeeID) REFERENCES NonmedicalEmployees(employeeID) 
+    ON DELETE SET NULL
 );
 
 
@@ -207,52 +197,34 @@ VALUES
     (24, 'Prenatal Nutrition', 'appointment with nutritionist to improve and support prenatal nutrition'),
     (25, 'Gestational Diabetes Nutrition', 'appointment with nutritionist to support nutrition in the setting of gestational diabetes');
     
-    -- Insert data into the ServiceDetails table
-INSERT INTO ServiceDetails (serviceDetailID, serviceID, employeeID)
-VALUES
-    (36, (SELECT serviceID from NonmedicalServices where name = 'Breastfeeding Group'), (SELECT employeeID FROM NonmedicalEmployees WHERE firstName = "Lexie" AND lastName = "Grey")),
-    (37, (SELECT serviceID from NonmedicalServices where name = 'Lactation Counseling'), (SELECT employeeID FROM NonmedicalEmployees WHERE firstName = "Jackson" AND lastName = "Avery" )),
-    (38, (SELECT serviceID from NonmedicalServices where name = 'Housing Assistance'), (SELECT employeeID FROM NonmedicalEmployees WHERE firstName = 'George' AND lastName = 'O''Malley')),
-    (39, (SELECT serviceID from NonmedicalServices where name = 'Prenatal Nutrition'), (SELECT employeeID FROM NonmedicalEmployees WHERE firstName =  "Jo" AND lastName = "Wilson")),
-    (40, (SELECT serviceID from NonmedicalServices where name = 'Gestational Diabetes Nutrition'), (SELECT employeeID FROM NonmedicalEmployees WHERE firstName =  "Jo" AND lastName = "Wilson"));
 
 -- Insert data into the ServiceHistories table
-INSERT INTO ServiceHistories (serviceHistoryID, clientID, serviceDetailID, date)
+INSERT INTO ServiceHistories (serviceHistoryID, clientID, serviceID, employeeID, date)
 VALUES
     (26, 
     (SELECT clientID FROM Clients WHERE firstName = "Jane" AND lastName = "Smith"), 
-    (SELECT serviceDetailID FROM NonmedicalServices 
-		INNER JOIN ServiceDetails ON NonmedicalServices.serviceID = ServiceDetails.serviceID
-		INNER JOIN NonmedicalEmployees ON ServiceDetails.employeeID = NonmedicalEmployees.employeeID 
-			WHERE NonmedicalServices.name = 'Breastfeeding Group' AND NonmedicalEmployees.firstName = 'Lexie' AND NonmedicalEmployees.lastName = 'Grey'), 
-    '2021-04-03'),
+    (SELECT serviceID FROM NonmedicalServices WHERE NonmedicalServices.name = 'Breastfeeding Group'),
+    (SELECT employeeID FROM NonmedicalEmployees WHERE NonmedicalEmployees.firstName = 'Lexie' AND NonmedicalEmployees.lastName = 'Grey'),
+	'2021-04-03'),
     (27, 
     (SELECT clientID FROM Clients WHERE firstName = "Katie" AND lastName = "Lee"), 
-    (SELECT serviceDetailID FROM NonmedicalServices 
-		INNER JOIN ServiceDetails ON NonmedicalServices.serviceID = ServiceDetails.serviceID
-		INNER JOIN NonmedicalEmployees ON ServiceDetails.employeeID = NonmedicalEmployees.employeeID 
-			WHERE NonmedicalServices.name = 'Lactation Counseling' AND NonmedicalEmployees.firstName = 'Jackson' AND NonmedicalEmployees.lastName = 'Avery'), 
+    (SELECT serviceID FROM NonmedicalServices WHERE NonmedicalServices.name = 'Lactation Counseling'),
+    (SELECT employeeID FROM NonmedicalEmployees WHERE NonmedicalEmployees.firstName = 'Jackson' AND NonmedicalEmployees.lastName = 'Avery'),
     '2021-03-29'),
     (28, 
     (SELECT clientID FROM Clients WHERE firstName = "Nicole" AND lastName = "Dicaprio"), 
-    (SELECT serviceDetailID FROM NonmedicalServices 
-		INNER JOIN ServiceDetails ON NonmedicalServices.serviceID = ServiceDetails.serviceID
-		INNER JOIN NonmedicalEmployees ON ServiceDetails.employeeID = NonmedicalEmployees.employeeID 
-			WHERE NonmedicalServices.name = 'Housing Assistance' AND NonmedicalEmployees.firstName = 'George' AND NonmedicalEmployees.lastName = 'O''Malley'), 
+    (SELECT serviceID FROM NonmedicalServices WHERE NonmedicalServices.name = 'Housing Assistance'),
+    (SELECT employeeID FROM NonmedicalEmployees WHERE NonmedicalEmployees.firstName = 'George' AND NonmedicalEmployees.lastName = 'O''Malley'),
     '2021-04-05'),
     (29, 
     (SELECT clientID FROM Clients WHERE firstName = "Meredith" AND lastName = "Grey"), 
-    (SELECT serviceDetailID FROM NonmedicalServices 
-		INNER JOIN ServiceDetails ON NonmedicalServices.serviceID = ServiceDetails.serviceID
-		INNER JOIN NonmedicalEmployees ON ServiceDetails.employeeID = NonmedicalEmployees.employeeID 
-			WHERE NonmedicalServices.name = 'Prenatal Nutrition' AND NonmedicalEmployees.firstName = 'Jo' AND NonmedicalEmployees.lastName = 'Wilson'), 
+    (SELECT serviceID FROM NonmedicalServices WHERE NonmedicalServices.name = 'Prenatal Nutrition'),
+    (SELECT employeeID FROM NonmedicalEmployees WHERE NonmedicalEmployees.firstName = 'Jo' AND NonmedicalEmployees.lastName = 'Wilson'), 
     '2021-04-12'),
     (30, 
     (SELECT clientID FROM Clients WHERE firstName = "Meredith" AND lastName = "Grey"), 
-    (SELECT serviceDetailID FROM NonmedicalServices 
-		INNER JOIN ServiceDetails ON NonmedicalServices.serviceID = ServiceDetails.serviceID
-		INNER JOIN NonmedicalEmployees ON ServiceDetails.employeeID = NonmedicalEmployees.employeeID 
-			WHERE NonmedicalServices.name = 'Gestational Diabetes Nutrition' AND NonmedicalEmployees.firstName = 'Jo' AND NonmedicalEmployees.lastName = 'Wilson'), 
+    (SELECT serviceID FROM NonmedicalServices WHERE NonmedicalServices.name = 'Gestational Diabetes Nutrition'),
+    (SELECT employeeID FROM NonmedicalEmployees WHERE NonmedicalEmployees.firstName = 'Jo' AND NonmedicalEmployees.lastName = 'Wilson'),
     '2021-04-13');
 
 
