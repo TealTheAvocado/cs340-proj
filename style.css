@@ -213,7 +213,7 @@ h1 {
 
   /*  ----- Table ----- */
 
-  table, th, td {
+    table, th, td {
     padding: 2%;
     margin:2%;
     background-color: var(--lightGreyhightlight);
@@ -223,17 +223,17 @@ h1 {
     border-collapse: collapse;
     /*flex-basis: auto;*/
     display:flex;
-    /*flex-direction: row;
-    flex-wrap: wrap;*/
-    /*flex: 1;*/
-    /*table-layout: auto;*/
-    /*width: 100%;*/
+    flex-direction: row;
+    flex-wrap: wrap;
+    flex-shrink: 2;
+    /*width: 100%;
+    table-layout: auto;*/
     }
 
-  th, td {
-    /*flex:1; */
+  /*th, td {
+    flex:1;
     flex-shrink: 2;
-  }
+  }*/
   
   
 /* Apply flex for large screens and revert to default for smaller screens */
