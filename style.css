@@ -218,9 +218,9 @@ h1 {
     margin:2%;
     background-color: var(--lightGreyhightlight);
     color: var(--textDarkGrey);
-    border:2px solid var(--textDarkGrey);
-    border-radius:5px 5px 5px 5px; 
-    border-collapse: collapse;
+    /*border:2px solid var(--textDarkGrey);*/
+    /*border-radius:5px 5px 5px 5px;*/
+    /*border-collapse: collapse;*/
     /*flex-basis: auto;*/
     display:flex;
     flex-direction: row;
@@ -230,10 +230,15 @@ h1 {
     table-layout: auto;*/
     }
 
-  /*th, td {
-    flex:1;
+  
+  th, td {
+    border-bottom: 1px solid var(--textDarkGrey);
+    /*flex:1;
     flex-shrink: 2;
   }*/
+
+  tr:hover {
+    background-color: var(--accentYellow);}
   
   
 /* Apply flex for large screens and revert to default for smaller screens */
