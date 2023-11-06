@@ -228,6 +228,17 @@ th, td {
 
 tr:hover {background-color: var(--accentYellow);
          }  
+.browseTable {
+  width: 100%;
+  display: flex;
+  th, td {
+  padding: 1%;
+  text-align: left;
+  border-bottom: 1px solid var(--textDarkGrey);
+  }
+  tr:hover {background-color: var(--accentYellow);
+         }
+}
   
 /* OLD code
   table {
