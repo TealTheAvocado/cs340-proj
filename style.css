@@ -253,8 +253,8 @@ input[type=date] {
 }
 
   /*  ----- Table ----- */
-table {
-	  border-collapse: collapse; 
+ table {
+	  /*border-collapse: collapse;*/
 	  display: flex;
 	  width: 100%;
 	  overflow-x: auto;
@@ -265,8 +265,8 @@ table {
 	  padding: 8px; 
 	  border-bottom: 1px solid var(--textDarkGrey);
 	  text-align: left;
-	  flex: 1; /* Allow columns to share available space equally */
-	  flex-shrink: 1; 	  
+	  /*flex: 1; 
+	  flex-shrink: 1;*/ 	  
   }	
 
 tr:hover {
