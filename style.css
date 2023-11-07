@@ -230,6 +230,7 @@ input, select {
 	font-weight: bold;
 	cursor: pointer;
 	float: right;
+	width: 16px;
 	margin-left: 10 px;
 	margin-right: 10px;
 	margin-top: 10px;
