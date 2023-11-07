@@ -197,12 +197,13 @@ form {
 	font-size: 100%;
 	color:var(--textDarkGrey);
 	padding:2%;
+	border: none;
 	box-sizing: border-box;
 }
 fieldset {
-  	border: 2px solid var(--textDarkGrey);
+  	/*border: 2px solid var(--textDarkGrey);*/
   	background-color: #0066ff70;
-  	border-radius:5px 5px 5px 5px;
+  	/*border-radius:5px 5px 5px 5px;*/
   	padding:2%;
 	margin: 10px;
 	/*width: 100%*/
@@ -218,6 +219,8 @@ label {
 	white-space: nowrap;
 }
 input, select {
+	border: 2px solid var(--textDarkGrey);
+	border-radius:5px 5px 5px 5px;
 	width: 100%;
 	padding: 12px 14px;
 	margin: 8px;
