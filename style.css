@@ -205,7 +205,7 @@ fieldset {
   	border-radius:5px 5px 5px 5px;
   	padding:2%;
 	margin: 10px;
-	width: 100%
+	/*width: 100%*/
   }
 legend {
   	padding: 5px 10px;
@@ -218,7 +218,7 @@ label {
 	white-space: nowrap;
 }
 input, select {
-	width: 100%;
+	/*width: 100%;*/
 	padding: 12px 14px;
 	margin: 8px;
 }
@@ -261,6 +261,8 @@ input[type=date] {
 	  width: 100%;
 	  overflow-x: auto;
 	  padding: 0 1%;
+	 margin-left: auto;
+	 margin-right: auto;
   }
 
   th, td {
