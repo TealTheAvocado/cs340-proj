@@ -113,10 +113,11 @@
   table {
 	  border-collapse: collapse; 
 	  display: flex;
-	  width: 100%
+	  width: 100%;
+	  overflow-x: auto;
   }
   th, td {
-	  padding: 10px; 
+	  padding: 1%; 
 	  border-bottom: 1px solid var(--textDarkGrey);
 	  text-align: left
 	  
@@ -125,6 +126,15 @@ tr:hover {
     background-color: var(--lightGreyhightlight); /* Updated background color */
     color: black; /* Updated text color */
   }
+/* set first three columns fixed width, overflow columns scroll*/
+table th:first-child,
+table td:first-child,
+table th:nth-child(2),
+table td:nth-child(2),
+table th:nth-child(3),
+table td:nth-child(3) {
+  min-width: 150px; /*may need to adjust*/
+}
 </style>
 <table>
   <tr>
