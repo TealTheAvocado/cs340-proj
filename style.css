@@ -202,6 +202,7 @@ form {
 }
 fieldset {
   	/*border: 2px solid var(--textDarkGrey);*/
+	border: none;
   	background-color: #0066ff70;
   	/*border-radius:5px 5px 5px 5px;*/
   	padding:2%;
