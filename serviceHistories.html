@@ -211,9 +211,10 @@ form, button, input, select, textarea {
 	color:var(--textDarkGrey);
 	width: 90%;
 	padding:2%;
+	box-sizing: border-box;
 }
 fieldset {
-  	border: 3px double var(--textDarkGrey);
+  	border: 3px single var(--textDarkGrey);
   	background-color: var(--siteHeadBlue);
   	border-radius:5px 5px 5px 5px;
   	padding:2%;
@@ -238,8 +239,9 @@ label {
 	font-weight: bold;
 	cursor: pointer;
 	float: right;
+	margin: 10 px;
 }
-btn:hover {
+.btn:hover {
 	background-color: var(--navigationBarBlue);
 	color: white;
   }	
@@ -252,6 +254,10 @@ textarea::placeholder {
 :focus{
   background-color: var(--navigationBarBlue);
   color: white;
+}
+select {
+  width: 100%;
+  padding: 16px 20px;
 }
 </style>
     <form method="POST" id="addServiceHistory">
