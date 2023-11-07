@@ -103,7 +103,7 @@
 	</p>
 <p><a href="#" onClick="showAll()">Display all forms</a> </p>
 <p><a href="#" onClick="newAppointmentHistory()">New</a> </p>
-<table border="1" cellpadding="5">
+<table>
   <tr>
     <th>History ID</th> <!-- apptHistoryID -->
     <th>Client First Name</th> <!-- instead of using clientID, use Clients.firstName --> 
@@ -189,7 +189,7 @@
                 </select>
             <label> date </label> <input type="date" name="date">
       </fieldset>
-          <input class="btn" type="submit" id="addappointmentHistory" value="Add Appointment to History">
+          <input class="btn" type="submit" id="addappointmentHistory" value="Add">
           <input class="btn" type="button" value="Cancel" onClick="browseAppointmentHistory()">
   </form> 
 </article><!-- insert -->
@@ -198,7 +198,7 @@
         <legend><strong>Update Appointment History</strong></legend>
             <fieldset class="fields">
             <input type="hidden" name="apptHistoryID" id="updateappointmentHistory" value="31">
-            <label> ID: </label> 31
+            <p><label> ID: </label> 31</p>
             <label> Client </label> <select name="client">
                 <option value="0">&nbsp;</option>
                 <option value="1">Jane Smith</option>
@@ -217,7 +217,7 @@
             </select>
             <label> date </label> <input type="date" name="date" value = "04-03-2021">
       </fieldset>
-          <input class="btn" type="submit" id="UpdateSaveAppointmentHistory" value="Save Update to Appointment History">
+          <input class="btn" type="submit" id="UpdateSaveAppointmentHistory" value="Save Update">
           <input class="btn" type="button" value="Cancel" onClick="browseAppointmentHistory()">
   </form> 
 </article>  <!-- update -->
@@ -232,7 +232,7 @@
                 <label> <strong>Appointment:</strong> </label> 8 wk prenatal - Stevens
                 <label> <strong>Date:</strong> </label> 04-03-2021
       </fieldset>
-      <input class="btn" type="submit" id="deleteApppointmentHistory" value="Delete Appointment History">
+      <input class="btn" type="submit" id="deleteApppointmentHistory" value="Delete">
             <input class="btn" type="button" value="Cancel" onClick="browseAppointmentHistory()">
     </form> 
   </article><!-- delete -->
