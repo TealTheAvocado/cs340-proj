@@ -100,7 +100,7 @@
         <p>Seattle Prenatal offers expert, personalized perinatal care to all clients. Browse the table below to review, add, and edit current perinatal appointments.  
         </p>
 <p><a href="#" onClick="showAll()">Display all forms</a> </p>
-<table border="1" cellpadding="5">
+<table>
   <tr>
     <th><a href="#" onClick="newPerinatalAppointment()">New</a></th>
     <th>ID</th> <!-- perinatalApptID -->
@@ -153,7 +153,7 @@
             <label> Billing Code </label> <input type="text" name="billingCode">
             <label> Description </label> <input type="text" name="description">
       </fieldset>
-          <input class="btn" type="submit" id="addperinatalAppointment" value="Add Perinatal Appontment">
+          <input class="btn" type="submit" id="addperinatalAppointment" value="Add">
           <input class="btn" type="button" value="Cancel" onClick="browsePerinatalAppointments()">
   </form> 
 </article><!-- insert -->
@@ -163,12 +163,12 @@
         <legend><strong>Update Perinatal Appointment</strong></legend>
           <fieldset class="fields">
           <input type="hidden" name="perinatalApptID" id="updatePerinatalApptID" value="16">
-          <label> ID: </label> 16
+          <p><label> ID: </label> 16 </p>
             <label> Name </label> <input type="text" name="name" value="8 wk prenatal">
             <label> Billing Code </label> <input type="text" name="billingCode" value="1256-7">
             <label> Description </label> <input type="text" name="description" value="8 week prenatal visit">
       </fieldset>
-          <input class="btn" type="submit" id="UpdateSavePerinatalAppointment" value="Save Update Perinatal Appointment">
+          <input class="btn" type="submit" id="UpdateSavePerinatalAppointment" value="Save Update">
           <input class="btn" type="button" value="Cancel" onClick="browsePerinatalAppointments()">
   </form> 
 </article><!-- update -->
