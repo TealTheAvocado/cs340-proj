@@ -241,7 +241,7 @@ tr:hover {background-color: var(--accentYellow);
 }*/
 
 
-main section article table.browseTable {
+table.browseTable {
   border-collapse: collapse;
   width: 100%;
   display: flex;
