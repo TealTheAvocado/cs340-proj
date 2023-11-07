@@ -101,7 +101,7 @@
 <article id="browse">
 <p>Seattle Prenatal employs a diverse group of physicians, nurse practitioners, and clinical nurse midwives who are committed to providing the best evidence-based, holistic medical care to pregnant women. Browse the table below to review, add, edit, and delete our current providers. </p>
 <p><a href="#" onClick="showAll()">Display all forms</a> </p>
-<table border="1" cellpadding="5">
+<table>
   <tr>
     <th><a href="#" onClick="newProvider()">New</a></th>
     <th>ID</th> <!-- providerID -->
@@ -164,7 +164,7 @@
                 <option value="2">Nurse Practitioner</option>
                 </select>
       </fieldset>
-          <input class="btn" type="submit" id="addProvider" value="Add Provider">
+          <input class="btn" type="submit" id="addProvider" value="Add">
           <input class="btn" type="button" value="Cancel" onClick="browseProviders()">
 	</form> 
 </article><!-- insert -->
@@ -174,7 +174,7 @@
         <legend><strong>Update Provider</strong></legend>
           <fieldset class="fields">
           <input type="hidden" name="providerID" id="updateproviderID" value="6">
-          <label> ID: </label> 6
+          <p><label> ID: </label> 6 </p>
             <label> First Name </label> <input type="text" name="firstName" value="Mark">
             <label> Last Name </label> <input type="text" name="lastName" value="Sloan">
             <label> Title </label> <select name="title">
@@ -183,7 +183,7 @@
                 <option value="2">Nurse Practitioner</option>
                 </select>
       </fieldset>
-          <input class="btn" type="submit" id="UpdateSaveProvider" value="Save Update Provider">
+          <input class="btn" type="submit" id="UpdateSaveProvider" value="Save Update">
           <input class="btn" type="button" value="Cancel" onClick="browseProviders()">
 	</form> 
 <!-- update -->
@@ -199,7 +199,7 @@
             <label> <strong>Name</strong> </label> Mark Sloan
             
     </fieldset>
-    <input class="btn" type="submit" id="DeleteProvider" value="Delete Provider">
+    <input class="btn" type="submit" id="DeleteProvider" value="Delete">
           <input class="btn" type="button" value="Cancel" onClick="browseProviders()">
   </form> 
 <!-- delete -->
