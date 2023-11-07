@@ -38,31 +38,22 @@ CREATE TABLE PerinatalAppointments (
     PRIMARY KEY (perinatalApptID)
 );
 
--- Drop and create the AppointmentDetails table
-DROP TABLE IF EXISTS AppointmentDetails;
-CREATE TABLE AppointmentDetails (
-    apptDetailID INT NOT NULL AUTO_INCREMENT,
-    perinatalApptID INT,
-    providerID INT,
-    PRIMARY KEY (apptDetailID),
-    FOREIGN KEY (perinatalApptID) REFERENCES PerinatalAppointments(perinatalApptID)
-    ON DELETE RESTRICT,
-    FOREIGN KEY (providerID) REFERENCES Providers(providerID)
-    ON DELETE SET NULL
-);
 
 -- Drop and create the AppointmentHistories table
 DROP TABLE IF EXISTS AppointmentHistories;
 CREATE TABLE AppointmentHistories (
     apptHistoryID INT NOT NULL AUTO_INCREMENT,
     clientID INT NOT NULL,
-    apptDetailID INT,
+    perinatalApptID INT NOT NULL,
+	providerID INT,
     date DATE NOT NULL,
     PRIMARY KEY (apptHistoryID),
     FOREIGN KEY (clientID) REFERENCES Clients(clientID)
     ON DELETE CASCADE,
-    FOREIGN KEY (apptDetailID) REFERENCES AppointmentDetails(apptDetailID)
-    ON DELETE RESTRICT
+    FOREIGN KEY (perinatalApptID) REFERENCES PerinatalAppointments(perinatalApptID)
+    ON DELETE RESTRICT,
+    FOREIGN KEY (providerID) REFERENCES Providers(providerID) 
+    ON DELETE SET NULL
 );
 
 
@@ -130,53 +121,34 @@ VALUES
     (18, 'family planning', '12344-22', 'discuss planning for pregnancy'),
     (19, '24 wk prenatal', '13435-123', '24 week prenatal visit'),
     (20, '16 wk prenatal', '12343-12', '15 week prenatal visit');
-    
--- Insert data into the AppointmentDetails table
-INSERT INTO AppointmentDetails (apptDetailID, perinatalApptID, providerID)
-VALUES
-    (41, (SELECT perinatalApptID FROM PerinatalAppointments WHERE name ='8 wk prenatal'), (SELECT providerID FROM Providers WHERE firstName = "Izzie" AND lastName = "Stevens")),
-    (42, (SELECT perinatalApptID FROM PerinatalAppointments WHERE name ='6 wk postpartum'), (SELECT providerID FROM Providers WHERE firstName = "Izzie" AND lastName = "Stevens")),
-    (43, (SELECT perinatalApptID FROM PerinatalAppointments WHERE name ='family planning'), (SELECT providerID FROM Providers WHERE firstName = "Callie" AND lastName = "Torres")),
-    (44, (SELECT perinatalApptID FROM PerinatalAppointments WHERE name ='24 wk prenatal'), (SELECT providerID FROM Providers WHERE firstName = "Mark" AND lastName = "Sloan")),
-    (45, (SELECT perinatalApptID FROM PerinatalAppointments WHERE name ='16 wk prenatal'), (SELECT providerID FROM Providers WHERE firstName = "Arizona" AND lastName = "Robbins"));
-    
+      
     -- Insert data into the AppointmentHistories table
-INSERT INTO AppointmentHistories (apptHistoryID, clientID, apptDetailID, date)
+INSERT INTO AppointmentHistories (apptHistoryID, clientID, perinatalApptID, providerID, date)
 VALUES
     (31, 
-    (SELECT clientID FROM Clients WHERE firstName = "Jane" AND lastName = "Smith"), 
-    (SELECT apptDetailID FROM PerinatalAppointments 
-		INNER JOIN AppointmentDetails ON PerinatalAppointments.perinatalApptID = AppointmentDetails.perinatalApptID
-		INNER JOIN Providers ON AppointmentDetails.providerID = Providers.providerID 
-			WHERE PerinatalAppointments.name = '8 wk prenatal' AND Providers.firstName = "Izzie" AND Providers.lastName = "Stevens"),
+    (SELECT clientID FROM Clients WHERE firstName = "Jane" AND lastName = "Smith"),
+    (SELECT perinatalApptID FROM PerinatalAppointments WHERE PerinatalAppointments.name = '8 wk prenatal'),
+    (SELECT providerID FROM Providers WHERE Providers.firstName = "Mark" AND Providers.lastName = "Sloan"),
 	'2021-04-03'),
     (32, 
     (SELECT clientID FROM Clients WHERE firstName = "Jane" AND lastName = "Smith"), 
-    (SELECT apptDetailID FROM PerinatalAppointments 
-		INNER JOIN AppointmentDetails ON PerinatalAppointments.perinatalApptID = AppointmentDetails.perinatalApptID
-		INNER JOIN Providers ON AppointmentDetails.providerID = Providers.providerID 
-			WHERE PerinatalAppointments.name = '6 wk postpartum' AND Providers.firstName = "Izzie" AND Providers.lastName = "Stevens"), 
+    (SELECT perinatalApptID FROM PerinatalAppointments WHERE PerinatalAppointments.name = '6 wk postpartum'),
+    (SELECT providerID FROM Providers WHERE Providers.firstName = "Miranda" AND Providers.lastName = "Bailey"),
     '2021-04-03'),
     (33, 
     (SELECT clientID FROM Clients WHERE firstName = "Katie" AND lastName = "Lee"), 
-    (SELECT apptDetailID FROM PerinatalAppointments 
-		INNER JOIN AppointmentDetails ON PerinatalAppointments.perinatalApptID = AppointmentDetails.perinatalApptID
-		INNER JOIN Providers ON AppointmentDetails.providerID = Providers.providerID 
-			WHERE PerinatalAppointments.name = 'family planning' AND Providers.firstName = 'Callie' AND Providers.lastName = 'Torres'), 
+    (SELECT perinatalApptID FROM PerinatalAppointments WHERE PerinatalAppointments.name = 'family planning'),
+    (SELECT providerID FROM Providers WHERE Providers.firstName = "Izzie" AND Providers.lastName = "Stevens"),
     '2021-03-29'),
     (34, 
     (SELECT clientID FROM Clients WHERE firstName = "Christina" AND lastName = "Yang"),
-	(SELECT apptDetailID FROM PerinatalAppointments 
-		INNER JOIN AppointmentDetails ON PerinatalAppointments.perinatalApptID = AppointmentDetails.perinatalApptID
-		INNER JOIN Providers ON AppointmentDetails.providerID = Providers.providerID 
-			WHERE PerinatalAppointments.name = '24 wk prenatal' AND Providers.firstName = 'Mark' AND Providers.lastName = 'Sloan'), 
+    (SELECT perinatalApptID FROM PerinatalAppointments WHERE PerinatalAppointments.name = '24 wk prenatal'),
+    (SELECT providerID FROM Providers WHERE Providers.firstName = "Callie" AND Providers.lastName = "Torres"),
     '2021-04-12'),
     (35, 
     (SELECT clientID FROM Clients WHERE firstName = "Nicole" AND lastName = "Dicaprio"), 
-    (SELECT apptDetailID FROM PerinatalAppointments 
-		INNER JOIN AppointmentDetails ON PerinatalAppointments.perinatalApptID = AppointmentDetails.perinatalApptID
-		INNER JOIN Providers ON AppointmentDetails.providerID = Providers.providerID 
-			WHERE PerinatalAppointments.name = '16 wk prenatal' AND Providers.firstName = 'Arizona' AND Providers.lastName = 'Robbins'), 
+    (SELECT perinatalApptID FROM PerinatalAppointments WHERE PerinatalAppointments.name = '16 wk prenatal'),
+    (SELECT providerID FROM Providers WHERE Providers.firstName = "Arizona" AND Providers.lastName = "Robbins"),
     '2021-04-05');
     
 -- Insert data into the NonmedicalEmployees table
