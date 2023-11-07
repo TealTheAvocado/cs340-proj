@@ -209,12 +209,11 @@ form, button, input, select, textarea {
 	font-family: inherit;
 	font-size: 100%;
 	color:var(--textDarkGrey);
-	width: 90%;
 	padding:2%;
 	box-sizing: border-box;
 }
 fieldset {
-  	border: 3px single var(--textDarkGrey);
+  	border: 3px solid var(--textDarkGrey);
   	background-color: var(--siteHeadBlue);
   	border-radius:5px 5px 5px 5px;
   	padding:2%;
@@ -229,7 +228,6 @@ legend {
 }
 label {
   display: inline-block;
-  font-size: 85%;
 }
 .btn {
 	background-color: var(--lightGreyhightlight);
@@ -239,7 +237,8 @@ label {
 	font-weight: bold;
 	cursor: pointer;
 	float: right;
-	margin: 10 px;
+	margin-left: 10 px;
+	margin-right: 10px;
 }
 .btn:hover {
 	background-color: var(--navigationBarBlue);
@@ -256,14 +255,16 @@ textarea::placeholder {
   color: white;
 }
 select {
-  width: 100%;
-  padding: 16px 20px;
+	width: 75%;
+	padding: 14px 16px;
+	margin: 8px;
+
 }
 </style>
     <form method="POST" id="addServiceHistory">
         <legend><strong>Add a Service to a Patient's History</strong></legend>
           <fieldset class="fields">
-            <label>Client Name</label><select name ="name">
+            <label>Client</label><select name ="name">
                 <option value="0">&nbsp;</option>
                 <option value="1">Jane Smith</option>
                 <option value="2">Katie Lee</option>
