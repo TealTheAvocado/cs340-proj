@@ -79,51 +79,29 @@ WHERE perinatalApptID= :appointment_ID_from_the_update_form;
 
 -- 4. Delete: To preserve patient histories, deletion of perinatal appointments is not allowed. 
 
--- Appointment Details Page
--- 1. Browse/Read: get all Appointment Details
--- for each Appointment Detail, list ID, perinatal appointment name, and concatenated provider first and last name 
-SELECT apptDetailID, PerinatalAppointments.name, CONCAT(Providers.firstName," ", Providers.lastName) AS Provider
-FROM PerinatalAppointments 
-INNER JOIN AppointmentDetails ON PerinatalAppointments.perinatalApptID = AppointmentDetails.perinatalApptID
-INNER JOIN Providers ON AppointmentDetails.providerID = Providers.providerID;
-
--- 2. Add/Create: add a new appointment detail 
--- create drop down for perinatal appointments, listing them by name
-SELECT perinatalapptID, name FROM PerinatalAppointments;
--- create drop down menu for providers, listing each provider by first name and last name
-SELECT providerID, CONCAT(firstName, " ", lastName) AS Provider FROM Providers;
--- insert new perinatal Appointment Detail
-INSERT INTO AppointmentDetails 
-(perinatalApptID, providerID) 
-VALUES 
-(:appointment_ID_from_droptdownInput, :provider_ID_sfrom_dropdownInput);
-
--- 3. Edit/Update: To preserve patient histories, editing/updating appointment detials is not allowed
-
--- 4. Delete: To preserve patient histories, deleting appointment details is not allowed
-
 -- Appointment Histories Page
 -- 1. Browse/Read: get all Appointment Histories
 -- for each Appointment History, list apptHistoryID, clients first name and last name, perinatal appointment name, providers first and last name concatenated and date
-SELECT AppointmentHistories.apptHistoryID, Clients.firstName, Clients.lastName, PerinatalAppointments.name, CONCAT(Providers.firstName," ", Providers.lastName) AS Provider, date 
+SELECT AppointmentHistories.apptHistoryID, Clients.firstName, Clients.lastName, PerinatalAppointments.name AS Appointment, CONCAT(Providers.firstName," ", Providers.lastName) AS Provider, date 
 FROM PerinatalAppointments
-INNER JOIN AppointmentHistories ON PerinatalAppointments.perinatalApptID = AppointmentDetails.perinatalApptID
-INNER JOIN Providers ON AppointmentDetails.providerID = Providers.providerID
+INNER JOIN AppointmentHistories ON PerinatalAppointments.perinatalApptID = AppointmentHistories.perinatalApptID
+INNER JOIN Providers ON AppointmentHistories.providerID = Providers.providerID
 INNER JOIN Clients ON AppointmentHistories.clientID = Clients.clientID;
+
 
 -- 2. Add/Create: add a new appointment history event
 -- Create drop down for client, listing each client by id and first and last name
 SELECT clientID, CONCAT(firstName, " ", lastName) as client 
 FROM Clients;
--- Create a drop down for appointment detail, listing each detail by appointment name and provider
-SELECT perinatalApptID, CONCAT(PerinatalAppointments.name, " - ", Providers.firstName," ", Providers.lastName) AS AppointmentDetail
-FROM PerinatalAppointments 
+-- Create a drop down for appointment, listing each by appointment name 
+SELECT perinatalApptID, PerinatalAppointments.name AS Appointment
+FROM PerinatalAppointments;
 -- Create a provider drop down, listing each by first name and last name
 SELECT providerID, CONCAT(Providers.firstName," ", Providers.lastName) as Provider 
 FROM Providers;
 -- insert new appointment history
 INSERT INTO AppointmentHistories
-(perinatalApptID, clientID, provuderID, date) 
+(perinatalApptID, clientID, providerID, date) 
 VALUES 
 (:perinatal_appt_ID_from_dropdownInput, :client_ID_from_dropdownInput, :provider_ID_from_dropdownInput, :dateInput);
 
@@ -131,6 +109,15 @@ VALUES
 -- get a single appointment history event's data for the Update Appointment Histories form
 SELECT apptHistoryID, clientID, perinatalApptID, providerID, date FROM AppointmentHistories
 WHERE apptHistoryID = :appointment_history_ID_selected_from_browse_appointment_history_page;
+-- Create a drop down for appointment, listing each by appointment name 
+SELECT perinatalApptID, PerinatalAppointments.name AS Appointment
+FROM PerinatalAppointments;
+-- Create a provider drop down, listing each by first name and last name
+SELECT providerID, CONCAT(Providers.firstName," ", Providers.lastName) as Provider 
+FROM Providers;
+-- update appointment history data based on submission of the Update Services History form 
+UPDATE AppointmentHistories SET clientID = :client_ID_selected_from_dropdown, perinatalApptID = :perinatalAppt_ID_selected_from_dropdown, providerID = :provider_ID_selected_from_dropdown, date= :dateInput
+WHERE appointmentHistoryID= :appointment_ID_from_the_update_form;
 
 -- 4. Delete: remove an appointment history event
 DELETE FROM AppointmentHistories
