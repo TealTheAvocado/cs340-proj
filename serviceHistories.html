@@ -106,29 +106,6 @@
 </p>
 <p><a href="#" onClick="showAll()">Display all forms</a> </p>
 <p><a href="#" onClick="newServiceHistory()">New</a></p>
-<style>
-:root {
-  --textDarkGrey: #666666;
-}
-  table {
-	  border-collapse: collapse; 
-	  display: flex;
-	  width: 100%;
-	  overflow-x: auto;
-	  padding: 0 1%;
-  }
-  th, td {
-	  padding: 8px; 
-	  border-bottom: 1px solid var(--textDarkGrey);
-	  text-align: left;
-	  flex: 1; /* Allow columns to share available space equally */
-	  flex-shrink: 1; 	  
-  }	
-tr:hover {
-    background-color: var(--lightGreyhightlight); /* Updated background color */
-    color: black; /* Updated text color */
-  }
-</style>
 <table>
   <tr>
     <th>History ID</th> <!-- serviceHistoryI D-->
@@ -194,78 +171,6 @@ tr:hover {
 </article>
 <!-- browse -->
 <article id="insert">
-<style>
-:root {
-	--navigationBarBlue:#0066FF;
-	--siteHeadBlue: #0066ff70;
-	--white:#FFFFFF;
-	--textDarkGrey:#666666;
-	--lightGreyhightlight:#66666650;
-	--lightBackground:#F2F2F2;
-	--font-hover-color: white;
-  }
-}
-form {
-	font-family: inherit;
-	font-size: 100%;
-	color:var(--textDarkGrey);
-	padding:2%;
-	box-sizing: border-box;
-
-}
-fieldset {
-  	border: 2px solid var(--textDarkGrey);
-  	background-color: var(--siteHeadBlue);
-  	border-radius:5px 5px 5px 5px;
-  	padding:2%;
-	margin: 10px;
-	/*width: 100%*/
-  }
-legend {
-  	padding: 5px 10px;
-    	font-weight:bold;
-    	font-size: 120%; 
-}
-}
-label {
-	/*display: inline-block;*/
-	white-space: nowrap;
-}
-.btn {
-	background-color: var(--lightGreyhightlight);
-	color: var(black);
-	padding:8px 8px;
-	text-align: center;
-	font-weight: bold;
-	cursor: pointer;
-	float: right;
-	margin-left: 10 px;
-	margin-right: 10px;
-}
-.btn:hover {
-	background-color: var(--navigationBarBlue);
-	color: white;
-  }	
-input::placeholder {
-  color:var(--lightGreyhightlight);
-}
-textarea::placeholder {
-  color: var(--lightGreyhightlight);
-}
-:focus{
-  background-color: var(--navigationBarBlue);
-  color: white;
-}
-select {
-	width: 100%;
-	padding: 12px 14px;
-	margin: 8px;
-}
-input[type=date] {
-	padding: 12px 14px;
-	margin: 8px;
-}
-</style>
     <form method="POST" id="addServiceHistory">
         <legend><strong>Add a Service to a Patient's History</strong></legend>
           <fieldset class="fields">
@@ -295,7 +200,7 @@ input[type=date] {
                 </select>
             <label> Date </label> <input type="date" name="date" placeholder="mm-dd-yyyy">
       </fieldset>
-          <input class="btn" type="submit" id="addappointmentHistory" value="Add Appointment to History">
+          <input class="btn" type="submit" id="addappointmentHistory" value="Add">
           <input class="btn" type="button" value="Cancel" onClick="browseServiceHistory()">
   </form> 
 </article><!-- insert -->
@@ -332,7 +237,7 @@ input[type=date] {
             </select>
             <label> Date </label> <input type="date" name="date" value = "04-03-2021">
       </fieldset>
-          <input class="btn" type="submit" id="UpdateSaveServiceHistory" value="Save Update to Service History">
+          <input class="btn" type="submit" id="UpdateSaveServiceHistory" value="Save Update">
           <input class="btn" type="button" value="Cancel" onClick="browseServiceHistory()">
   </form> 
 </article><!-- update -->
@@ -348,7 +253,7 @@ input[type=date] {
 		<label> <strong>Employee:</strong> </label>Lexie Grey
                 <label> <strong>Date:</strong> </label> 04-03-2021
       </fieldset>
-      <input class="btn" type="submit" id="deleteserviceHistory" value="Delete Service History">
+      <input class="btn" type="submit" id="deleteserviceHistory" value="Delete">
             <input class="btn" type="button" value="Cancel" onClick="browseServiceHistory()">
     </form> 
 <!-- delete -->
