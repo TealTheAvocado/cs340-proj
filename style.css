@@ -240,22 +240,24 @@ tr:hover {background-color: var(--accentYellow);
          }
 }*/
 
-main section article table {
+
+main section article table.browseTable {
   border-collapse: collapse;
   width: 100%;
   display: flex;
-  /* Add your table styles here */
+  /* Additional specifications for th and td elements */
+  th, td {
+    padding: 15px; 
+    text-align: left; 
+    border-bottom: 2px solid var(--textDarkGrey); 
+  }
+  /* Specification for tr elements on hover */
+  tr:hover {
+    background-color: var(--lightGreyhightlight); 
+    color: black; 
+  }
 }
 
-main section article th, main section article td {
-  padding: 1%;
-  text-align: left;
-  border-bottom: 1px solid var(--textDarkGrey);
-}
-
-main section article tr:hover {
-  background-color: var(--accentYellow);
-}
   
 /* OLD code
   table {
