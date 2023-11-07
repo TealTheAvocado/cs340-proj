@@ -218,7 +218,7 @@ label {
 	white-space: nowrap;
 }
 input, select {
-	/*width: 100%;*/
+	width: 100%;
 	padding: 12px 14px;
 	margin: 8px;
 }
