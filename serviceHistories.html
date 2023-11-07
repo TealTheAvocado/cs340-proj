@@ -205,11 +205,12 @@ tr:hover {
 	--font-hover-color: white;
   }
 }
-form, button, input, select, textarea {
+form {
 	font-family: inherit;
 	font-size: 100%;
 	color:var(--textDarkGrey);
 	padding:2%;
+	width: 75%
 	box-sizing: border-box;
 }
 fieldset {
@@ -254,9 +255,9 @@ textarea::placeholder {
   background-color: var(--navigationBarBlue);
   color: white;
 }
-select {
-	width: 75%;
-	padding: 14px 16px;
+input[type=date], select {
+	width: 100%;
+	padding: 12px 14px;
 	margin: 8px;
 
 }
