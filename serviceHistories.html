@@ -110,7 +110,6 @@
 :root {
   --textDarkGrey: #666666;
 }
-
   table {
 	  border-collapse: collapse; 
 	  display: flex;
@@ -119,7 +118,7 @@
 	  padding: 0 1%;
   }
   th, td {
-	  padding: 1%; 
+	  padding: 8px; 
 	  border-bottom: 1px solid var(--textDarkGrey);
 	  text-align: left;
 	  flex: 1; /* Allow columns to share available space equally */
@@ -130,13 +129,26 @@ tr:hover {
     background-color: var(--lightGreyhightlight); /* Updated background color */
     color: black; /* Updated text color */
   }
+.headcol {
+	position:absolute;
+	width: 5 em;
+	left: 0;
+	top: auto;
+	border-top-width: 2px;
+	martgin-top:-1px
+}
+headcol:before{
+	content: 'Row ';
+}
+	
+	
 	
 </style>
 <table>
   <tr>
-    <th>History ID</th> <!-- serviceHistoryI D-->
-    <th>Client First Name</th> <!-- instead of using clientID, use Clients.firstName --> 
-    <th>Client Last Name</th> <!-- instead of using clientID, use Clients.lastName --> 
+    <th class="headcol">History ID</th> <!-- serviceHistoryI D-->
+    <th class="headcol">Client First Name</th> <!-- instead of using clientID, use Clients.firstName --> 
+    <th class="headcol">Client Last Name</th> <!-- instead of using clientID, use Clients.lastName --> 
     <th>Service</th> <!-- instead of using serviceID, use NonmedicalServices.name --> 
     <th>Employee</th> <!-- instead of using employeeID using concatenated first and last name --> 
     <th>Date</th>
