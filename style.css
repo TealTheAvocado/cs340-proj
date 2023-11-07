@@ -194,10 +194,10 @@ input[type="text"]
 form {
 	font-family: inherit;
 	font-size: 100%;
+	background-color: var(--siteHeadBlue);
 	color:var(--textDarkGrey);
 	padding:2%;
 	box-sizing: border-box;
-
 }
 fieldset {
   	border: 2px solid var(--textDarkGrey);
@@ -205,7 +205,7 @@ fieldset {
   	border-radius:5px 5px 5px 5px;
   	padding:2%;
 	margin: 10px;
-	/*width: 100%*/
+	width: 100%
   }
 legend {
   	padding: 5px 10px;
@@ -227,6 +227,7 @@ label {
 	float: right;
 	margin-left: 10 px;
 	margin-right: 10px;
+	margin-top: 10px;
 }
 .btn:hover {
 	background-color: var(--navigationBarBlue);
@@ -254,7 +255,7 @@ input[type=date] {
 
   /*  ----- Table ----- */
  table {
-	  /*border-collapse: collapse;*/
+	  border-collapse: collapse;
 	  display: flex;
 	  width: 100%;
 	  overflow-x: auto;
