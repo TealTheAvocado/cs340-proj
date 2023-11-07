@@ -214,7 +214,7 @@ h1 {
   /*  ----- Table ----- */
 
   /* verbadim W3 schools*/
-table {
+/*table {
   border-collapse: collapse;
   width: 100%;
   display: flex;
@@ -238,6 +238,23 @@ tr:hover {background-color: var(--accentYellow);
   }
   tr:hover {background-color: var(--accentYellow);
          }
+}*/
+
+main section article table {
+  border-collapse: collapse;
+  width: 100%;
+  display: flex;
+  /* Add your table styles here */
+}
+
+main section article th, main section article td {
+  padding: 1%;
+  text-align: left;
+  border-bottom: 1px solid var(--textDarkGrey);
+}
+
+main section article tr:hover {
+  background-color: var(--accentYellow);
 }
   
 /* OLD code
