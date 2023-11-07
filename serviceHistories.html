@@ -195,28 +195,40 @@ tr:hover {
 <!-- browse -->
 <article id="insert">
 <style>
+:root {
+	--navigationBarBlue:#0066FF;
+	--siteHeadBlue: #0066ff70;
+	--white:#FFFFFF;
+	--textDarkGrey:#666666;
+	--lightGreyhightlight:#66666650;
+	--lightBackground:#F2F2F2;
+	--font-hover-color: white;
+  }
+}
 form, button, input, select, textarea {
-  display: inline-block;
   font-family: inherit;
   font-size: 100%;
   color:var(--textDarkGrey);
   padding:2%
 }
 fieldset {
-  border: 3px double var(--textDarkGrey);
-  background-color: (var(--white));
-  border-radius:5px 5px 5px 5px;
-  padding:2%;
+  	border: 3px double var(--textDarkGrey);
+  	background-color: var(--white);
+  	border-radius:5px 5px 5px 5px;
+  	padding:2%;
+	margin: 10px;
+	width: 100%
   }
 legend {
-    font-weight:bold;
-    font-size: 120%;
+  	padding: 5px 10px;
+    	font-weight:bold;
+    	font-size: 120%; 
+}
 }
 label {
   display: block;
   font-size: 85%;
 }
-
 .btn {
   background-color: var(--lightGreyhightlight);
   color: var(black);
@@ -226,6 +238,10 @@ label {
   font-size: 100%;
   font-weight: bold;
 }
+btn:hover {
+	background-color: var(--navigationBarBlue);
+	color: white;
+  }	
 input::placeholder {
   color:var(--lightGreyhightlight);
 }
