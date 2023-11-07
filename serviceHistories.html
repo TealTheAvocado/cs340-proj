@@ -227,7 +227,8 @@ legend {
 }
 }
 label {
-  display: inline-block;
+	display: inline-block;
+	white-space: nowrap;
 }
 .btn {
 	background-color: var(--lightGreyhightlight);
@@ -299,9 +300,10 @@ input[type=date] {
 </article><!-- insert -->
 <article id="update">
     <form method="POST" id="updateAppointmentHistory">
-        <legend><strong>Update Appointment History</strong></legend>
-            <fieldset class="fields">
-            <label> ID: 31 </label> <input type="hidden" name="apptHistoryID" id="updateappointmentHistory" value="31">
+        <legend><strong>Update Appointment History ID: 31</strong></legend>
+        <fieldset class="fields">
+	<input type="hidden" name="apptHistoryID" id="updateappointmentHistory" value="31">
+            <label> ID: 31 </label>
             <label> Client </label> <select name="client">
                 <option value="0">&nbsp;</option>
                 <option value="1">Jane Smith</option>
