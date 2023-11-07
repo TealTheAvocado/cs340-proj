@@ -117,7 +117,7 @@ SELECT providerID, CONCAT(Providers.firstName," ", Providers.lastName) as Provid
 FROM Providers;
 -- update appointment history data based on submission of the Update Services History form 
 UPDATE AppointmentHistories SET clientID = :client_ID_selected_from_dropdown, perinatalApptID = :perinatalAppt_ID_selected_from_dropdown, providerID = :provider_ID_selected_from_dropdown, date= :dateInput
-WHERE appointmentHistoryID= :appointment_ID_from_the_update_form;
+WHERE apptHistoryID= :appointment_ID_from_the_update_form;
 
 -- 4. Delete: remove an appointment history event
 DELETE FROM AppointmentHistories
