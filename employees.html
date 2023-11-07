@@ -106,7 +106,7 @@
 <p>In order to provide comprehensive services to families, Seattle Prenatal relies on our talented and diverse group of employees. We are privileged to employ motivated and compassionate social workers, case managers, lactation consultants, counselors, health coaches, and nutritionists. Browse the table below to review, add, edit, or delete our current employees.  
 </p>
 <p><a href="#" onClick="showAll()">Display all forms</a> </p>
-<table border="1" cellpadding="5">
+<table>
   <tr>
     <th><a href="#" onClick="newEmployee()">New</a></th>
     <th>ID</th> <!-- employeeID -->
@@ -170,7 +170,7 @@
                 <option value="3">Social Worker</option>
                 </select>
       </fieldset>
-          <input class="btn" type="submit" id="addEmployee" value="Add Employee">
+          <input class="btn" type="submit" id="addEmployee" value="Add">
           <input class="btn" type="button" value="Cancel" onClick="browseEmployees()">
 	</form> 
 </article><!-- insert -->
@@ -179,7 +179,7 @@
         <legend><strong>Update Employee</strong></legend>
           <fieldset class="fields">
           <input type="hidden" name="employeeID" id="updateemployeeID" value="11">
-          <label> ID: </label> 11
+          <p><label> ID: </label> 11</p>
             <label> First Name </label> <input type="text" name="firstName" value="Lexie">
             <label> Last Name </label> <input type="text" name="lastName" value="Sloan">
             <label> Title </label> <select name="title">
@@ -189,7 +189,7 @@
                 <option value="3">Social Worker</option>
                 </select>
       </fieldset>
-          <input class="btn" type="submit" id="UpdateSaveEmployee" value="Save Update Employee">
+          <input class="btn" type="submit" id="UpdateSaveEmployee" value="Save Update">
           <input class="btn" type="button" value="Cancel" onClick="browseEmployees()">
 	</form> 
 </article><!-- update -->
@@ -203,7 +203,7 @@
             <label> <strong>Name</strong> </label> Lexie Grey
             
     </fieldset>
-    <input class="btn" type="submit" id="deleteEmployee" value="Delete Employee">
+    <input class="btn" type="submit" id="deleteEmployee" value="Delete">
           <input class="btn" type="button" value="Cancel" onClick="browseEmployees()">
   </form> 
 </article><!-- delete -->
