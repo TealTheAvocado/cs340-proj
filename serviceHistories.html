@@ -110,11 +110,17 @@
 :root {
   --textDarkGrey: #666666;
 }
+
+/* Wrapping container for the table to enable horizontal scrolling */
+.table-container {
+  overflow-x: auto;
+}
+
   table {
 	  border-collapse: collapse; 
 	  display: flex;
 	  width: 100%;
-	  overflow-x: auto;
+	  white-space: nowrap; 
   }
   th, td {
 	  padding: 1%; 
