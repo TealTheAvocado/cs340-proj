@@ -111,16 +111,11 @@
   --textDarkGrey: #666666;
 }
 
-/* Wrapping container for the table to enable horizontal scrolling */
-.table-container {
-  overflow-x: auto;
-}
-
   table {
 	  border-collapse: collapse; 
 	  display: flex;
 	  width: 100%;
-	  white-space: nowrap; 
+	  overflow-x: auto; 
   }
   th, td {
 	  padding: 1%; 
@@ -132,15 +127,7 @@ tr:hover {
     background-color: var(--lightGreyhightlight); /* Updated background color */
     color: black; /* Updated text color */
   }
-/* set first three columns fixed width, overflow columns scroll*/
-table th:first-child,
-table td:first-child,
-table th:nth-child(2),
-table td:nth-child(2),
-table th:nth-child(3),
-table td:nth-child(3) {
-  min-width: 100px; /*may need to adjust*/
-}
+	
 </style>
 <table>
   <tr>
