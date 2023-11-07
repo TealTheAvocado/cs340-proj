@@ -214,8 +214,13 @@ legend {
 }
 }
 label {
-	/*display: inline-block;*/
+	display: inline-block;
 	white-space: nowrap;
+}
+input, select {
+	width: 100%;
+	padding: 12px 14px;
+	margin: 8px;
 }
 .btn {
 	background-color: var(--lightGreyhightlight);
@@ -243,11 +248,7 @@ textarea::placeholder {
   background-color: var(--navigationBarBlue);
   color: white;
 }
-input, select {
-	width: 100%;
-	padding: 12px 14px;
-	margin: 8px;
-}
+
 input[type=date] {
 	padding: 12px 14px;
 	margin: 8px;
