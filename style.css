@@ -192,16 +192,16 @@ input[type="text"]
 
   /* ----- Forms ------*/
 form {
+	background-color: #0066ff70;
 	font-family: inherit;
 	font-size: 100%;
-	background-color: var(--siteHeadBlue);
 	color:var(--textDarkGrey);
 	padding:2%;
 	box-sizing: border-box;
 }
 fieldset {
   	border: 2px solid var(--textDarkGrey);
-  	background-color: var(--siteHeadBlue);
+  	background-color: #0066ff70;
   	border-radius:5px 5px 5px 5px;
   	padding:2%;
 	margin: 10px;
@@ -243,7 +243,7 @@ textarea::placeholder {
   background-color: var(--navigationBarBlue);
   color: white;
 }
-select {
+input, select {
 	width: 100%;
 	padding: 12px 14px;
 	margin: 8px;
