@@ -127,29 +127,29 @@ WHERE apptHistoryID = :appointment_history_ID_selected_from_browse_appointment_h
 -- Employee Page 
 -- 1. Browse/Read: get all employees
 -- for each provider, list ID, first name, last name, and title
-SELECT employeeID, firstName, lastName, title FROM Employees; 
+SELECT employeeID, firstName, lastName, title FROM NonmedicalEmployees; 
 
 -- 2. Add/Create an employee: 
 -- create dropdown for title
-SELECT DISTINCT title From Employees; 
+SELECT DISTINCT title From NonmedicalEmployees; 
 -- add new employee
-INSERT INTO Employees
+INSERT INTO NonmedicalEmployees
 (firstName, lastName, title) 
 VALUES 
 (:fnameInput, :lnameInput, :title_from_drowpdown_Input);
 
 -- 3. Edit/Update up employee:
 -- create dropdown for title
-SELECT DISTINCT title From Employees; 
+SELECT DISTINCT title From NonmedicalEmployees; 
 -- get a single employee's data for the Update Employee form
-SELECT employeeID, firstName, lastName, title FROM Employees
+SELECT employeeID, firstName, lastName, title FROM NonmedicalEmployees
 WHERE employeeID = :employee_ID_selected_from_browse_employee_page
 -- update an employee's data based on submission of the Update Employee form 
 UPDATE Employees SET firstName = :fnameInput, lastName= :lnameInput, title= :title_from_dropdown_input
 WHERE employeeID= :employee_ID_from_the_update_form;
 
 -- 4. Delete an employee:
-DELETE FROM Employees
+DELETE FROM NonmedicalEmployees
 WHERE employeeID = :employee_ID_selected_from_browse_employee_page;
 
 -- Nonmedical Services Page
