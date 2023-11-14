@@ -12,7 +12,7 @@ CREATE TABLE Providers (
     providerID INT NOT NULL AUTO_INCREMENT,
     firstName VARCHAR(45) NOT NULL,
     lastName VARCHAR(45) NOT NULL,
-    title VARCHAR(45),
+    title VARCHAR(45) NOT NULL,
     PRIMARY KEY (providerID)
 );
 
@@ -63,7 +63,7 @@ CREATE TABLE NonmedicalEmployees (
     employeeID INT NOT NULL AUTO_INCREMENT,
     firstName VARCHAR(45) NOT NULL,
     lastName VARCHAR(45) NOT NULL,
-    title VARCHAR(45),
+    title VARCHAR(45) NOT NULL,
     PRIMARY KEY (employeeID)
 );
 
