@@ -34,7 +34,7 @@ CREATE TABLE PerinatalAppointments (
     perinatalApptID INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
     billingCode VARCHAR(45) NOT NULL,
-    description VARCHAR(255),
+    description VARCHAR(255) NOT NULL,
     PRIMARY KEY (perinatalApptID)
 );
 
@@ -72,7 +72,7 @@ DROP TABLE IF EXISTS NonmedicalServices;
 CREATE TABLE NonmedicalServices (
     serviceID INT NOT NULL AUTO_INCREMENT,
     name VARCHAR(255) NOT NULL,
-    description VARCHAR(255),
+    description VARCHAR(255) NOT NULL,
     PRIMARY KEY (serviceID)
 );
 
