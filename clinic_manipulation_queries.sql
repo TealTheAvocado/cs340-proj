@@ -1,29 +1,30 @@
 -- Clent Page
 -- 1. Browse/Read: Get all Clients: 
 -- for each client, list clientID, firstName, lastName and Primary Provider 
-SELECT Clients.clientID, Clients.firstName, Clients.lastName, CONCAT(Providers.firstName," ", Providers.lastName) AS Provider 
-FROM Clients
-INNER JOIN Providers ON Clients.providerID = Providers.providerID;
+SELECT Clients.clientID AS ID, Clients.firstName AS FirstName, Clients.lastName AS LastName, IFNULL(CONCAT(Providers.firstName, ' ' ,Providers.lastName), 'Null') AS Provider 
+FROM Clients 
+LEFT JOIN Providers ON Clients.providerID = Providers.providerID;
+   
 
 -- 2. Add/Create a client: 
--- Get all Provider IDs, firstNames, lastNames to populate the Provider dropdown
-SELECT providerID, firstName, lastName FROM Providers;
--- add a new client 
-INSERT INTO Clients 
-(firstName, lastName, providerID) 
-VALUES 
-(:firstName, :lastName, :provider_id_from_dropdown_Input);
+-- get infor to create provider drop down menu
+SELECT providerID AS providerID, CONCAT(firstName, ' ' ,lastName) AS Provider FROM Providers;
 
--- 3. Edit/Update a client: 
+-- insert client into database
+INSERT INTO Clients (firstName, lastName, providerID) 
+VALUES (:firstName, :lastName, :provider_id_from_dropdown_Input);
+
+
+-- 3. Edit/Update a client:  Note this has not been implemented yet
 -- get a single client's data for the Update Client form 
-SELECT clientID, firstName, lastName, providerID FROM Clients
-WHERE clientID = :client_ID_selected_from_browse_client_page;
+-- SELECT clientID, firstName, lastName, providerID FROM Clients
+-- WHERE clientID = :client_ID_selected_from_browse_client_page;
 -- Get all Provider IDs, firstNames, lastNames to populate the Provider dropdown
-SELECT providerID, firstName, lastName FROM Providers;
+-- SELECT providerID, firstName, lastName FROM Providers;
 -- update a client's data based on submission of the Update Client form 
-UPDATE Clients SET firstName = :fnameInput, lastName= :lnameInput, 
-providerID = :provider_id_from_dropdown_Input
-WHERE clientID= :client_ID_from_the_update_form;
+-- UPDATE Clients SET firstName = :fnameInput, lastName= :lnameInput, 
+-- providerID = :provider_id_from_dropdown_Input
+-- WHERE clientID= :client_ID_from_the_update_form;
 
 -- 4. Delete a client:
 DELETE FROM Clients 
@@ -106,7 +107,7 @@ VALUES
 (:perinatal_appt_ID_from_dropdownInput, :client_ID_from_dropdownInput, :provider_ID_from_dropdownInput, :dateInput);
 
 -- 3. Edit/Update: At this time, the appointment and date can be updated from this page, but client cannot. 
--- get a single appointment history event's data for the Update Appointment Histories form
+--  get a single appointment history event's data for the Update Appointment Histories form
 SELECT apptHistoryID, clientID, perinatalApptID, providerID, date FROM AppointmentHistories
 WHERE apptHistoryID = :appointment_history_ID_selected_from_browse_appointment_history_page;
 -- Create a drop down for appointment, listing each by appointment name 
@@ -127,7 +128,7 @@ WHERE apptHistoryID = :appointment_history_ID_selected_from_browse_appointment_h
 -- Employee Page 
 -- 1. Browse/Read: get all employees
 -- for each provider, list ID, first name, last name, and title
-SELECT employeeID, firstName, lastName, title FROM NonmedicalEmployees; 
+ SELECT employeeID AS ID, firstName AS FirstName, lastName AS LastName, title AS Title FROM NonmedicalEmployees;
 
 -- 2. Add/Create an employee: 
 -- create dropdown for title
@@ -138,15 +139,15 @@ INSERT INTO NonmedicalEmployees
 VALUES 
 (:fnameInput, :lnameInput, :title_from_drowpdown_Input);
 
--- 3. Edit/Update up employee:
+-- 3. Edit/Update up employee -- not allowed at this time:
 -- create dropdown for title
-SELECT DISTINCT title From NonmedicalEmployees; 
+-- SELECT DISTINCT title From NonmedicalEmployees; 
 -- get a single employee's data for the Update Employee form
-SELECT employeeID, firstName, lastName, title FROM NonmedicalEmployees
-WHERE employeeID = :employee_ID_selected_from_browse_employee_page
+-- SELECT employeeID, firstName, lastName, title FROM NonmedicalEmployees
+-- WHERE employeeID = :employee_ID_selected_from_browse_employee_page
 -- update an employee's data based on submission of the Update Employee form 
-UPDATE Employees SET firstName = :fnameInput, lastName= :lnameInput, title= :title_from_dropdown_input
-WHERE employeeID= :employee_ID_from_the_update_form;
+-- UPDATE Employees SET firstName = :fnameInput, lastName= :lnameInput, title= :title_from_dropdown_input
+-- WHERE employeeID= :employee_ID_from_the_update_form;
 
 -- 4. Delete an employee:
 DELETE FROM NonmedicalEmployees
@@ -155,7 +156,7 @@ WHERE employeeID = :employee_ID_selected_from_browse_employee_page;
 -- Nonmedical Services Page
 -- 1. Browse/Read: get all Nonmedical Services
 -- for each service, list ID, name, and description
-SELECT ServceID, name, description FROM NonmedicalServices; 
+SELECT serviceID AS ID, name AS Name, description AS Description FROM NonmedicalServices; 
 
 -- 2. Add/Create: Create a new Service
 -- insert new nonmedical service 
@@ -164,28 +165,27 @@ INSERT INTO NonmedicalServices
 VALUES 
 (:nameInput, :descriptionInput);
 
--- 3.Edit/Update: Edit a service
+-- 3.Edit/Update: Edit a service at this time editing a service is not allowed. 
 -- get a single service's data for the Update Nonmedical Services form
-SELECT serviceID, name, description FROM NonmedicalServices
-WHERE serviceID = :service_ID_selected_from_browse_appointment_page;
+-- SELECT serviceID, name, description FROM NonmedicalServices
+-- WHERE serviceID = :service_ID_selected_from_browse_appointment_page;
 -- update a services data based on submission of the Update Nonmedical Services form 
-UPDATE NonmedicalServices SET name = :nameInput, description= :descriptionInput
-WHERE serviceID= :service_ID_from_the_update_form;
+-- UPDATE NonmedicalServices SET name = :nameInput, description= :descriptionInput
+-- WHERE serviceID= :service_ID_from_the_update_form;
 
 -- 4. Delete: To preserve patient histories, deletion of nonmedical services is not allowed. 
 
 -- Service Histories Page
 -- 1. Browse/Read: get all Service Histories
 -- for each Service History, list serviceHistoryID, clients first name and last name, service name, providers first and last name concatenated and date
-SELECT ServiceHistories.serviceHistoryID, Clients.firstName, Clients.lastName, NonmedicalServices.name AS Service, CONCAT(NonmedicalEmployees.firstName," ", NonmedicalEmployees.lastName) AS Employee, date 
-FROM NonmedicalServices
-INNER JOIN ServiceHistories ON NonmedicalServices.serviceID = ServiceHistories.serviceID
-INNER JOIN NonmedicalEmployees ON ServiceHistories.employeeID = NonmedicalEmployees.employeeID
-INNER JOIN Clients ON ServiceHistories.clientID = Clients.clientID;
+SELECT serviceHistoryID AS ID, CONCAT(Clients.firstName, ' ', Clients.lastName) AS Client, NonmedicalServices.name AS Service, IFNULL(CONCAT(NonmedicalEmployees.firstName, ' ', NonmedicalEmployees.lastName), 'Null') AS Employee, DATE_FORMAT(ServiceHistories.date, '%m/%d/%y') AS Date FROM NonmedicalServices 
+INNER JOIN ServiceHistories ON NonmedicalServices.serviceID = ServiceHistories.serviceID 
+LEFT JOIN NonmedicalEmployees ON ServiceHistories.employeeID = NonmedicalEmployees.employeeID 
+INNER JOIN Clients ON ServiceHistories.clientID = Clients.clientID;               
 
 -- 2. Add/Create: add a new service history event
 -- Create drop down for client, listing each client by id and first and last name
-SELECT clientID, CONCAT(firstName, " ", lastName) as client 
+SELECT clientID, CONCAT(firstName, " ", lastName) as Client 
 FROM Clients;
 -- Create a drop down for service, listing each by name
 SELECT serviceID, NonmedicalServices.name AS Service
@@ -199,11 +199,13 @@ INSERT INTO ServiceHistories
 VALUES 
 (:client_ID_from_dropdownInput, :service_ID_from_dropdownInput, :employee_ID_from_dropdownInput, :dateInput);
 
--- 3. Edit/Update: At this time, the service type and date can be updated, but client cannot. 
+-- 3. Edit/Update: At this time, all details of the service history can be updated 
 -- get a single service history event's data for the Update Service Histories form
 SELECT serviceHistoryID, clientID, serviceID, employeeID, date FROM ServiceHistories
 WHERE serviceHistoryID = :service_history_ID_selected_from_browse_history_page;
-
+-- Create drop down for client, listing each client by id and first and last name
+SELECT clientID, CONCAT(firstName, " ", lastName) as Client 
+FROM Clients;
 -- Create a drop down for service, listing each by name
 SELECT serviceID, NonmedicalServices.name AS Service
 FROM NonmedicalServices;
